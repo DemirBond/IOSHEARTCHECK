@@ -1040,7 +1040,7 @@ class DataManager {
 		var finalInputsString = ""
 		for item in inputs {
 			if !item.isEmpty {
-				if finalInputsString.characters.count > 0 {
+				if finalInputsString.count > 0 {
 					finalInputsString = finalInputsString + "|" + item
 				} else {
 					finalInputsString = item
@@ -1066,7 +1066,7 @@ class DataManager {
 					checkInsideofPahItem(item:item, pahItem: pahItem.items)
 				}else if (item.items.count > 0 && pahItem.items.count > 0) {
 					checkInsideofAllItem(item: item.items, pahItem: pahItem.items)
-				}else if (item.identifier == pahItem.identifier && item.identifier.characters.count >= 3) {
+				}else if (item.identifier == pahItem.identifier && item.identifier.count >= 3) {
 					//print(pahItem.identifier + ": \(String(describing: pahItem.storedValue?.value))" + " equals! " + item.identifier + ": \(String(describing: item.storedValue?.value))")
 					let index = item.identifier.index(item.identifier.startIndex, offsetBy: 3)
 					let prefix = item.identifier.substring(to: index)
@@ -1092,7 +1092,7 @@ class DataManager {
 			
 			if (regItem.items.count > 0) {
 				checkInsideofRegularItem(item: regItem.items, pahItem: pahItem)
-			} else if (regItem.identifier == pahItem.identifier && regItem.identifier.characters.count >= 3) {
+			} else if (regItem.identifier == pahItem.identifier && regItem.identifier.count >= 3) {
 				//print(pahItem.identifier + " equals " + regItem.identifier)
 				let index = regItem.identifier.index(regItem.identifier.startIndex, offsetBy: 3)
 				let prefix = regItem.identifier.substring(to: index)
@@ -1118,7 +1118,7 @@ class DataManager {
 			
 			if (pItem.items.count > 0) {
 				checkInsideofPahItem(item:item, pahItem: pItem.items)
-			} else if (item.identifier == pItem.identifier && item.identifier.characters.count >= 3) {
+			} else if (item.identifier == pItem.identifier && item.identifier.count >= 3) {
 				//print(pItem.identifier + " -- equals " + item.identifier)
 				let index = item.identifier.index(item.identifier.startIndex, offsetBy: 3)
 				let prefix = item.identifier.substring(to: index)
@@ -1149,7 +1149,7 @@ class DataManager {
 					checkInsideofPahItem(item:regItem, pahItem: pItem.items)
 				} else if (regItem.items.count > 0 && pItem.items.count > 0) {
 					checkInsideofAllItem(item: regItem.items, pahItem: pItem.items)
-				} else if (regItem.identifier == pItem.identifier && regItem.identifier.characters.count >= 3) {
+				} else if (regItem.identifier == pItem.identifier && regItem.identifier.count >= 3) {
 					//print(pItem.identifier + " -- -- equals " + regItem.identifier)
 					
 					let index = regItem.identifier.index(regItem.identifier.startIndex, offsetBy: 3)
@@ -1175,7 +1175,7 @@ class DataManager {
 			
 			if(item.items.count > 0){
 				resetPahItem(item: item.items)
-			} else if (item.identifier.characters.count >= 3){
+			} else if (item.identifier.count >= 3){
 				let index = item.identifier.index(item.identifier.startIndex, offsetBy: 3)
 				let prefix = item.identifier.substring(to: index)
 				

@@ -100,7 +100,7 @@ class RestClient: NSObject {
 			if responseObject.response?.statusCode == 200 {
 				success(RegisterResponse(isSuccess: true, message: ""))
 			} else {
-				let resJson = JSON.parse(responseObject.result.value ?? "{}")
+				let resJson = JSON(parseJSON: responseObject.result.value ?? "{}")
 				print(success(RegisterResponse(isSuccess: false, message: resJson["Message"].stringValue)))
 			}
 			
@@ -119,7 +119,7 @@ class RestClient: NSObject {
 			if responseObject.response?.statusCode == 200 {
 				success(RegisterResponse(isSuccess: true, message: ""))
 			} else {
-				let resJson = JSON.parse(responseObject.result.value ?? "{}")
+				let resJson = JSON(parseJSON: responseObject.result.value ?? "{}")
 				print(success(RegisterResponse(isSuccess: false, message: resJson["Message"].stringValue)))
 			}
 			

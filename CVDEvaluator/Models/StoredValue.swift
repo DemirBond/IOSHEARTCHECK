@@ -63,7 +63,7 @@ class StoredValue {
 	func validateValue() throws {
 		switch self.valueType {
 		case ValueType.integer:
-			if value != nil && value!.characters.count > 0 {
+			if value != nil && value!.count > 0 {
 				guard let val = Int(value!) else { throw InputError.incorrectInput }
 				let minVal = Int(self.minValue!)
 				let maxVal = Int(self.maxValue!)
@@ -74,7 +74,7 @@ class StoredValue {
 			}
 			
 		case ValueType.decimal:
-			if value != nil && value!.characters.count > 0 {
+			if value != nil && value!.count > 0 {
 				guard let val = Double(value!) else { throw InputError.incorrectInput }
 				let minVal = self.minValue!
 				let maxVal = self.maxValue!
@@ -85,10 +85,10 @@ class StoredValue {
 			}
 			
 		case ValueType.string:
-			if value != nil && value!.characters.count > 0 {
+			if value != nil && value!.count > 0 {
 				let maxlength = nil != maxLengthValue ? maxLengthValue! : 80
 
-				guard value!.characters.count <= maxlength else { throw InputError.toLong }
+				guard value!.count <= maxlength else { throw InputError.toLong }
 				
 			} else if self.isMandatory {
 				throw InputError.emptyInput
@@ -103,7 +103,7 @@ class StoredValue {
 		
 		switch self.valueType {
 		case ValueType.integer:
-			if inputText.characters.count > 0 {
+			if inputText.count > 0 {
 				guard let val = Int(inputText) else { throw InputError.incorrectInput }
 				let minVal = Int(self.minValue!)
 				let maxVal = Int(self.maxValue!)
@@ -114,7 +114,7 @@ class StoredValue {
 			}
 			
 		case ValueType.decimal:
-			if inputText.characters.count > 0 {
+			if inputText.count > 0 {
 				guard let val = Double(inputText) else { throw InputError.incorrectInput }
 				let minVal = self.minValue!
 				let maxVal = self.maxValue!
@@ -125,9 +125,9 @@ class StoredValue {
 			}
 			
 		case ValueType.string:
-			if inputText.characters.count > 0 {
+			if inputText.count > 0 {
 				let maxlength = nil != maxLengthValue ? maxLengthValue! : 80
-				guard inputText.characters.count <= maxlength else { throw InputError.toLong }
+				guard inputText.count <= maxlength else { throw InputError.toLong }
 				
 			} else if self.isMandatory {
 				throw InputError.emptyInput

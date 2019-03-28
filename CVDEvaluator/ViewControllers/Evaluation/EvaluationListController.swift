@@ -181,42 +181,41 @@ class EvaluationListController: BaseTableController, NVActivityIndicatorViewable
 	
 	
 	// Override to support editing the table view.
-	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
 			// Delete the row from the data source
-			
+
 			let evaluation = DataManager.manager.patients![indexPath.row - 1]
-			
+
 			self.startAnimating()
-			
+
 			DispatchQueue.global().async {
 				RestClient.client.deleteEvaluationByID(uuid: Int(evaluation.evaluationUUID!)!, success: { (response) in print(response)
-					
+
 					self.stopAnimating()
-					
+
 					tableView.beginUpdates()
 					tableView.deleteRows(at: [indexPath], with: .fade)
 					DataManager.manager.deleteEvaluation(at: indexPath.row - 1)
 					tableView.endUpdates()
-					
+
 				}, failure: { error in print(error)
-					
+
 					self.stopAnimating()
-					
+
 					UIAlertController.infoAlert(message: error.localizedDescription, title: "Failed to delete evaluation".localized, viewcontroller: self, handler: {})
-					
+
 					/*var actions = [CVDAction] ()
 					var alertTitle: String?
 					actions.append(CVDAction(title: "OK".localized, type: CVDActionType.cancel, handler: nil, short: true))
 					alertTitle = "Failed to delete evaluation".localized
-					
+
 					self.showCVDAlert(title: alertTitle!, message: nil, actions: actions)
 					*/
 				})
-			}			
+			}
 		}
 	}
-	
 	
 	// Override to support rearranging the table view.
 	override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {

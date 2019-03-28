@@ -172,7 +172,7 @@ class BioController: BaseTableController, NVActivityIndicatorViewable { //, UITa
 	}
 	
 	
-	override func leftButtonAction(_ sender: UIBarButtonItem) {
+	@objc override func leftButtonAction(_ sender: UIBarButtonItem) {
 		// Added this section to fix double entering of bio page, problem was that when the user exited the page with the keyboard still up, the .isBioCompleted, would not evaulate.
 		self.hideKeyboard()
 		
@@ -214,7 +214,7 @@ class BioController: BaseTableController, NVActivityIndicatorViewable { //, UITa
 	}
 	
 	
-	override func bottomRightButtonAction(_ sender: UIBarButtonItem) {
+	@objc override func bottomRightButtonAction(_ sender: UIBarButtonItem) {
 		if validatePage() {
 			DataManager.manager.evaluation!.isBioCompleted = true
 		}
@@ -290,7 +290,7 @@ class BioController: BaseTableController, NVActivityIndicatorViewable { //, UITa
 				activeField?.becomeFirstResponder()
 				
 			} else {
-				self.tableView.scrollToRow(at: path, at: UITableViewScrollPosition.middle, animated: false)
+				self.tableView.scrollToRow(at: path, at: UITableView.ScrollPosition.middle, animated: false)
 				if let cell = tableView.cellForRow(at: path) as? GeneratedCell {
 					activeField = cell.textField
 					activeField?.isEnabled = true
@@ -341,7 +341,7 @@ extension BioController {
 		
 		if cellType ==  .textLeft || cellType ==  .integerLeft || cellType ==  .decimalLeft  {
 			cell.textField?.textColor = CVDStyle.style.purpleColor
-			cell.textField?.borderStyle = UITextBorderStyle.none
+			cell.textField?.borderStyle = UITextField.BorderStyle.none
 		}
 		
 		if cellType ==  .disclosureSimple{

@@ -358,7 +358,7 @@ class EvaluationItem  {
 					let start = storedValue.index(storedValue.startIndex, offsetBy: 1)
 					let end = storedValue.index(storedValue.endIndex, offsetBy: -1)
 					let range = start..<end
-					let strList = storedValue.substring(with: range)
+					let strList = storedValue[range]
 					let strTrimmed = strList.trimmingCharacters(in: .whitespacesAndNewlines)
 					let radioComponents: [String] = strTrimmed.components(separatedBy: ",")
 				
