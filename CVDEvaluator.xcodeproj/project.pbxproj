@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E2706D22269B3F9009386A3 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2706D12269B3F9009386A3 /* UITableView+Extensions.swift */; };
 		78174BB11FE571930068B98D /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 78174BA61FE571920068B98D /* LICENSE.txt */; };
 		78174BB21FE571930068B98D /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78174BA71FE571920068B98D /* OpenSans-Bold.ttf */; };
 		78174BB31FE571930068B98D /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78174BA81FE571920068B98D /* OpenSans-BoldItalic.ttf */; };
@@ -143,6 +144,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E2706D12269B3F9009386A3 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		2AB6A5BC01152DFBE0438B0C /* Pods-CVDEvaluator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVDEvaluator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CVDEvaluator/Pods-CVDEvaluator.debug.xcconfig"; sourceTree = "<group>"; };
 		78174BA61FE571920068B98D /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		78174BA71FE571920068B98D /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -283,6 +285,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E2706D02269B3E7009386A3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0E2706D12269B3F9009386A3 /* UITableView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		535FC24423E7C3D638A9AC6A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +348,7 @@
 		78BF73E61E3F640F0040EC81 /* CVDEvaluator */ = {
 			isa = PBXGroup;
 			children = (
+				0E2706D02269B3E7009386A3 /* Extensions */,
 				BA49CCA61F33A35E0040060A /* Models */,
 				BA49CD291F33A6FE0040060A /* Networking */,
 				BA49CD1C1F33A6B00040060A /* Literals */,
@@ -692,11 +703,13 @@
 					};
 					78BF73F71E3F640F0040EC81 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 32KV9Q45UD;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 78BF73E31E3F640F0040EC81;
 					};
 					78BF74021E3F640F0040EC81 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 32KV9Q45UD;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 78BF73E31E3F640F0040EC81;
 					};
@@ -704,10 +717,9 @@
 			};
 			buildConfigurationList = 78BF73DF1E3F640F0040EC81 /* Build configuration list for PBXProject "CVDEvaluator" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -908,6 +920,7 @@
 				BA49CCE71F33A35E0040060A /* Laboratories.swift in Sources */,
 				789268A51E6478C80018FEF5 /* Evaluation.xcdatamodeld in Sources */,
 				BA49CCEB1F33A35E0040060A /* ReviewOfSystem.swift in Sources */,
+				0E2706D22269B3F9009386A3 /* UITableView+Extensions.swift in Sources */,
 				BA49CD081F33A54E0040060A /* StringExtentions.swift in Sources */,
 				78BF73E81E3F640F0040EC81 /* AppDelegate.swift in Sources */,
 				BA49CD3C1F33FB860040060A /* HomeController.swift in Sources */,
@@ -1161,6 +1174,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 32KV9Q45UD;
 				INFOPLIST_FILE = CVDEvaluatorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SZG-tech.CVDEvaluatorTests";
@@ -1175,6 +1189,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 32KV9Q45UD;
 				INFOPLIST_FILE = CVDEvaluatorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SZG-tech.CVDEvaluatorTests";
@@ -1188,6 +1203,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 32KV9Q45UD;
 				INFOPLIST_FILE = CVDEvaluatorUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SZG-tech.CVDEvaluatorUITests";
@@ -1201,6 +1217,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 32KV9Q45UD;
 				INFOPLIST_FILE = CVDEvaluatorUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SZG-tech.CVDEvaluatorUITests";

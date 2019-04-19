@@ -66,8 +66,8 @@ class GeneratedCell: UITableViewCell, UITextFieldDelegate, KBNumberPadDelegate {
 	var subCellModelTwo:EvaluationItem?
 	
 	
-	var subCellModelThree:EvaluationItem? 
-	
+	var subCellModelThree:EvaluationItem?
+
 	/*
 	var isCheckedButtonSubOne: Bool {
 		get {
@@ -288,8 +288,9 @@ class GeneratedCell: UITableViewCell, UITextFieldDelegate, KBNumberPadDelegate {
 			}
 			
 		} else {
+			self.textField?.text = nil
 			self.textField?.text = self.cellModel.storedValue?.value
-			
+
 			if [.textLeft, .integerLeft, .decimalLeft, .mail, .password].contains(where: { $0 == cellModel.form.itemType })  {
 				self.textField?.textColor = CVDStyle.style.leftFieldColor
 			} else {
@@ -316,6 +317,11 @@ class GeneratedCell: UITableViewCell, UITextFieldDelegate, KBNumberPadDelegate {
 	// MARK: - UITextField delegates
 	
 	func textFieldDidEndEditing(_ textField: UITextField) {
+		if let supperView = self.superview as? UITableView, supperView.isResetting {
+			self.cellModel.storedValue?.value = nil
+			return
+		}
+
 		let strInput = textField.text
 		
 		do {

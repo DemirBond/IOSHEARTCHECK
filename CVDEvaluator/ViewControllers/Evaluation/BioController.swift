@@ -32,7 +32,6 @@ class BioController: BaseTableController, NVActivityIndicatorViewable { //, UITa
 	
 	var isSaved: Bool = false
 	
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -205,9 +204,12 @@ class BioController: BaseTableController, NVActivityIndicatorViewable { //, UITa
 		
 		// Reset Fields
 		actions.append(MenuAction(title: "Reset Fields", handler: {
+			self.tableView.isResetting = true
 			self.resetFields(items: self.pageForm.items)
-			
-			self.tableView.reloadData()
+			self.tableView.reloadDataThenPerform {
+				self.view.endEditing(true)
+				self.tableView.isResetting = false
+			}
 		}))
 		
 		self.showDropMenu(actions: actions)
@@ -328,7 +330,7 @@ extension BioController {
 		let cellType = itemModel.form.itemType
 		let cell = tableView.dequeueReusableCell(withIdentifier: cellType.reuseIdentifier(), for: indexPath) as! GeneratedCell
 		cell.delegate = self
-		
+
 		// self.textField?.text = self.cellModel.storedValue?.value
 		
 		if cellType == .date {
