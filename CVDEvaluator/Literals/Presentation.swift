@@ -142,8 +142,8 @@ struct Presentation {
 	static let chronicLungDisease = "#id:chklung|    #title:Known lung disease, click Pulmonary tab|    #type:#radio | #group: (chronicHFWithKnownEtiology, newOnsetSuspectedHF, chronicLungDisease)"// | #selected: 1"
 	
 	// FIXME: Phillips Edit for grouping radio buttons
-	static let outpatient = "#id:chkD5| #title:Ambulatory / Outpatient |    #type:#radio | #group: (chkD5,chdD4, inHospitalLabel)"
-	static let emergencyRoom = "#id:chkD4| #title:Escalating / Emergency Room |    #type:#radio | #group: (chkD5,chdD4, inHospitalLabel)"
+	static let outpatient = "#id:chkD5| #title:Slowly progressive | #type:#radio | #group: (chkD5,chdD4, inHospitalLabel)"
+	static let emergencyRoom = "#id:chkD4| #title:Rapidly progressive |  #type:#radio | #group: (chkD5,chdD4, inHospitalLabel)"
 	
 	// Symptoms -> Dyspnea -> Decompensated / Hospitalized
 	//static let inHospitalLabel = "#id:inHospitalLabel|    #title:Decompensated / Hospitalized|    #type:#disclosureControl"
@@ -497,16 +497,16 @@ struct Presentation {
 	static let murmur = "#id:murmur | #title:Murmur characteristics | #type:#disclosureSimple"
 	static let systolicMurmur = "#id:chkSystolicMurmur | #title:Systolic Murmur | #type:#disclosureControl"
 	static let blnCresDecres = "#id:chkCresDecres | #title:Crescendo-Decrescendo | #type:#disclosureControl"
-	static let blnEarlyMidSysPeak = "#id:chkEarlyMidPeak | #title:Early-Mid Systolic Peaking | #type:#radio | #group: (chkEarlyMidPeak, chkLatePeak)"
-	static let blnLateSysPeak = "#id:chkLatePeak | #title:Late Systolic Peaking | #type:#radio | #group: (chkEarlyMidPeak, chkLatePeak)"
-	
+	static let blnEarlyMidSysPeak = "#id:chkEarlyMidPeak | #title:Early-Mid Systolic Peaking | #type:#radio | #group: (chkEarlyMidPeak, chkLatePeak, chksquat, chkstanding)"
+	static let blnLateSysPeak = "#id:chkLatePeak | #title:Late Systolic Peaking | #type:#radio | #group: (chkEarlyMidPeak, chkLatePeak, chksquat, chkstanding)"
+	static let blnsquat = "#id:chksquat | #title:Softer with Squat | #type:#radio | #group: (chkEarlyMidPeak, chkLatePeak, chksquat, chkstanding)"
+	static let blnstanding = "#id:chkstanding | #title:Softer with standing | #type:#radio | #group: (chkEarlyMidPeak, chkLatePeak, chksquat, chkstanding)"
+
 	static let blnPlateuShaped = "#id:chkPlateuShaped | #title:Plateau Shaped | #type:#disclosureControl"
 	static let blnHalosystolic = "#id:chkHalosystolic | #title:Halosystolic | #type:#radio | #group: (chkHalosystolic, chkPansystolic, chkMidsystolic)"
 	static let blnPansystolic = "#id:chkPansystolic | #title:Pansystolic | #type:#radio | #group: (chkHalosystolic, chkPansystolic, chkMidsystolic)"
 	static let blnMidsystolic = "#id:chkMidsystolic | #title:Midsystolic | #type:#radio | #group: (chkHalosystolic, chkPansystolic, chkMidsystolic)"
-	
-	static let blnsquat = "#id:chksquat | #title:Softer with Squat | #type:#check"
-	static let blnstanding = "#id:chkstanding | #title:Softer with standing | #type:#check"
+
 	static let blnejectionsound = "#id:chkejectionsound | #title:Ejection sound | #type:#check"
 	static let blnsystolicclick = "#id:chksystolicclick | #title:Systolic click | #type:#check"
 	
@@ -995,8 +995,8 @@ struct Presentation {
 	static let kmeql = "#id:txtHomo | #title:K meq/l |#type:#decimalRight | #min:2.0 | #max:9.0 | #placeholder: K meq/l"
 	static let creatinineMgDl = "#id:txtcreatinine | #title:Creatinine mg/dl |#type:#decimalRight | #min:0.4 | #max:20.0 | #placeholder: mg/dl"
 	static let bunMgDl = "#id:txtBUN | #title:BUN mg/dl |#type:#integerRight | #min:6 | #max:200 | #placeholder: mg/dl"
-	static let alt = "#id:txtALT | #title:ALT |#type:#integerRight | #min:3 | #max:250000"
-	static let ast = "#id:txtAST | #title:AST |#type:#integerRight | #min:3 | #max:250000"
+	static let alt = "#id:txtALT | #title:ALT |#type:#integerRight | #min:3 | #max:250000 | #placeholder: Value"
+	static let ast = "#id:txtAST | #title:AST |#type:#integerRight | #min:3 | #max:250000 | #placeholder: Value"
 	static let gfrMlMin173M2 = "#id:txtGFR | #title:GFR ml/min/1.73 M2 |#type:#integerRight | #min:5 | #max:120 | #placeholder: ml/min/1.73 M2"
 	static let hemoglobin = "#id:txthemoglobin | #title:Hemoglobin g/dl |#type:#integerRight | #min:0 | #max:1200 | #placeholder: g/dl"
 	static let worseningRenalFx = "#id:chkWG | #title:Worsening Renal Fx | #type:#check"
@@ -1135,8 +1135,8 @@ struct Presentation {
 	static let pericardialEffusion = "#id:chkpericardial | #title:Pericardial Effusion | #type:#check"
 	static let rwma = "#id:chkRWMA | #title:RWMA | #type:#check"
 	static let enlargedLAOrLVH = "#id:chkEnlargedLA | #title:Enlarged LA | #type:#check"
-	static let ea05AndDTMore280ms = "#id:chkLVeccenticity | #title:E/A < 0.5 and DT > 280ms | #type:#check"
-	static let gradeMore2DiastolicDysfunction = "#id:chkMPI | #title:Grade ≥ 2 Diastolic Dysfunction | #type:#check"
+	static let ea05AndDTMore280ms = "#id:chkLVeccenticity | #title:E more than 50cm/s | #type:#check"
+	static let gradeMore2DiastolicDysfunction = "#id:chkMPI | #title:E/A more than 2 | #type:#check"
 	static let blnMPI1 = "#id:chkMPI1| #title:E/A less than 0.8 | #type:#check"
 	static let blnMPI2 = "#id:chkMPI2| #title:E/A 0.8 to 2 | #type:#check"
 	static let respiratoryIVSShift = "#id:chkIVSshift | #title:Respiratory IVS Shift | #type:#check"
@@ -1145,17 +1145,18 @@ struct Presentation {
 	static let enlargedRA = "#id:chkEnlargedRA | #title:Enlarged RA | #type:#check"
 	static let enlargedRV = "#id:chkEnlargedRV | #title:Enlarged RV | #type:#check"
 	static let midsystolicNotch = "#id:chkmidsystolicn | #title:Midsystolic Notch | #type:#check"
-	static let lvLaterealAnnulusEE = "#id:txtMP | #title:LV Latereal Annulus E/E' |#type:#integerRight | #min:1 | #max:30 | #placeholder: E/E"
+	static let lvLaterealAnnulusEE = "#id:txtMP | #title:E/Average E' | #type:#integerRight | #min:1 | #max:30 | #placeholder: Value"
 
-	static let lvlateralAnnulusE = "#id:txtMPL | #title:LV lateral annulus E |#type:#integerRight | #min:1 | #max:80"
-	static let lvmeidalAnnulusE = "#id:txtMPL | #title:LV medial annulus E |#type:#integerRight | #min:1 | #max:80"
+	static let lvlateralAnnulusE = "#id:txtMPL | #title:LV lateral annulus E' | #type:#integerRight | #min:1 | #max:80 | #placeholder: Value"
+	static let lvmeidalAnnulusE = "#id:txtMPL | #title:LV medial annulus E' | #type:#integerRight | #min:1 | #max:80 | #placeholder: Value"
 	static let lvefInEchocardiography = "#id:txtEF | #title:LVEF |#type:#integerRight | #min:10 | #max:80 | #placeholder: LVEF"
 	static let trjVelocityMsec = "#id:txtTRJ | #title:TRJ Velocity m/sec |#type:#integerRight | #min:1 | #max:6 | #placeholder: m/sec"
+	static let shortPaat = "#id:chkTei | #title:Short PAAT | #type:#check"
 	
 	static let echoTitleLVFunc = "#id: echoTitleLV | #title:LV Function | #type: #label"
 	static let echoTitleRVFunc = "#id: echoTitleRV | #title:RV Function | #type: #label"
 	static let echoTitlePericardium = "#id: echoTitlePeric | #title:Pericardium | #type: #label"
-	
+	static let echoTitleRvotDoppler = "#id: echoTitleRvotDoppler | #title:RVOT DOPPLER | #type: #label"
 	
 	// Diagnostics -> Chest X-Ray https://zpl.io/Z2uefQH
 	static let rightPleuralEffusion = "#id:chkRPLE | #title:Right Pleural Effusion | #type:#check"

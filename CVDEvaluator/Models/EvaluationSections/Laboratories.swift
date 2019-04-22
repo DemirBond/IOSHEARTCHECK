@@ -20,6 +20,7 @@ class Laboratories: EvaluationItem {
 	let bunMgDl = EvaluationItem(literal: Presentation.bunMgDl)
 	let alt = EvaluationItem(literal: Presentation.alt)
 	let ast = EvaluationItem(literal: Presentation.ast)
+	let inr = EvaluationItem(literal: Presentation.inr)
 	let gfrMlMin173M2 = EvaluationItem(literal: Presentation.gfrMlMin173M2)
 	let hemoglobin = EvaluationItem(literal: Presentation.hemoglobin)
 	let worseningRenalFx = EvaluationItem(literal: Presentation.worseningRenalFx)
@@ -60,6 +61,7 @@ class Laboratories: EvaluationItem {
 			bunMgDl,
 			alt,
 		  	ast,
+			inr,
 			gfrMlMin173M2,
 			hemoglobin,
 			//worseningRenalFx,

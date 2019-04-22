@@ -233,8 +233,6 @@ class HeartMurmurInPhysicalExam: EvaluationItem {
 		
 		let blnCresDecres = CrescendoDecrescendo(literal: Presentation.blnCresDecres)
 		let blnPlateuShaped = PlateuShaped(literal: Presentation.blnPlateuShaped)
-		let blnsquat = EvaluationItem(literal: Presentation.blnsquat)
-		let blnstanding = EvaluationItem(literal: Presentation.blnstanding)
 		let blnejectionsound = EvaluationItem(literal: Presentation.blnejectionsound)
 		let blnsystolicclick = EvaluationItem(literal: Presentation.blnsystolicclick)
 		
@@ -242,8 +240,6 @@ class HeartMurmurInPhysicalExam: EvaluationItem {
 			return [
 				blnCresDecres,
 				blnPlateuShaped,
-				blnsquat,
-				blnstanding,
 				blnejectionsound,
 				blnsystolicclick
 			]
@@ -254,11 +250,15 @@ class HeartMurmurInPhysicalExam: EvaluationItem {
 		
 		let blnEarlyMidSysPeak = EvaluationItem(literal: Presentation.blnEarlyMidSysPeak)
 		let blnLateSysPeak = EvaluationItem(literal: Presentation.blnLateSysPeak)
+		let blnsquat = EvaluationItem(literal: Presentation.blnsquat)
+		let blnstanding = EvaluationItem(literal: Presentation.blnstanding)
 		
 		override var items: [EvaluationItem] {
 			return [
 				blnEarlyMidSysPeak,
-				blnLateSysPeak
+				blnLateSysPeak,
+				blnsquat,
+				blnstanding
 			]
 		}
 	}

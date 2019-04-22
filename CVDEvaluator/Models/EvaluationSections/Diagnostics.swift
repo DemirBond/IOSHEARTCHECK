@@ -279,7 +279,7 @@ class Echocardiography: EvaluationItem {
 	let hepaticVeinExpDiastolicReversal = EvaluationItem(literal: Presentation.hepaticVeinExpDiastolicReversal)
 	let enlargedRA = EvaluationItem(literal: Presentation.enlargedRA)
 	let enlargedRV = EvaluationItem(literal: Presentation.enlargedRV)
-	let midsystolicNotch = EvaluationItem(literal: Presentation.midsystolicNotch)
+
 	let lvLaterealAnnulusEE = EvaluationItem(literal: Presentation.lvLaterealAnnulusEE)
 	let lvlateralAnnulusE = EvaluationItem(literal: Presentation.lvlateralAnnulusE)
 	let lvmeidalAnnulusE = EvaluationItem(literal: Presentation.lvmeidalAnnulusE)
@@ -288,9 +288,13 @@ class Echocardiography: EvaluationItem {
 	let trjVelocityMsec = EvaluationItem(literal: Presentation.trjVelocityMsec)
 	let tapse = EvaluationItem(literal: Presentation.tapse)
 
+	let shortPaat = EvaluationItem(literal: Presentation.shortPaat)
+	let midsystolicNotch = EvaluationItem(literal: Presentation.midsystolicNotch)
+
 	let titleLVFunc = EvaluationItem(literal: Presentation.echoTitleLVFunc)
 	let titleRVFunc = EvaluationItem(literal: Presentation.echoTitleRVFunc)
 	let titlePericardium = EvaluationItem(literal: Presentation.echoTitlePericardium)
+	let echoTitleRvotDoppler = EvaluationItem(literal: Presentation.echoTitleRvotDoppler)
 	
 	override var items: [EvaluationItem] {
 		return [
@@ -311,14 +315,16 @@ class Echocardiography: EvaluationItem {
 				tapse,
 				enlargedRA,
 				enlargedRV,
-				midsystolicNotch,
 				
+			echoTitleRvotDoppler,
+				shortPaat,
+				midsystolicNotch,
+
 			titlePericardium,
 				pericardialEffusion,
 				respiratoryIVSShift,
 				mitralEVariation,
-				hepaticVeinExpDiastolicReversal,
-
+				hepaticVeinExpDiastolicReversal
 		]
 	}
 }
