@@ -470,7 +470,7 @@ class ThromboembolicVKA: EvaluationItem {
 
 class ThromboembolicPrevention: EvaluationItem {
 	
-	let inr = EvaluationItem(literal: Presentation.inr)
+	//let inr = EvaluationItem(literal: Presentation.inr)
 	let bleedingRisk = BleedingRisk(literal: Presentation.bleedingRisk)
 	let proceduralBleedingRisk = ProceduralBleedingRisk(literal: Presentation.proceduralBleedingRisk)
 	let deepVenousThrombosis = EvaluationItem(literal: Presentation.deepVenousThrombosis)
@@ -481,7 +481,7 @@ class ThromboembolicPrevention: EvaluationItem {
 	
 	override var items: [EvaluationItem] {
 		return [
-			inr,
+			//inr,
 			bleedingRisk,
 			proceduralBleedingRisk,
 			deepVenousThrombosis,
@@ -956,7 +956,7 @@ class NoncardioembolicVCATIAAssoicaedWithCarotidPlaque: EvaluationItem {
 class PeriphericVascularDisease: EvaluationItem {
 	
 	let abiLess09 = EvaluationItem(literal: Presentation.abiLess09)
-	let claudication = EvaluationItem(literal: Presentation.claudication)
+	//let claudication = EvaluationItem(literal: Presentation.claudication)
 	let criticalLimbIschemia = EvaluationItem(literal: Presentation.criticalLimbIschemia)
 	let endovascularRevascularization = EvaluationItem(literal: Presentation.endovascularRevascularization)
 	let peripheralArteryBypassGraft = EvaluationItem(literal: Presentation.peripheralArteryBypassGraft)
@@ -964,7 +964,7 @@ class PeriphericVascularDisease: EvaluationItem {
 	override var items: [EvaluationItem] {
 		return [
 			abiLess09,
-			claudication,
+			//claudication,
 			criticalLimbIschemia,
 			endovascularRevascularization,
 			peripheralArteryBypassGraft
