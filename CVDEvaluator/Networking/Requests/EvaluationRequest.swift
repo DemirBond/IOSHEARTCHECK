@@ -23,7 +23,7 @@ struct EvaluationRequest{
 	var inputs: String
 	
 	func toDictionary() -> Dictionary<String, AnyObject> {
-		var dict = ["age": age as AnyObject, "isPAH": isPAH as AnyObject, "gender": gender as AnyObject, "SBP": SBP as AnyObject, "DBP": DBP as AnyObject, "inputs": inputs as AnyObject]
+		var dict = ["age": age as AnyObject, "isPAH": isPAH as AnyObject, "gender": gender as AnyObject, "SBP": SBP as AnyObject, "DBP": DBP as AnyObject, "forHF" : "false" as AnyObject, "inputs": inputs as AnyObject]
 		
 		if (isSave) {
 			dict["name"] = name as AnyObject

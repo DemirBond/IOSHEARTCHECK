@@ -174,7 +174,7 @@ class EvaluationController: BaseTableController, NVActivityIndicatorViewable {
 	}
 	
 	
-	@objc override func bottomRightButtonAction(_ sender: UIBarButtonItem) { // Compute Evaluation
+	override func bottomRightButtonAction(_ sender: UIBarButtonItem) { // Compute Evaluation
 		self.computeEvaluation(isSaveMode: false)
 	}
 	

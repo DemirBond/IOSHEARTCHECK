@@ -83,7 +83,7 @@ class BaseTableController: UITableViewController, BuildAppearance, EvaluationEdi
 			self.navigationItem.rightBarButtonItems = rightBarItems
 			
 			// BottomBar
-			let bottomSelectors: [Selector?] = [#selector(self.bottomRightButtonAction1(_:)),
+			let bottomSelectors: [Selector?] = [#selector(self.bottomRightButtonAction(_:)),
 			                                    #selector(self.bottomRightButtonAction1(_:))]
 			let cvdToolbar = CVDToolbar()
 			cvdToolbar.setup(dict: appearanceInfo, target: self, actions: bottomSelectors)
