@@ -448,6 +448,11 @@ struct Presentation {
 	static let percussionInPhysicalExam = "#id:chkpercussion| #title:Abnormal resonance to percussion | #type:#check"
 	static let thoraxInPhysicalExam = "#id:chkthorax | #title:Increased thorax AP diameter  | #type:#check"
 	static let abdominalTendernessInPhysicalExam = "#id:chkabdominal | #title:Abdominal Tenderness | #type:#check"
+
+	static let distentionInPhysicalExam = "#id:chkdistention | #title:Abdominal Distention | #type:#check"
+	static let bowelsoundsInPhysicalExam = "#id:chkbowelsounds | #title:Abnormal Bowel Sounds | #type:#check"
+	static let costovertebralInPhysicalExam = "#id:chkcostovertebral | #title:Costovertebral Tenderness | #type:#check"
+
 	static let hepatojulularRefluxInPhysicalExam = "#id:chkHJR | #title:Hepatojulular Reflux | #type:#check"
 	static let ascitesInPhysicalExam = "#id:chkascites | #title:Ascites | #type:#check"
 	static let abdominalbruitInPhysicalExam = "#id: chkabbruit | #title: Abdominal Bruit | #type:#check"
@@ -501,6 +506,7 @@ struct Presentation {
 	static let blnMidsystolic = "#id:chkMidsystolic | #title:Midsystolic | #type:#radio | #group: (chkHalosystolic, chkPansystolic, chkMidsystolic)"
 	
 	static let blnsquat = "#id:chksquat | #title:Softer with Squat | #type:#check"
+	static let blnstanding = "#id:chkstanding | #title:Softer with standing | #type:#check"
 	static let blnejectionsound = "#id:chkejectionsound | #title:Ejection sound | #type:#check"
 	static let blnsystolicclick = "#id:chksystolicclick | #title:Systolic click | #type:#check"
 	
@@ -989,6 +995,8 @@ struct Presentation {
 	static let kmeql = "#id:txtHomo | #title:K meq/l |#type:#decimalRight | #min:2.0 | #max:9.0 | #placeholder: K meq/l"
 	static let creatinineMgDl = "#id:txtcreatinine | #title:Creatinine mg/dl |#type:#decimalRight | #min:0.4 | #max:20.0 | #placeholder: mg/dl"
 	static let bunMgDl = "#id:txtBUN | #title:BUN mg/dl |#type:#integerRight | #min:6 | #max:200 | #placeholder: mg/dl"
+	static let alt = "#id:txtALT | #title:ALT |#type:#integerRight | #min:3 | #max:250000"
+	static let ast = "#id:txtAST | #title:AST |#type:#integerRight | #min:3 | #max:250000"
 	static let gfrMlMin173M2 = "#id:txtGFR | #title:GFR ml/min/1.73 M2 |#type:#integerRight | #min:5 | #max:120 | #placeholder: ml/min/1.73 M2"
 	static let hemoglobin = "#id:txthemoglobin | #title:Hemoglobin g/dl |#type:#integerRight | #min:0 | #max:1200 | #placeholder: g/dl"
 	static let worseningRenalFx = "#id:chkWG | #title:Worsening Renal Fx | #type:#check"
@@ -1034,6 +1042,7 @@ struct Presentation {
 	static let ekg = "#id:chkEKG | #title:EKG | #type:#disclosureControl"
 	static let stressTesting = "#id:chkDTS | #title:Stress Testing | #type:#disclosureControl"
 	static let echocardiography = "#id:chkEcho | #title:Echocardiography | #type:#disclosureControl"
+	static let tapse = "#id:txtTAPSE | #title:TAPSE | #type:#decimalRight | #min:1 | #max:6 | #placeholder: Value"
 	static let chestXRay = "#id:chkchestxray | #title:Chest X-Ray | #type:#disclosureControl"
 	static let hrct = "#id:chkHRCT | #title:High resolution CT | #type:#disclosureControl"
 	static let rhc = "#id:chkHC | #title:RHC | #type:#disclosureControl | #alert: Refer to Heart Failure Specialist for Management"
@@ -1128,6 +1137,8 @@ struct Presentation {
 	static let enlargedLAOrLVH = "#id:chkEnlargedLA | #title:Enlarged LA | #type:#check"
 	static let ea05AndDTMore280ms = "#id:chkLVeccenticity | #title:E/A < 0.5 and DT > 280ms | #type:#check"
 	static let gradeMore2DiastolicDysfunction = "#id:chkMPI | #title:Grade ≥ 2 Diastolic Dysfunction | #type:#check"
+	static let blnMPI1 = "#id:chkMPI1| #title:E/A less than 0.8 | #type:#check"
+	static let blnMPI2 = "#id:chkMPI2| #title:E/A 0.8 to 2 | #type:#check"
 	static let respiratoryIVSShift = "#id:chkIVSshift | #title:Respiratory IVS Shift | #type:#check"
 	static let mitralEVariation = "#id:chkmitralE | #title:Mitral E Variation | #type:#check"
 	static let hepaticVeinExpDiastolicReversal = "#id:chkhepatic | #title:Hepatic Vein Exp Diastolic Reversal | #type:#check"
@@ -1135,6 +1146,9 @@ struct Presentation {
 	static let enlargedRV = "#id:chkEnlargedRV | #title:Enlarged RV | #type:#check"
 	static let midsystolicNotch = "#id:chkmidsystolicn | #title:Midsystolic Notch | #type:#check"
 	static let lvLaterealAnnulusEE = "#id:txtMP | #title:LV Latereal Annulus E/E' |#type:#integerRight | #min:1 | #max:30 | #placeholder: E/E"
+
+	static let lvlateralAnnulusE = "#id:txtMPL | #title:LV lateral annulus E |#type:#integerRight | #min:1 | #max:80"
+	static let lvmeidalAnnulusE = "#id:txtMPL | #title:LV medial annulus E |#type:#integerRight | #min:1 | #max:80"
 	static let lvefInEchocardiography = "#id:txtEF | #title:LVEF |#type:#integerRight | #min:10 | #max:80 | #placeholder: LVEF"
 	static let trjVelocityMsec = "#id:txtTRJ | #title:TRJ Velocity m/sec |#type:#integerRight | #min:1 | #max:6 | #placeholder: m/sec"
 	
@@ -1212,6 +1226,7 @@ struct Presentation {
 	static let hctz = "#id:chkHCTZ | #title:HCTZ | #type:#check"
 	static let indapamide = "#id:chkindapamide | #title:Indapamide | #type:#check"
 	static let chlorthalidoneMetolazone = "#id:chkchlorthalidone | #title:Chlorthalidone, Metolazone |#type:#check"
+	static let spirolactone = "#id:chkaldactone| #title:Spirolactone | #type:#check"
 	
 	// HSR -> In Hospital/IV Therapies https://zpl.io/1QwAhq
 	static let ivAntiarrythmic = "#id:chkIVAA | #title:IV Antiarrythmic | #type:#disclosureControl"

@@ -118,7 +118,8 @@ class PODiuretic: EvaluationItem {
 	let hctz = EvaluationItem(literal:Presentation.hctz)
 	let indapamide = EvaluationItem(literal: Presentation.indapamide)
 	let chlorthalidoneMetolazone = EvaluationItem(literal: Presentation.chlorthalidoneMetolazone)
-	
+	let spirolactone = EvaluationItem(literal: Presentation.spirolactone)
+
 	override var items: [EvaluationItem] {
 		return [
 			furosemide40,
@@ -132,7 +133,8 @@ class PODiuretic: EvaluationItem {
 			torsemide50Plus,
 			hctz,
 			indapamide,
-			chlorthalidoneMetolazone
+			chlorthalidoneMetolazone,
+			spirolactone
 		]
 	}
 }

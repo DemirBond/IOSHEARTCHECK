@@ -865,7 +865,6 @@ class HeartFailureInHMS: EvaluationItem {
 		let blntorsemide20 = EvaluationItem(literal: HMS.blntorsemide20)
 		let blntorsemide40 = EvaluationItem(literal: HMS.blntorsemide40)
 		let blntorsemide50 = EvaluationItem(literal: HMS.blntorsemide50)
-
 		override var items: [EvaluationItem] {
 			return [
 				blnfurosemide40,
@@ -1060,6 +1059,7 @@ class EchocardiographyInHSM: EvaluationItem {
 	
 	let blnLVeccenticity = EvaluationItem(literal: HMS.blnLVeccenticity)
 	let blnMPI = EvaluationItem(literal: HMS.blnMPI)
+
 	let blnEnlargedLA = EvaluationItem(literal: HMS.blnEnlargedLA)
 	let txtMP = EvaluationItem(literal: HMS.txtMP)
 	// Note: was commented in the source code.

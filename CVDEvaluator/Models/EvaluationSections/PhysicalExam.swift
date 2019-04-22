@@ -31,6 +31,11 @@ class PhysicalExam: EvaluationItem {
 	let percussionInPhysicalExam = EvaluationItem(literal: Presentation.percussionInPhysicalExam)
 	let thoraxInPhysicalExam = EvaluationItem(literal: Presentation.thoraxInPhysicalExam)	
 	let abdominalTendernessInPhysicalExam = EvaluationItem(literal: Presentation.abdominalTendernessInPhysicalExam)
+
+	let distentionInPhysicalExam = EvaluationItem(literal: Presentation.distentionInPhysicalExam)
+	let bowelsoundsInPhysicalExam = EvaluationItem(literal: Presentation.bowelsoundsInPhysicalExam)
+	let costovertebralInPhysicalExam = EvaluationItem(literal: Presentation.costovertebralInPhysicalExam)
+
 	let hepatojulularRefluxInPhysicalExam = EvaluationItem(literal: Presentation.hepatojulularRefluxInPhysicalExam)
 	let ascitesInPhysicalExam = EvaluationItem(literal: Presentation.ascitesInPhysicalExam)
 	let anyCNSSymptomsInPhysicalExam = EvaluationItem(literal: Presentation.anyCNSSymptomsInPhysicalExam)
@@ -89,6 +94,9 @@ class PhysicalExam: EvaluationItem {
 			// Abdominal
 			abdominalLabel,
 			abdominalTendernessInPhysicalExam,
+			distentionInPhysicalExam,
+			bowelsoundsInPhysicalExam,
+			costovertebralInPhysicalExam,
 			hepatojulularRefluxInPhysicalExam,
 			ascitesInPhysicalExam,
 
@@ -226,6 +234,7 @@ class HeartMurmurInPhysicalExam: EvaluationItem {
 		let blnCresDecres = CrescendoDecrescendo(literal: Presentation.blnCresDecres)
 		let blnPlateuShaped = PlateuShaped(literal: Presentation.blnPlateuShaped)
 		let blnsquat = EvaluationItem(literal: Presentation.blnsquat)
+		let blnstanding = EvaluationItem(literal: Presentation.blnstanding)
 		let blnejectionsound = EvaluationItem(literal: Presentation.blnejectionsound)
 		let blnsystolicclick = EvaluationItem(literal: Presentation.blnsystolicclick)
 		
@@ -234,6 +243,7 @@ class HeartMurmurInPhysicalExam: EvaluationItem {
 				blnCresDecres,
 				blnPlateuShaped,
 				blnsquat,
+				blnstanding,
 				blnejectionsound,
 				blnsystolicclick
 			]

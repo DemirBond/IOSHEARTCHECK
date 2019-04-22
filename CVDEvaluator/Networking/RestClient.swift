@@ -178,7 +178,7 @@ class RestClient: NSObject {
 			"Authorization": token,
 			"Accept": "application/json"
 		]
-		Alamofire.request(RestClient.deleteEvaluationUrl, method: .get, parameters: params, headers:headers).responseJSON {(responseObject) -> Void in
+		Alamofire.request(RestClient.deleteEvaluationUrl, method: .delete, parameters: params, headers:headers).responseJSON {(responseObject) -> Void in
 			if responseObject.result.isSuccess {
 				let resJson = JSON(responseObject.result.value!)
 				success(resJson)

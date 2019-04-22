@@ -272,6 +272,8 @@ class Echocardiography: EvaluationItem {
 	let enlargedLAOrLVH = EvaluationItem(literal: Presentation.enlargedLAOrLVH)
 	let ea05AndDTMore280ms = EvaluationItem(literal: Presentation.ea05AndDTMore280ms)
 	let gradeMore2DiastolicDysfunction = EvaluationItem(literal: Presentation.gradeMore2DiastolicDysfunction)
+	let blnMPI1 = EvaluationItem(literal: Presentation.blnMPI1)
+	let blnMPI2 = EvaluationItem(literal: Presentation.blnMPI2)
 	let respiratoryIVSShift = EvaluationItem(literal: Presentation.respiratoryIVSShift)
 	let mitralEVariation = EvaluationItem(literal: Presentation.mitralEVariation)
 	let hepaticVeinExpDiastolicReversal = EvaluationItem(literal: Presentation.hepaticVeinExpDiastolicReversal)
@@ -279,9 +281,13 @@ class Echocardiography: EvaluationItem {
 	let enlargedRV = EvaluationItem(literal: Presentation.enlargedRV)
 	let midsystolicNotch = EvaluationItem(literal: Presentation.midsystolicNotch)
 	let lvLaterealAnnulusEE = EvaluationItem(literal: Presentation.lvLaterealAnnulusEE)
+	let lvlateralAnnulusE = EvaluationItem(literal: Presentation.lvlateralAnnulusE)
+	let lvmeidalAnnulusE = EvaluationItem(literal: Presentation.lvmeidalAnnulusE)
+
 	let lvefInEchocardiography = EvaluationItem(literal: Presentation.lvefInEchocardiography)
 	let trjVelocityMsec = EvaluationItem(literal: Presentation.trjVelocityMsec)
-	
+	let tapse = EvaluationItem(literal: Presentation.tapse)
+
 	let titleLVFunc = EvaluationItem(literal: Presentation.echoTitleLVFunc)
 	let titleRVFunc = EvaluationItem(literal: Presentation.echoTitleRVFunc)
 	let titlePericardium = EvaluationItem(literal: Presentation.echoTitlePericardium)
@@ -292,12 +298,17 @@ class Echocardiography: EvaluationItem {
 				lvefInEchocardiography,
 				rwma,
 				lvLaterealAnnulusEE,
+				lvlateralAnnulusE,
+				lvmeidalAnnulusE,
 				enlargedLAOrLVH,
 				ea05AndDTMore280ms,
 				gradeMore2DiastolicDysfunction,
+				blnMPI1,
+				blnMPI2,
 				
 			titleRVFunc,
 				trjVelocityMsec,
+				tapse,
 				enlargedRA,
 				enlargedRV,
 				midsystolicNotch,

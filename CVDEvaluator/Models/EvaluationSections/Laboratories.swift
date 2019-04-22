@@ -18,6 +18,8 @@ class Laboratories: EvaluationItem {
 	let kmeql = EvaluationItem(literal: Presentation.kmeql)
 	let creatinineMgDl = EvaluationItem(literal: Presentation.creatinineMgDl)
 	let bunMgDl = EvaluationItem(literal: Presentation.bunMgDl)
+	let alt = EvaluationItem(literal: Presentation.alt)
+	let ast = EvaluationItem(literal: Presentation.ast)
 	let gfrMlMin173M2 = EvaluationItem(literal: Presentation.gfrMlMin173M2)
 	let hemoglobin = EvaluationItem(literal: Presentation.hemoglobin)
 	let worseningRenalFx = EvaluationItem(literal: Presentation.worseningRenalFx)
@@ -56,6 +58,8 @@ class Laboratories: EvaluationItem {
 			kmeql,
 			creatinineMgDl,
 			bunMgDl,
+			alt,
+		  	ast,
 			gfrMlMin173M2,
 			hemoglobin,
 			//worseningRenalFx,
