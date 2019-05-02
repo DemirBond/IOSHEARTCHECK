@@ -252,24 +252,25 @@ class HeartFailure: EvaluationItem {
 // MARK: - CVProfile -> Heart Failure -> Heart Failure Stage
 
 class NYHAClass: EvaluationItem {
-	
+
+
+	let nyhaclass1 = EvaluationItem(literal: Presentation.nyhaclass1)
+	let nyhaclass2 = EvaluationItem(literal: Presentation.nyhaclass2)
+	let nyhaclass3 = EvaluationItem(literal: Presentation.nyhaclass3)
+	let nyhaclass4 = EvaluationItem(literal: Presentation.nyhaclass4)
+
 	let atHighRiskOfHF = EvaluationItem(literal: Presentation.atHighRiskOfHF)
 	let structuralHeartDeseaseNoSymptoms = EvaluationItem(literal: Presentation.structuralHeartDeseaseNoSymptoms)
 	let structuralHeartDeseaseSymptoms = EvaluationItem(literal: Presentation.structuralHeartDeseaseSymptoms)
 	
 	let refactoryHFInterventions = RefactoryHFInterventions(literal: Presentation.refactoryHFInterventions)
 	
-	let NYHACCSVClass1 = EvaluationItem(literal: Presentation.nyhaccvsClass1)
-	let NYHACCSVClass2 = EvaluationItem(literal: Presentation.nyhaccvsClass2)
-	let NYHACCSVClass3 = EvaluationItem(literal: Presentation.nyhaccvsClass3)
-	let NYHACCSVClass4 = EvaluationItem(literal: Presentation.nyhaccvsClass4)
-	
 	override var items: [EvaluationItem] {
 		return [
-//			NYHACCSVClass1,
-//			NYHACCSVClass2,
-//			NYHACCSVClass3,
-//			NYHACCSVClass4,
+			nyhaclass1,
+			nyhaclass2,
+			nyhaclass3,
+			nyhaclass4,
 			atHighRiskOfHF,
 			structuralHeartDeseaseNoSymptoms,
 			structuralHeartDeseaseSymptoms,

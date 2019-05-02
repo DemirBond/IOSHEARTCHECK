@@ -153,11 +153,6 @@ class GeneratedController: BaseTableController, NVActivityIndicatorViewable {
 				let navigateAction = CVDAction(title: "Refer".localized, type: CVDActionType.done, handler: handler2, short: false)
 				self.showCVDAlert(title: alert, message: nil, actions: [navigateAction, cancelAction])
 			}
-
-			
-			
-			
-			
 		}
 		
 	}
@@ -622,11 +617,11 @@ class GeneratedController: BaseTableController, NVActivityIndicatorViewable {
 			if pageForm.identifier == "bioPAHMain" || validatePage() {
 				let storyboard = UIStoryboard(name: "Medical", bundle: nil)
 				
-				if itemModel.identifier == identifierBy(literal: Presentation.pah) {
-					let controller = storyboard.instantiateViewController(withIdentifier: "HypertensionControllerID") as! HypertensionController
-					controller.pageForm = itemModel
-					self.navigationController?.pushViewController(controller, animated: true)
-				} else {
+//				if itemModel.identifier == identifierBy(literal: Presentation.pah) {
+//					let controller = storyboard.instantiateViewController(withIdentifier: "HypertensionControllerID") as! HypertensionController
+//					controller.pageForm = itemModel
+//					self.navigationController?.pushViewController(controller, animated: true)
+//				} else {
 					let controller = storyboard.instantiateViewController(withIdentifier: "GeneratedControllerID") as! GeneratedController
 					controller.pageForm = itemModel
 					controller.isHeartSpecilaistManagementPop = self.isHeartSpecilaistManagementPop
@@ -634,7 +629,7 @@ class GeneratedController: BaseTableController, NVActivityIndicatorViewable {
 						controller.isHeartSpecilaistManagement = self.isHeartSpecilaistManagement
 					//}
 					self.navigationController?.pushViewController(controller, animated: true)
-				}
+//				}
 			}
 			
 			hideKeyboard()

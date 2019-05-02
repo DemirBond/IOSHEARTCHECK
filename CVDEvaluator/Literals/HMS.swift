@@ -58,24 +58,26 @@ struct HMS {
 	
 	// Main -> PAH 1
 	static let txtSVR = "#id:txt6MWT | #title:6MW Distance | #type:#integerRight | #min:50 | #max:500 | #placeholder:  "
-	static let blnCongenita = "#id:chkCongenita | #title:Congenital | #type:#disclosureControl"
+	static let blnCongenita = "#id:chkCongenital | #title:Congenital Heart Disesea | #type:#disclosureControl"
 	static let blnSclero = "#id:chkSclero | #title:Scleroderma | #type:#check"
 	static let blnSLE = "#id:chkSLE | #title:SLE | #type:#check"
 	static let blnHIV = "#id:chkHIV | #title:HIV | #type:#check"
-	static let blnFF = "#id:chkFF | #title:Portal Hypertension | #type:#check"
-	static let blnresp = "#id:chkRESP | #title:Respiratory Disease/Hypoxia | #type:#disclosureControl"
+	static let blnFF = "#id:chkFF | #title:Porto Hypertension | #type:#check"
+	static let blnresp = "#id:chkRESP | #title:Respiratory Disease | #type:#check"
 	static let blnIdio = "#id:chkIdio | #title:Idiopathic | #type:#check"
 	static let blnPVOD = "#id:chkPVOD | #title:PVOD/PCH | #type:#check"
 	static let blnSplen = "#id:chkSplen | #title:Splenectomy/SC | #type:#check"
 	static let blnFamilial = "#id:chkFamilial | #title:Familial | #type:#check"
 	static let blnCTEP = "#id:chkCTEP | #title:CTEP | #type:#check"
 	static let blnDrugs = "#id:chkDrugs | #title:Drugs/Toxins | #type:#check"
+
+	static let asdLess2cm = "#id:chkASD | #title:ASD | #type:#check"
 	
 	// Main -> PAH 1 -> Congenital
-	static let blnASD = "#id:chkASD | #title:ASD < 2cm | #type:#check"
-	static let blnVSD = "#id:chkVSD | #title:VSD < 1cm | #type:#check"
+	static let blnASD = "#id:chkASD | #title:ASD | #type:#check"
+	static let blnVSD = "#id:chkVSD | #title:VSD | #type:#check"
 	static let blnPCS = "#id:chkPCS | #title:Post Corrective Surgery | #type:#check"
-	static let blnEisen = "#id:chkEisen | #title:Eisenmenger | #type:#check"
+	static let blnEisen = "#id:chkEisen | #title:Eisenmenger Syndrome | #type:#check"
 	
 	// Main -> PAH 1 -> Respiratory Disease/Hyposia
 	static let txtAHI = "#id:txtAHI | #title:AHI | #type:#integerRight | #min:0 | #max:100 | #placeholder: "
@@ -103,8 +105,8 @@ struct HMS {
 	static let txtCMP = "#id:txtCMP | #title:Heart Rate | #type:#integerRight | #min:20 | #max:300 | #placeholder: "
 	
 	// Main -> PAH 3
-	static let txtTRJ = "#id:txtTRJ | #title:TR Jet Velocity | #type:#decimalRight | #min:1.0 | #max:6.0 | #placeholder: "
-	static let txtERVSP = "#id:txtERVSP | #title:Exercise RSVP | #type:#integerRight | #min:16 | #max:144 | #placeholder: "
+	static let txtTRJ = "#id:txtTRJ | #title:TR Jet Velocity | #type:#decimalRight | #min:1.0 | #max:6.0 | #placeholder: Value"
+	static let txtERVSP = "#id:txtERVSP | #title:Exercise RSVP | #type:#integerRight | #min:16 | #max:144 | #placeholder: Value"
 	
 	static let blnAD = "#id:chkAD | #title:Advanced Echocardiography | #type:#disclosureControl"
 	//static let blnTD = "#id:chkTD | #title:Check if LV TD Done | #type:#check"
@@ -238,7 +240,7 @@ struct HMS {
 	
 	// Advanced LHF -> Heart Failure -> Clinics
 	static let txtCHF = "#id:txtCHF| #title:LVEF | #type:#integerRight | #min:10 | #max:80 | #placeholder: "
-	static let txtO2sat = "#id:txtO2sat| #title: O2sat% | #type:#integerRight | #min:50 | #max:100 | #placeholder: "
+	static let txtO2sat = "#id:txtO2Sat| #title: O2sat% | #type:#integerRight | #min:50 | #max:100 | #placeholder: "
 	static let txtproBNP = "#id:txtproBNP| #title:NT-proBNP pg/ml | #type:#integerRight | #min:50 | #max:100000 | #placeholder: "
 	
 	static let blnPEd = "#id:chkPEd| #title:Pulmonary Edema | #type:#check"

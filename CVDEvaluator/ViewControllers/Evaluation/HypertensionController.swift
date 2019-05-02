@@ -101,9 +101,11 @@ class HypertensionController: GeneratedController {
 	
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
 		let segmentForm = pageForm.items[selectedTabNum]
 		let itemModel = segmentForm.items[indexPath.row]
-		
+
+
 		let cellType = itemModel.form.itemType
 		let cell = tableView.dequeueReusableCell(withIdentifier: cellType.reuseIdentifier(), for: indexPath) as! GeneratedCell
 		cell.delegate = self
@@ -150,6 +152,15 @@ class HypertensionController: GeneratedController {
 			}
 			
 			hideKeyboard()
+
+		case .disclosureControlExpandable:
+			//let cell = tableView.cellForRow(at: indexPath) as! RightIntegerCellExpandable
+			//cellExpanded = !cellExpanded
+			let cell = tableView.cellForRow(at: indexPath) as! DisclosureControlCellExpandable
+			itemModel.isExpanded = !itemModel.isExpanded
+			cell.updateDisclosureIcon()
+			tableView.beginUpdates()
+			tableView.endUpdates()
 			
 		default:
 			()
@@ -167,6 +178,34 @@ class HypertensionController: GeneratedController {
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		let segmentForm = pageForm.items[selectedTabNum]
 		let itemModel = segmentForm.items[indexPath.row]
+		
+		if (itemModel.form.itemType == .disclosureSimpleExpandable) {
+			if cellExpanded {
+				return 150
+			}
+			else {
+				return 55
+			}
+		}
+
+		if (itemModel.form.itemType == .disclosureControlExpandable) {
+			if itemModel.isExpanded {
+				if itemModel.subCellsCount == 3{
+					return 200
+				}
+				else if  itemModel.subCellsCount == 2{
+					return 150
+				}
+				else { //if  itemModel.subCellsCount == 1{
+					return 100
+				}
+			}
+			else {
+				return 55
+			}
+
+		}
+		
 		return itemModel.calculateCellHeight(forWidth: self.view.frame.size.width)
 	}
 	

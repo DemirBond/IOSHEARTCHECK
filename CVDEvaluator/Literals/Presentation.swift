@@ -109,7 +109,7 @@ struct Presentation {
 	static let bioWaistCirc = "#id:waist | #title:Waist Circ. |  #type:#decimalLeft| #min:20|  #max:60"
 	static let bioAA = "#id:chkAsianCode  |  #title:AA |    #type:#check"
 	static let bioPregnancy = "#id:chkpreg |    #title:Pregnancy |    #type:#check"
-	static let bioO2sat = "#id:txtO2sat | #title:RA O2 sat |  #type:#decimalLeft| #min:50|  #max:100"
+	static let bioO2sat = "#id:txtO2Sat | #title:RA O2 sat |  #type:#decimalLeft| #min:50|  #max:100"
 	
 	// Bio -> Gender: https://zpl.io/Z16UrC4
 	static let male = 		"#id:male|    #title:Male|    #type:#radio | #group: (male, female)"
@@ -153,12 +153,12 @@ struct Presentation {
 	static let day3 = "#id:chkD3|    #title:Day 3|    #type:#radio | #group:  (chkD1, chkD2, chkD3)"
 	
 	// Symptoms -> Dyspnea -> Dyspnea on Exertion https://zpl.io/xTF0A
-	static let dyspneaOnExertionNotAtRest = "#id:chkDOE|    #title:Dyspnea on Exertion, not at Rest|    #type:#disclosureControl"
+	static let dyspneaOnExertionNotAtRest = "#id:chkDOE|    #title:Dyspnea on Exertion |    #type:#disclosureControl"
 	static let strenousExertion = "#id:chkclass1|    #title:Strenous Exertion|    #type:#radio | #group : (chkclass1, chkclass2, chkclass3)"
 	static let moreThanDailyRoutine = "#id:chkclass2|    #title:More than Daily Routine|    #type:#radio | #group : (chkclass1, chkclass2, chkclass3)"
 	static let dailyRoutineMinimalActivities = "#id:chkclass3|    #title:Daily Routine / Minimal Activities |  #type:#radio | #group : (chkclass1, chkclass2, chkclass3)"
 	
-	static let dyspneaAtRestOrphopnea = "#id:chkdysp|    #title:Dyspnea at Rest / Orthopnea|    #type:#disclosureControlExpandable"
+	static let dyspneaAtRestOrphopnea = "#id:chkdysp|    #title:Dyspnea at Rest|    #type:#check"
 	static let weightGain = "#id:chkWeight|    #title:Weight Gain|    #type:#check"
 	
 	// Symptoms -> Chest Pain https://zpl.io/xUvxt
@@ -538,7 +538,7 @@ struct Presentation {
 	static let thromboembolicVKA = "#id:thromboembolicVKA | #title:Thromboembolic/VKA | #type:#disclosureWeather"
 	static let ventricularTachyarrthymias = "#id:ventricularTachyarrthymias | #title:Ventricular Tachyarrthymias | #type:#disclosureWeather"
 	static let bradyarrthymiaSyncope = "#id:bradyarrthymiaSyncope | #title:Bradyarrthymia/Syncope | #type:#disclosureWeather"
-	static let valvularHeartDisease = "#id:chkvalvular | #title:Valvular Heart Disease | #type:#disclosureWeather | #alert: Refer to Heart Failure Specialist for Management"
+	static let valvularHeartDisease = "#id:secvalvular_heart_disease | #title:Valvular Heart Disease | #type:#disclosureWeather | #alert: Refer to Heart Failure Specialist for Management"
 	static let pulmonaryHypertension = "#id:pulmonaryHypertension | #title:Pulmonary Hypertension | #type:#disclosureWeather | #alert: Refer to Heart Failure Specialist for Management"
 	static let vascularDisease = "#id:vascularDiseases | #title:Vascular Disease | #type:#disclosureWeather"
 	
@@ -607,7 +607,7 @@ struct Presentation {
 	static let spicdInHF = "#id:chkICD |    #title:Status Post ICD|    #type:#check"
 	static let cRTI = "#id:chkCRTI |    #title:Status Post CRTI|    #type:#check"
 	static let lvefInHF = "#id:txtCHF | #title:LVEF | #type:#integerRight | #min:10 | #max:80 | #placeholder: LVEF"
-	static let nyhaClass = "#id:nyhaClass|#title:Heart Failure Stage |#type:#disclosureSimple"
+	static let nyhaClass = "#id:nyhaClass|#title:Heart Failure Class/ Stage |#type:#disclosureSimple"
 	static let idiopathicDCMNonischemic = "#id:chkNonischemicCMP | #title:Idiopathic/DCM/Nonischemic | #type:#check"
 	static let ischemicPostMILess45Day = "#id:chkIschemic | #title:Ischemic Post MI < 45 days | #type:#check"
 	static let cardiotoxis = "#id:chkCardiotoxins | #title:Cardiotoxins | #type:#check"
@@ -618,6 +618,10 @@ struct Presentation {
 	static let peripartumCMP = "#id:chkrestrictive | #title:Peripartum CMP | #type:#check"
 	
 	//	CurrentPast CV Profile -> Heart Failure -> Heart Failure Class / Stage
+	static let nyhaclass1 = "#id:chkNYHA1 | #title:NYHA Class 1 |  #type:#check | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
+	static let nyhaclass2 = "#id:chkNYHA2 | #title:NYHA Class 2 |  #type:#check | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
+	static let nyhaclass3 = "#id:chkNYHA3 | #title:NYHA Class 3 |  #type:#check | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
+	static let nyhaclass4 = "#id:chkNYHA4 | #title:NYHA Class 4 |  #type:#check | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
 	static let atHighRiskOfHF = "#id:chkA|    #title:At High Risk for HF, but without Structural Heart Disease or Symptoms of HF NYHA/CCVS Class 0|    #type:#check"
 	static let structuralHeartDeseaseNoSymptoms = "#id:chkB| #title:Structural Heart Disease, but without signs/symptoms of HF|    #type:#check"
 	static let structuralHeartDeseaseSymptoms = "#id:chkC| #title:Structural Heart Diseasewith prior or current symptoms of HF|    #type:#check"
@@ -880,11 +884,13 @@ struct Presentation {
 	static let fvc = "#id:txtFVCP| #title:% FVC | #type:#decimalRight | #min:0.0 | #max:120.0 | #placeholder: % FVC"
 	static let dlco = "#id:txtDLCO| #title:% DLCO | #type:#decimalRight | #min:10.0 | #max:100.0 | #placeholder: % DLCO"
 	static let po2 = "#id:txtPO2| #title:PO₂ mmhg | #type:#decimalRight | #min:10.0 | #max:100.0 | #placeholder: PO₂ mmhg"
-	static let nsevere = "#id:chknsevere| #title:Severe chronic hypercapnia | #type:#check"
+	static let nsevere = "#id:chkhypercapnia| #title:Severe chronic hypercapnia | #type:#check"
 	static let asthmadisease = "#id:chkasthma| #title:Asthma / Reactive airway disease | #type:#disclosureControl"
 	static let lung_copd = "#id:chkCOPD| #title:COPD | #type:#disclosureControlExpandable"
 	static let interstitialLungDisease = "#id:chkILD| #title:Interstitial lung disease | #type:#check"
-	
+	static let pulmonaryOSA = "#id:chkOSA| #title:OSA | #type:#disclosureControl"
+	static let ahi = "#id:txtAHI| #title:AHI | #type:#integerRight | #min:0 | #max:120 | #placeholder: Value"
+
 	// Pulmonary -> Asthma / Reactive airway disease:
 	static let symptomsWeek = "#id:txtasymptoms| #title:Symptoms / week | #type:#decimalRight | #min:0.0 | #max:112.0 | #placeholder: Per/Week"
 	static let nocturnal = "#id:txtnocturnal| #title:Nocturnal awakening | #type:#decimalRight | #min:0.0 | #max:112.0 | #placeholder: Per/week"
@@ -1045,9 +1051,12 @@ struct Presentation {
 	static let tapse = "#id:txtTAPSE | #title:TAPSE | #type:#decimalRight | #min:1 | #max:6 | #placeholder: Value"
 	static let chestXRay = "#id:chkchestxray | #title:Chest X-Ray | #type:#disclosureControl"
 	static let hrct = "#id:chkHRCT | #title:High resolution CT | #type:#disclosureControl"
-	static let rhc = "#id:chkHC | #title:RHC | #type:#disclosureControl | #alert: Refer to Heart Failure Specialist for Management"
+	static let rhc = "#id:secright_heart_catheterization | #title:RHC | #type:#disclosureControl | #alert: Refer to Heart Failure Specialist for Management"
 	static let coronaryCalciumScore = "#id:txtCCS | #title:Coronary Calcium Score |#type:#integerRight | #min:0 | #max:100 | #placeholder: Value"
 	static let total = "#id:txtTotalCCS | #title:Total |#type:#integerRight | #min:0 | #max:10000 | #placeholder: Value"
+	static let pfts = "#id:chkPFTS | #title:PFTs |#type:#disclosureControl"
+
+	// Diagnostics -> PFTS
 	
 	// Diagnostics -> EKG
 	static let nsrInEKG = "#id:chkNSR| #title: Normal sinus rhtym| #type:#check"
@@ -1150,7 +1159,7 @@ struct Presentation {
 	static let lvlateralAnnulusE = "#id:txtMPL | #title:LV lateral annulus E' | #type:#integerRight | #min:1 | #max:80 | #placeholder: Value"
 	static let lvmeidalAnnulusE = "#id:txtMPL | #title:LV medial annulus E' | #type:#integerRight | #min:1 | #max:80 | #placeholder: Value"
 	static let lvefInEchocardiography = "#id:txtEF | #title:LVEF |#type:#integerRight | #min:10 | #max:80 | #placeholder: LVEF"
-	static let trjVelocityMsec = "#id:txtTRJ | #title:TRJ Velocity m/sec |#type:#integerRight | #min:1 | #max:6 | #placeholder: m/sec"
+	static let trjVelocityMsec = "#id:txtTRJ | #title:TRJ Velocity m/sec |#type:#decimalRight | #min:1.0 | #max:6.0 | #placeholder: m/sec"
 	static let shortPaat = "#id:chkTei | #title:Short PAAT | #type:#check"
 	
 	static let echoTitleLVFunc = "#id: echoTitleLV | #title:LV Function | #type: #label"
@@ -1190,7 +1199,12 @@ struct Presentation {
 	static let bBlocker = "#id:chkcar | #title:B Blocker | #type:#disclosureControl"
 	static let acelARB = "#id:chkace | #title:Acel/ARB | #type:#disclosureControl"
 	static let poDiuretic = "#id:chkdiuretic | #title:PO Diuretic | #type:#disclosureControl"
-	static let ccbOtherVasolidators = "#id:chkCCB | #title:CCB, Other Vasolidators | #type:#check"
+	static let ccbOtherVasolidators = "#id:chkCCB | #title:CCB| #type:#disclosureControlExpandable"
+	static let dihydropyridine = "#id:chkdihydropyridine | #title:Dihydropyridine| #type:#check | #group: (chkdihydropyridine, chknondihydropyridine)"
+	static let nondihydropyridine = "#id:chknondihydropyridine | #title:Nitrates| #type:#check | #group: (chkdihydropyridine, chknondihydropyridine)"
+	static let vasodilator = "#id:chkvasodilator | #title:Vasodilators| #type:#disclosureControlExpandable"
+	static let hydralazine = "#id:chkhydralazine | #title:Hydralazine| #type:#check | #group: (chkhydralazine, chknitrate)"
+	static let nitrate = "#id:chknitrate | #title:Nitrates| #type:#check | #group: (chkhydralazine, chknitrate)"
 	static let currentVKATherapy = "#id:chkVKA| #title:Current VKA Therapy | #type:#check"
 	static let directThrombinInhibitors = "#id:chkCAC  | #title:Direct Thrombin Inhibitors | #type:#check"
 	static let factorXaInhibitors = "#id:chkFactorX  | #title:Factor Xa Inhibitors | #type:#check"
@@ -1276,8 +1290,8 @@ struct Presentation {
 	//
 	// MARK: - Heart Specialist Management
 	//
-	static let bioPAHMain = "#id:bioPAHMain | #title:Bio/PAH Main | #type:#disclosureWeather"
-	static let pah = "#id:pah | #title:PAH | #type:#disclosureWeather"
+	static let bioPAHMain = "#id:secbio_pah_main | #title:Exercise capacity | #type:#disclosureWeather"
+	static let pah = "#id:pah | #title:PAH Etiology | #type:#disclosureWeather"
 	static let valvularInHSM = "#id:valvularInHSM | #title:Valvular | #type:#disclosureWeather"
 	static let advancedLHF = "#id:advancedLHF | #title:Advanced LHF | #type:#disclosureWeather"
 	static let echocardiographyInHSM = "#id:echocardiographyInHSM | #title:Echocardiography | #type:#disclosureControl"
@@ -1294,4 +1308,7 @@ struct Presentation {
 	static let pah2 = "#id:pah2 | #title:Page 2 | #type:#segment"
 	static let pah3 = "#id:pah3 | #title:Page 3 | #type:#segment"
 
+	// Heart Specialist Management ->  Exercise capacity
+	static let sixMwDistance = "#id:txt6MWT | #title:6MWT,mm | #type:#integerRight | #min:50 | #max: 600 | #placeholder: Value"
+	static let maxVoMgKgMin = "#id:txtVO2 | #title:VO2 kg/min| #type:#integerRight | #min:6 | #max: 40 | #placeholder: Value"
 }

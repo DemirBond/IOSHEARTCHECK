@@ -152,14 +152,14 @@ class DyspneaOnExertionNotAtRest: EvaluationItem {
 	let strenousExertion = EvaluationItem(literal: Presentation.strenousExertion)
 	let moreThanDailyRoutine = EvaluationItem(literal: Presentation.moreThanDailyRoutine)
 	let dailyRoutineMinimalActivities = EvaluationItem(literal: Presentation.dailyRoutineMinimalActivities)
-	
-	let NYHACCSVClass1 = EvaluationItem(literal: Presentation.nyhaccvsClass1)
-	let NYHACCSVClass2 = EvaluationItem(literal: Presentation.nyhaccvsClass2)
-	let NYHACCSVClass3 = EvaluationItem(literal: Presentation.nyhaccvsClass3)
-	let seperator = EvaluationItem(literal: Presentation.separator)
-	
+//
+//	let NYHACCSVClass1 = EvaluationItem(literal: Presentation.nyhaccvsClass1)
+//	let NYHACCSVClass2 = EvaluationItem(literal: Presentation.nyhaccvsClass2)
+//	let NYHACCSVClass3 = EvaluationItem(literal: Presentation.nyhaccvsClass3)
+//	let seperator = EvaluationItem(literal: Presentation.separator)
+
 	override var items: [EvaluationItem] {
-		return [strenousExertion, moreThanDailyRoutine, dailyRoutineMinimalActivities, seperator, NYHACCSVClass1, NYHACCSVClass2,NYHACCSVClass3]
+		return [strenousExertion, moreThanDailyRoutine, dailyRoutineMinimalActivities]
 	}
 }
 

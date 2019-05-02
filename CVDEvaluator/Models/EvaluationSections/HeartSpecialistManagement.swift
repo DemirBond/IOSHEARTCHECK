@@ -13,19 +13,19 @@ import Foundation
 
 class HeartSpecialistManagement: EvaluationItem {
 	
-	let bioPAHMain = BioPAHMain(literal: Presentation.bioPAHMain)
-	let pah = PAH(literal: Presentation.pah)
+	let bioPAHMain = ExerciseCapacity(literal: Presentation.bioPAHMain)
+	let pah = PAH1(literal: Presentation.pah)
 	let valvularInHSM = Valvular(literal: Presentation.valvularInHSM)
 	let advancedLHF = AdvancedLHF(literal: Presentation.advancedLHF)
 	//let echocardiographyInHSM = EchocardiographyInHSM(literal: Presentation.echocardiographyInHSM)
 	//let laboratoryEKG = LaboratoryEKG(literal: Presentation.laboratoryEKG)
 	let rhcInHSM = RHCInHSM(literal: Presentation.rhcInHSM)
-	let seperator = EvaluationItem(literal: Presentation.separator)
-	let nyhaCCVS1 = EvaluationItem(literal: Presentation.nyhaccvsClass1)
-	let nyhaCCVS2 = EvaluationItem(literal: Presentation.nyhaccvsClass2)
-	let nyhaCCVS3 = EvaluationItem(literal: Presentation.nyhaccvsClass3)
-	let nyhaCCVS4 = EvaluationItem(literal: Presentation.nyhaccvsClass4)
-	
+//	let seperator = EvaluationItem(literal: Presentation.separator)
+//	let nyhaCCVS1 = EvaluationItem(literal: Presentation.nyhaccvsClass1)
+//	let nyhaCCVS2 = EvaluationItem(literal: Presentation.nyhaccvsClass2)
+//	let nyhaCCVS3 = EvaluationItem(literal: Presentation.nyhaccvsClass3)
+//	let nyhaCCVS4 = EvaluationItem(literal: Presentation.nyhaccvsClass4)
+
 	override var items: [EvaluationItem] {
 		return [
 			bioPAHMain,
@@ -34,13 +34,22 @@ class HeartSpecialistManagement: EvaluationItem {
 			advancedLHF,
 			//echocardiographyInHSM,
 			//laboratoryEKG,
-			rhcInHSM,
-			seperator,
-			nyhaCCVS1,
-			nyhaCCVS2,
-			nyhaCCVS3,
-			nyhaCCVS4
+			rhcInHSM
+//			seperator,
+//			nyhaCCVS1,
+//			nyhaCCVS2,
+//			nyhaCCVS3,
+//			nyhaCCVS4
 		]
+	}
+}
+
+class ExerciseCapacity: EvaluationItem {
+	let sixMwDistance = EvaluationItem(literal: Presentation.sixMwDistance)
+	let maxVoMgKgMin = EvaluationItem(literal: Presentation.maxVoMgKgMin)
+
+	override var items: [EvaluationItem] {
+		return [sixMwDistance, maxVoMgKgMin]
 	}
 }
 
@@ -107,7 +116,7 @@ class GenderInHMS: EvaluationItem {
 // MARK: - HMS -> PAH
 
 class PAH: EvaluationItem {
-	
+
 	let pah1 = PAH1(literal: Presentation.pah1)
 	let pah2 = PAH2(literal: Presentation.pah2)
 	let pah3 = PAH3(literal: Presentation.pah3)
@@ -125,15 +134,15 @@ class PAH: EvaluationItem {
 // MARK: - HMS -> PAH -> PAH1
 
 class PAH1: EvaluationItem {
-	
-	let txtSVR = EvaluationItem(literal: HMS.txtSVR)
+
+	let blnIdio = EvaluationItem(literal: HMS.blnIdio)
+	//let txtSVR = EvaluationItem(literal: HMS.txtSVR)
 	let blnCongenita = Congenital(literal: HMS.blnCongenita)
 	let blnSclero = EvaluationItem(literal: HMS.blnSclero)
 	let blnSLE = EvaluationItem(literal: HMS.blnSLE)
 	let blnHIV = EvaluationItem(literal: HMS.blnHIV)
 	let blnFF = EvaluationItem(literal: HMS.blnFF)
 	let blnresp = RespiratoryDisease(literal: HMS.blnresp)
-	let blnIdio = EvaluationItem(literal: HMS.blnIdio)
 	let blnPVOD = EvaluationItem(literal: HMS.blnPVOD)
 	let blnSplen = EvaluationItem(literal: HMS.blnSplen)
 	let blnFamilial = EvaluationItem(literal: HMS.blnFamilial)
@@ -142,14 +151,14 @@ class PAH1: EvaluationItem {
 	
 	override var items: [EvaluationItem] {
 		return [
-			txtSVR,
+			blnIdio,
+			//txtSVR,
 			blnCongenita,
 			blnSclero,
 			blnSLE,
 			blnHIV,
 			blnFF,
 			blnresp,
-			blnIdio,
 			blnPVOD,
 			blnSplen,
 			blnFamilial,

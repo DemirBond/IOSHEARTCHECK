@@ -13,33 +13,40 @@ import Foundation
 
 class Pulmonary: EvaluationItem {
 	
-	let fev1_lt = EvaluationItem(literal: Presentation.fev1_lt)
-	let fev1_percent = EvaluationItem(literal: Presentation.fev1_percent)
-	let fvc = EvaluationItem(literal: Presentation.fvc)
-	let dlco = EvaluationItem(literal: Presentation.dlco)
-	let po2 = EvaluationItem(literal: Presentation.po2)
+//	let fev1_lt = EvaluationItem(literal: Presentation.fev1_lt)
+//	let fev1_percent = EvaluationItem(literal: Presentation.fev1_percent)
+//	let fvc = EvaluationItem(literal: Presentation.fvc)
+//	let dlco = EvaluationItem(literal: Presentation.dlco)
+//	let po2 = EvaluationItem(literal: Presentation.po2)
 	let nsevere = EvaluationItem(literal: Presentation.nsevere)
 	let asthmadisease = AsthmaReactiveAirwayDisease(literal: Presentation.asthmadisease)
 	let copd = LungCOPD(literal: Presentation.lung_copd)
 	let interstitialLungDisease = EvaluationItem(literal: Presentation.interstitialLungDisease)
-	let separator = EvaluationItem(literal: Presentation.separator)
+	let osa = SectionOSA(literal: Presentation.pulmonaryOSA)
+	//let separator = EvaluationItem(literal: Presentation.separator)
 	
 	override var items: [EvaluationItem] {
 		return [
+			nsevere,
 			asthmadisease,
 			copd,
 			interstitialLungDisease,
+			osa
+			//separator,
 			
-			separator,
-			
-			fev1_lt,
-			fev1_percent,
-			fvc,
-			dlco,
-			po2,
-			nsevere,
-
+//			fev1_lt,
+//			fev1_percent,
+//			fvc,
+//			dlco,
+//			po2
 		]
+	}
+}
+
+class SectionOSA: EvaluationItem {
+	let ahi = EvaluationItem(literal: Presentation.ahi)
+	override var items: [EvaluationItem] {
+		return [ahi]
 	}
 }
 
@@ -94,7 +101,7 @@ class LungCOPD: EvaluationItem {
 	
 	override var items: [EvaluationItem] {
 		return [
-			//acute,
+			acute,
 			copdex,
 			copdhos
 		]

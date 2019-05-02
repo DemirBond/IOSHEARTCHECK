@@ -25,11 +25,12 @@ class HSR: EvaluationItem {
 // MARK: - HSR -> POMeds
 
 class POMeds: EvaluationItem {
-	
+
 	let bBlocker = BBlocker(literal: Presentation.bBlocker)
 	let acelARB = AcelARB(literal: Presentation.acelARB)
 	let poDiuretic = PODiuretic(literal: Presentation.poDiuretic)
-	let ccbOtherVasolidators = EvaluationItem(literal: Presentation.ccbOtherVasolidators)
+	let ccbOtherVasolidators = SectionCBB(literal: Presentation.ccbOtherVasolidators)
+	let vasodilator = SectionVasodilator(literal: Presentation.vasodilator)
 	let currentVKATherapy = EvaluationItem(literal: Presentation.currentVKATherapy)
 	let directThrombinInhibitors = EvaluationItem(literal: Presentation.directThrombinInhibitors)
 	let factorXaInhibitors = EvaluationItem(literal: Presentation.factorXaInhibitors)
@@ -40,9 +41,34 @@ class POMeds: EvaluationItem {
 			acelARB,
 			poDiuretic,
 			ccbOtherVasolidators,
+			vasodilator,
 			currentVKATherapy,
 			directThrombinInhibitors,
 			factorXaInhibitors
+		]
+	}
+}
+
+class SectionCBB: EvaluationItem {
+
+	let dihydropyridine = EvaluationItem(literal: Presentation.dihydropyridine)
+	let nondihydropyridine = EvaluationItem(literal: Presentation.nondihydropyridine)
+
+	override var items: [EvaluationItem] {
+		return [
+			dihydropyridine,
+			nondihydropyridine
+		]
+	}
+}
+
+class SectionVasodilator: EvaluationItem {
+	let hydralazine = EvaluationItem(literal: Presentation.hydralazine)
+	let nitrate = EvaluationItem(literal: Presentation.nitrate)
+	override var items: [EvaluationItem] {
+		return [
+			hydralazine,
+			nitrate
 		]
 	}
 }

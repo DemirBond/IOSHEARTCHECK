@@ -21,6 +21,7 @@ class Diagnostics: EvaluationItem {
 	let rhc = RHC(literal: Presentation.rhc)
 	let coronaryCalciumScore = EvaluationItem(literal: Presentation.coronaryCalciumScore)
 	let total = EvaluationItem(literal: Presentation.total)
+	let pfts = PFTS(literal: Presentation.pfts)
 
 	override var items: [EvaluationItem] {
 		return [
@@ -30,12 +31,30 @@ class Diagnostics: EvaluationItem {
 			chestXRay,
 			hrct,
 			rhc,
+			pfts,
 			coronaryCalciumScore,
 			total
 		]
 	}
 }
 
+// MARK: - Diagnostics -> PFTS
+class PFTS: EvaluationItem {
+	let fev1_lt = EvaluationItem(literal: Presentation.fev1_lt)
+	let fev1_percent = EvaluationItem(literal: Presentation.fev1_percent)
+	let fvc = EvaluationItem(literal: Presentation.fvc)
+	let dlco = EvaluationItem(literal: Presentation.dlco)
+	let po2 = EvaluationItem(literal: Presentation.po2)
+
+	override var items: [EvaluationItem] {
+		return [fev1_lt,
+				  fev1_percent,
+				  fvc,
+				  dlco,
+				  po2
+		]
+	}
+}
 
 // MARK: - Diagnostics -> EKG
 
