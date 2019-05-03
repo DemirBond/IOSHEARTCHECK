@@ -1296,7 +1296,7 @@ struct Presentation {
 	static let advancedLHF = "#id:advancedLHF | #title:Advanced LHF | #type:#disclosureWeather"
 	static let echocardiographyInHSM = "#id:echocardiographyInHSM | #title:Echocardiography | #type:#disclosureControl"
 	static let laboratoryEKG = "#id:laboratoryEKG | #title:Laboratory/EKG | #type:#disclosureControl"
-	static let rhcInHSM = "#id:secright_heart_catheterization | #title:Right Heart Catheterization | #type:#disclosureWeather"
+	static let rhcInHSM = "#id:rhcInHSM | #title:Right Heart Catheterization | #type:#disclosureWeather"
 
 	//phillips fixes
 //	static let EKGinHSM = "#id: EKGinHSM | #title: EKG | #type:#disclosureWeather"

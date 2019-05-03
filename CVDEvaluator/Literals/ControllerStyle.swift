@@ -188,7 +188,7 @@ class CVDStyle {
 	
 	// Heart Management Specialist
 	let pahLink = CVDLink(screens: ["bioPAHMain"], link: "pah")
-	let valvularInHSMLink = CVDLink(screens: ["pah"], link: "valvularInHSM")
+	let valvularInHSMLink = CVDLink(screens: ["pah"], link: "rhcInHSM")
 	let advancedLHFLink = CVDLink(screens: ["valvularInHSM"], link: "advancedLHF")
 	let echocardiographyLink = CVDLink(screens: ["advancedLHF"], link: "echocardiographyInHSM")
 	let laboratoryEKGLink = CVDLink(screens: ["echocardiographyInHSM"], link: "laboratoryEKG")
