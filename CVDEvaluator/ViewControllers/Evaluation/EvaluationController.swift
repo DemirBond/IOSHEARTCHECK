@@ -114,7 +114,7 @@ class EvaluationController: BaseTableController, NVActivityIndicatorViewable {
 		
 		unlockItems(array: [model.symptoms, model.physicalExam, model.reviewOfSystem, model.cvProfile, model.pulmonary, model.renal, model.riskFactors,
 			model.surgicalRisk, model.laboratories, model.diagnostics, model.nsr])
-		
+
 		switch model.evaluationStatus {
 			case .initialized:
 				lockItems(array: [model.symptoms, model.physicalExam, model.cvProfile, model.reviewOfSystem, model.pulmonary, model.renal, model.riskFactors,
@@ -203,7 +203,6 @@ class EvaluationController: BaseTableController, NVActivityIndicatorViewable {
 		self.tableView.reloadData()
 	}
 
-	
 	func showAlert(title: String, description: String?, models: [EvaluationItem]) {
 		
 		var alertActions = [CVDAction] ()
@@ -217,14 +216,30 @@ class EvaluationController: BaseTableController, NVActivityIndicatorViewable {
 		
 		self.showCVDAlert(title: title, message: description, actions: alertActions)
 	}
+
+	func showAlert(title: String, description: String?, models: [EvaluationItem], doneModel: EvaluationItem) {
+
+		var alertActions = [CVDAction] ()
+		for item in models {
+			let handler = createHandler(model: item, navigation: self.navigationController)
+			let navigateAction = CVDAction(title: item.title, type: CVDActionType.done, handler: handler, short: false)
+			alertActions.append(navigateAction)
+		}
+		let handler = createHandler(model: doneModel, navigation: self.navigationController)
+		let noneAction = CVDAction(title: "None".localized, type: CVDActionType.done, handler: handler, short: false)
+		alertActions.append(noneAction)
+
+		self.showCVDAlert(title: title, message: description, actions: alertActions)
+	}
 	
 	private func showLockedScreenAlert(for item: EvaluationItem) {
 		
 		let model = DataManager.manager.evaluation!
 		
 		let alertTitle = "Cannot open form \(item.title)"
-		
-		if DataManager.manager.evaluation!.evaluationStatus == .initialized {
+
+		switch DataManager.manager.evaluation!.evaluationStatus {
+		case .initialized:
 			let storyboard = UIStoryboard(name: "Medical", bundle: nil)
 			let alertDescription = "Please fill out the Bio form first.".localized
 			let handler1 = {() in
@@ -236,20 +251,21 @@ class EvaluationController: BaseTableController, NVActivityIndicatorViewable {
 			let cancelAction = CVDAction(title: "Cancel".localized, type: CVDActionType.cancel, handler: nil, short: false)
 			let navigateAction = CVDAction(title: "Open " + model.bio.title, type: CVDActionType.done, handler: handler1, short: false)
 			self.showCVDAlert(title: alertTitle, message: alertDescription, actions: [navigateAction, cancelAction])
-			
-		} else if DataManager.manager.evaluation!.evaluationStatus == .bioCompleted  {
-			
+			return
+		case .bioCompleted:
 			let alertDescription = "Please fill out the form \(model.cvProfile.title) or \(model.riskFactors.title)"
-			showAlert(title: alertTitle, description: alertDescription, models: [model.cvProfile, model.riskFactors])
-		}
-			
-		else if DataManager.manager.evaluation!.evaluationStatus == .riskCompleted {
+			//showAlert(title: alertTitle, description: alertDescription, models: [model.cvProfile, model.riskFactors])
+			showAlert(title: alertTitle, description: alertDescription, models: [model.cvProfile, model.riskFactors], doneModel: item)
+			return
+		case .riskCompleted:
 			let alertDescription = "Please fill out the form \(model.diagnostics.title)"
 			showAlert(title: alertTitle, description: alertDescription, models: [model.diagnostics])
-			
-		} else if DataManager.manager.evaluation!.evaluationStatus == .diagnosticCompleted {
+			return
+		case .diagnosticCompleted:
 			let alertDescription = "Please fill out the form \(model.nsr.title)"
 			showAlert(title: alertTitle, description: alertDescription, models: [model.nsr])
+			return
+		default: return
 		}
 	}
 	
@@ -462,6 +478,7 @@ class EvaluationController: BaseTableController, NVActivityIndicatorViewable {
 	
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: false)
 		let itemModel = DataManager.manager.evaluation!.items[indexPath.row]
 		
 		let storyboard = UIStoryboard(name: "Medical", bundle: nil)

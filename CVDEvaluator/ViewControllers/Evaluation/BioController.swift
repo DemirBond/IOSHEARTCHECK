@@ -177,8 +177,6 @@ class BioController: BaseTableController, NVActivityIndicatorViewable { //, UITa
 		
 		if (DataManager.manager.evaluation?.isSaved)! {
 			DataManager.manager.evaluation?.evaluationStatus = .evaluated
-			
-
 		}
 		else {
 			if validatePage() {

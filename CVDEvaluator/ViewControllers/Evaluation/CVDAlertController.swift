@@ -8,9 +8,9 @@
 
 import UIKit
 
-let longWidth: CGFloat = 175.0
+let longWidth: CGFloat = sheetWidth - (16*2)
 let shortWidth: CGFloat = 120.0
-let sheetWidth: CGFloat = 255.0
+let sheetWidth: CGFloat = UIScreen.main.bounds.width - 120
 let buttonHeight: CGFloat = 44.0
 
 
@@ -76,9 +76,11 @@ class CVDAlertController: UIViewController {
 		
 		self.stageView.alpha = 0.0
 		setupAlertSheet()
+
+		let tap = UITapGestureRecognizer(target: self, action: #selector(dismiss(_:)))
+		self.view.addGestureRecognizer(tap)
 	}
-	
-	
+
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
@@ -183,5 +185,9 @@ class CVDAlertController: UIViewController {
 			self.dismiss(animated: false, completion: nil)
 			completion?()
 		})
+	}
+
+	@objc private func dismiss(_ sender: Any) {
+		self.dismiss(animated: false, completion: nil)
 	}
 }
