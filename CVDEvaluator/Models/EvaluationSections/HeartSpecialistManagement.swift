@@ -16,7 +16,7 @@ class HeartSpecialistManagement: EvaluationItem {
 	let bioPAHMain = ExerciseCapacity(literal: Presentation.bioPAHMain)
 	let pah = PAH1(literal: Presentation.pah)
 	let valvularInHSM = Valvular(literal: Presentation.valvularInHSM)
-	let advancedLHF = AdvancedLHF(literal: Presentation.advancedLHF)
+	//let advancedLHF = AdvancedLHF(literal: Presentation.advancedLHF)
 	//let echocardiographyInHSM = EchocardiographyInHSM(literal: Presentation.echocardiographyInHSM)
 	//let laboratoryEKG = LaboratoryEKG(literal: Presentation.laboratoryEKG)
 	let rhcInHSM = RHCInHSM(literal: Presentation.rhcInHSM)
@@ -30,11 +30,11 @@ class HeartSpecialistManagement: EvaluationItem {
 		return [
 			bioPAHMain,
 			pah,
+			rhcInHSM,
 			valvularInHSM,
-			advancedLHF,
+			//advancedLHF,
 			//echocardiographyInHSM,
 			//laboratoryEKG,
-			rhcInHSM
 //			seperator,
 //			nyhaCCVS1,
 //			nyhaCCVS2,
@@ -372,9 +372,9 @@ class Valvular: EvaluationItem {
 
 class ValvularInValvular: EvaluationItem {
 	
-	let lvef = EvaluationItem(literal: Presentation.lvefInHF)
+	//let lvef = EvaluationItem(literal: Presentation.lvefInHF)
 	let newOnsetAtrialFibrillation = EvaluationItem(literal: HMS.newOnsetAtrialFibrillation)
-	let pregnancyInValvular = EvaluationItem(literal: HMS.pregnancyInValvular)
+	//let pregnancyInValvular = EvaluationItem(literal: HMS.pregnancyInValvular)
 	let aorticStenosis = AorticStenosis(literal: HMS.aorticStenosis)
 	let mitralStenosis = MitralStenosis(literal: HMS.mitralStenosis)
 	
@@ -388,9 +388,9 @@ class ValvularInValvular: EvaluationItem {
 	
 	override var items: [EvaluationItem] {
 		return [
-				lvef,
+				//lvef,
 				newOnsetAtrialFibrillation,
-				pregnancyInValvular,
+				//pregnancyInValvular,
 				aorticStenosis,
 				mitralStenosis,
 				pulmonicStenosis,
@@ -581,7 +581,7 @@ class PulmonicRegurgitation: EvaluationItem {
 
 class ValvularSurgeryRiskInValvular: EvaluationItem {
 	
-	let stsPromLabel = EvaluationItem(literal: HMS.stsPromLabel)
+	//let stsPromLabel = EvaluationItem(literal: HMS.stsPromLabel)
 	let lowInVRS = EvaluationItem(literal: HMS.lowInVRS)
 	let intermediateInVRS = EvaluationItem(literal: HMS.intermediateInVRS)
 	let highInVRS = EvaluationItem(literal: HMS.highInVRS)
@@ -589,7 +589,7 @@ class ValvularSurgeryRiskInValvular: EvaluationItem {
 	
 	override var items: [EvaluationItem] {
 		return [
-			stsPromLabel,
+			//stsPromLabel,
 			lowInVRS,
 			intermediateInVRS,
 			highInVRS,
@@ -1155,6 +1155,7 @@ class RHCInHSM: EvaluationItem {
 	let blnTotalVWA = EvaluationItem(literal: HMS.blnTotalVWA)
 	let txtPADP = EvaluationItem(literal: HMS.txtPADP)
 	let txtRVEDP = EvaluationItem(literal: HMS.txtRVEDP)
+	let txtSVRWU = EvaluationItem(literal: HMS.txtSVRWU)
 
 	override var items: [EvaluationItem] {
 		return [
@@ -1167,7 +1168,8 @@ class RHCInHSM: EvaluationItem {
 			txtVWA,
 			blnTotalVWA,
 			txtPADP,
-			txtRVEDP
+			txtRVEDP,
+			txtSVRWU
 		]
 	}
 }

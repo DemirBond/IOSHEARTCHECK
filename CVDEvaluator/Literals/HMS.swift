@@ -62,14 +62,14 @@ struct HMS {
 	static let blnSclero = "#id:chkSclero | #title:Scleroderma | #type:#check"
 	static let blnSLE = "#id:chkSLE | #title:SLE | #type:#check"
 	static let blnHIV = "#id:chkHIV | #title:HIV | #type:#check"
-	static let blnFF = "#id:chkFF | #title:Porto Hypertension | #type:#check"
+	static let blnFF = "#id:chkFF | #title:Porto Pulmonary | #type:#check"
 	static let blnresp = "#id:chkRESP | #title:Respiratory Disease | #type:#check"
 	static let blnIdio = "#id:chkIdio | #title:Idiopathic | #type:#check"
-	static let blnPVOD = "#id:chkPVOD | #title:PVOD/PCH | #type:#check"
-	static let blnSplen = "#id:chkSplen | #title:Splenectomy/SC | #type:#check"
+	static let blnPVOD = "#id:chkPVOD | #title:Pulmonary Veno Occlusive Disease | #type:#check"
+	static let blnSplen = "#id:chkSplen | #title:Post Splenectomy | #type:#check"
 	static let blnFamilial = "#id:chkFamilial | #title:Familial | #type:#check"
-	static let blnCTEP = "#id:chkCTEP | #title:CTEP | #type:#check"
-	static let blnDrugs = "#id:chkDrugs | #title:Drugs/Toxins | #type:#check"
+	static let blnCTEP = "#id:chkCTEP | #title:Chronic Thrombo Embolic | #type:#check"
+	static let blnDrugs = "#id:chkDrugs | #title:Drugs,Toxins | #type:#check"
 
 	static let asdLess2cm = "#id:chkASD | #title:ASD | #type:#check"
 	
@@ -130,8 +130,8 @@ struct HMS {
 	
 	// Valvular
 	static let valvularInValvular = "#id:valvularInValvular| #title:Valvular | #type:#disclosureWeather"
-	static let valvularSurgeryRiskInValvular = "#id:valvularSurgeryRiskInValvular| #title:Valvular Surgery Risk | #type:#disclosureWeather"
-	static let otherSurgicalRiskInValvular = "#id:otherSurgicalRiskInValvular| #title:Other Surgical Risk  | #type:#disclosureWeather"
+	static let valvularSurgeryRiskInValvular = "#id:secvalvular_surgery_risk| #title:Valvular Surgery Risk | #type:#disclosureWeather"
+	static let otherSurgicalRiskInValvular = "#id:secother_surgical_risk| #title:Other Surgical Risk  | #type:#disclosureWeather"
 	
 	// Valvular -> Valvular
 	static let lvef = "#id:txtEF| #title:LV EF  | #type:#integerRight | #min:10 | #max:80 | #placeholder: "
@@ -140,49 +140,49 @@ struct HMS {
 	static let aorticStenosis = "#id:chkAorticStenosis| #title:Aortic Stenosis  | #type:#disclosureControl"
 	static let mitralStenosis = "#id:chkMitralStenosis| #title:Mitral Stenosis  | #type:#disclosureControl"
 	static let tricuspidStenosis = "#id:chkTricuspidStenosis| #title:Tricuspid Stenosis  | #type:#disclosureControl"
-	static let pulmonicStenosis = "#id:chkPulmonicStenosis| #title:Pulmonic Stenosis  | #type:#disclosureControlExpandable"
+	static let pulmonicStenosis = "#id:chkPulmonicStenosis| #title:Pulmonic Stenosis  | #type:#disclosureControl"
 	static let aorticRegurgitation = "#id:chkAorticRegurgitation| #title:Aortic Regurgitation  | #type:#disclosureControl"
 	static let primaryMitralRegurgitation = "#id:chkMitralRegurgitation| #title:Primary Mitral Regurgitation  | #type:#disclosureControl"
 	static let tricuspidRegurgitation = "#id:chkTricuspidRegurgitation| #title:Tricuspid Regurgitation  | #type:#disclosureControl"
 	static let pulmonicRegurgitation = "#id:chkPulmonicRegurgitation| #title:Pulmonic Regurgitation  | #type:#disclosureControlExpandable"
 	
 	// Valvular -> Valvular -> Aortic Stenosis
-	static let calcAorticValve = "#id:chkCalcAorticValve| #title:Calcified Aortic Valve w/ Reduced Systolic Opening | #type:#check"
-	static let congenitallyStenoticAorticValve = "#id:chkCongenStenAortValve| #title:Congenitally Stenotic Aortic Valve | #type:#check"
+	static let calcAorticValve = "#id:chkCalcAortValve| #title:Calcific Aortic Stenosis | #type:#check"
+	static let congenitallyStenoticAorticValve = "#id:chkCongenStenAortValve| #title:Congenitally Aortic Stenosis | #type:#check"
 	static let rheumaticAV = "#id:chkreumaticAV| #title:Rheumatic AV | #type:#check"
-	static let calculatedAorticValveArea = "#id:txtCalcAortValveArea| #title:Calculated Aortic Valve Area | #type:#decimalRight | #min:0.1 | #max:4.0 | #placeholder: "
-	static let aorticMeanPressureGradient = "#id:txtAortMeanPressGradient| #title:Aortic Mean Pressure Gradient | #type:#integerRight | #min:4 | #max:60 | #placeholder:  "
-	static let aorticValveVelocity = "#id:txtAortValveVel| #title:Aortic Valve Velocity | #type:#decimalRight | #min:1.0 | #max:6.0 | #placeholder:  "
-	static let strokeVolumeIndex = "#id:txtStrokeVolIndex| #title:Stroke Volume Index SV/BSA (SV/m²) | #type:#integerRight | #min:1 | #max:9 | #placeholder:  "
-	static let indexedValveArea = "#id:txtIndexedValveArea| #title:Indexed Valve Area AVA/BSA (AVAcm²/m²) | #type:#decimalRight | #min:0.1 | #max:9.0 | #placeholder:  "
-	static let bicuspidAorticRootDiameter = "#id:txtAortRootDiameter| #title:Bicuspid/Aortic Root Diameter | #type:#decimalRight | #min:0.1 | #max:7.0 | #placeholder:  "
+	static let calculatedAorticValveArea = "#id:txtCalcAortValveArea| #title:Calculated AVA,cms2 | #type:#decimalRight | #min:0.1 | #max:4.0 | #placeholder: Value"
+	static let aorticMeanPressureGradient = "#id:txtAortMeanPressGradient| #title:Mean pressure gradient, mmHg | #type:#integerRight | #min:4 | #max:60 | #placeholder: Value"
+	static let aorticValveVelocity = "#id:txtAortValveVel| #title:Aortic valve velocity, m/s | #type:#decimalRight | #min:1.0 | #max:6.0 | #placeholder: Value"
+	static let strokeVolumeIndex = "#id:txtStrokeVolIndex| #title:Stroke volume index | #type:#integerRight | #min:1 | #max:9 | #placeholder:  Value"
+	static let indexedValveArea = "#id:txtIndexedValveArea| #title:Indexed valve area | #type:#decimalRight | #min:0.1 | #max:9.0 | #placeholder:  Value"
+	static let bicuspidAorticRootDiameter = "#id:txtAortRootDiameter| #title:Aortic Root Diameter, mm | #type:#decimalRight | #min:0.1 | #max:7.0 | #placeholder:  Value"
 	
 	// Valvular -> Valvular -> Mitral Stenosis
-	static let mva = "#id:txtMVA| #title:MVA cm² | #type:#integerRight | #min:0 | #max:9999 | #placeholder: "
-	static let phtmsec = "#id:txtPHT| #title:PHT msec | #type:#integerRight | #min:0 | #max:9999 | #placeholder:  "
-	static let rheumaticMVTV = "#id:chkrheumaticMV| #title:Rheumatic MV/TV | #type:#check"
-	static let favorableValveMorphology = "#id:chkFavValveMorph| #title:Favorable Valve Morphology | #type:#check"
-	static let laClot = "#id:chkLAClot | #title:LA Clot | #type:#check"
+	static let mva = "#id:txtMVA| #title:MVA,cms2 | #type:#decimalRight | #min:0.1 | #max:9.0 | #placeholder: Value"
+	static let phtmsec = "#id:txtPHT| #title:PHT,msec | #type:#integerRight | #min:50 | #max:400 | #placeholder: Value"
+	static let rheumaticMVTV = "#id:chkrheumaticMV| #title:Rheumatic MV | #type:#check"
+	static let favorableValveMorphology = "#id:chkFavValveMorph| #title:Favorable for valvuloplasty | #type:#check"
+	static let laClot = "#id:chkLAClot | #title:LA clot | #type:#check"
 	
 	// Valvular -> Valvular -> Pulmonic Stenosis
-	static let pulmonicValveVelocity = "#id:pulmonicValveVelocity| #title:Pulmonic Valve Velocity | #type:#decimalRight | #min:0.5 | #max:5.0 | #placeholder: "
+	static let pulmonicValveVelocity = "#id:txtPulValveVel| #title:Pulmonic valve velocity, m/s | #type:#decimalRight | #min:0.5 | #max:5.0 | #placeholder: Value"
 	
 	// Valvular -> Valvular -> Aortic Regurgitation
-	static let holodiastolicFlowReversal = "#id:chkHolodiastolicRev| #title:Holodiastolic Flow Reversal | #type:#check"
-	static let venaContractaWidth = "#id:txtVenaContractaWidth2| #title:Vena Contracta Width | #type:#decimalRight | #min:0.1 | #max:9.0 | #placeholder: "
-	static let regurgitantVolumeMlBeat = "#id:txtRegurVolume| #title:Regurgitant Volume ml/beat | #type:#integerRight | #min:0 | #max:99 | #placeholder: "
-	static let regurgitantFraction = "#id:txtRegurFrac| #title:Regurgitant Fraction | #type:#integerRight | #min:0 | #max:61 | #placeholder:"
-	static let ero = "#id:txtERO| #title:ERO | #type:#decimalRight | #min:0.1 | #max:9.0 | #placeholder: "
-	static let lveddmm = "#id:txtLVEDd| #title:LVEDd mm | #type:#integerRight | #min:10 | #max:90 | #placeholder: "
-	static let lvesdmm = "#id:txtLVESd| #title:LVESd mm | #type:#integerRight | #min:10 | #max:60 | #placeholder:"
-	static let aorticRootDiameter = "#id:txtAorticRootDiameter| #title:Aortic Root Diameter | #type:#integerRight | #min:2 | #max:9 | #placeholder: "
+	static let holodiastolicFlowReversal = "#id:chkHolodiastolicRev| #title:Holodiastolic reversal | #type:#check"
+	static let venaContractaWidth = "#id:txtVenaContractaWidth2| #title:Vena contracta width, mm | #type:#decimalRight | #min:0.1 | #max:9.0 | #placeholder: Value"
+	static let regurgitantVolumeMlBeat = "#id:txtRegurVolume| #title:Regurgitant volume, cc | #type:#integerRight | #min:0 | #max:99 | #placeholder: Value"
+	static let regurgitantFraction = "#id:txtRegurFrac| #title:Regurgitant fraction, % | #type:#integerRight | #min:0 | #max:61 | #placeholder: Value"
+	static let ero = "#id:txtERO| #title:ERO,cms2 | #type:#decimalRight | #min:0.1 | #max:9.0 | #placeholder: Value"
+	static let lveddmm = "#id:txtLVEDd| #title:LVEDd,mm | #type:#integerRight | #min:10 | #max:90 | #placeholder: Value"
+	static let lvesdmm = "#id:txtLVESd| #title:LVESd,mm | #type:#integerRight | #min:10 | #max:60 | #placeholder: Value"
+	static let aorticRootDiameter = "#id:txtAorticRootDiameter| #title:Aortic root diameter, mm | #type:#integerRight | #min:2 | #max:9 | #placeholder: Value"
 	
 	// Valvular -> Valvular -> Tricuspid Regurgitation
-	static let txtAnnularDiameter = "#id:txtAnnularDiameter | #title:Annular Diameter/ mm | #type:#decimalRight | #min:0.1 | #max:7.0 | #placeholder: "
-	static let txtCentralJetArea = "#id:txtCentralJetArea | #title:Central Jet Area cm² | #type:#decimalRight | #min:0.1 | #max:9.0 | #placeholder: "
-	static let txtVenaContractaWidth = "#id:txtVenaContractaWidth | #title:Vena Contracta Width | #type:#decimalRight | #min:0.1 | #max:9.0 | #placeholder:"
-	static let blnHepaticVeinFlowRev = "#id:chkHepaticVeinFlowRev| #title:Hepatic Vein Flow Reversal | #type:#check"
-	static let blnabTVleaflet = "#id:chkabTVleaflet| #title:Abnormal TV Leaflet(s) | #type:#check"
+	static let txtAnnularDiameter = "#id:txtAnnularDiameter | #title:Annular Diameter, cm | #type:#decimalRight | #min:0.1 | #max:9.0 | #placeholder: Value"
+	static let txtCentralJetArea = "#id:txtCentralJetArea | #title:Central Jet Area, cms2 | #type:#decimalRight | #min:0.1 | #max:9.0 | #placeholder: Value"
+	static let txtVenaContractaWidth = "#id:txtVenaContractaWidth | #title:Vena contracta width, mm | #type:#decimalRight | #min:0.1 | #max:29.0 | #placeholder: Value"
+	static let blnHepaticVeinFlowRev = "#id:chkHepaticVeinFlowRev| #title:Hepatic vein flow reversal | #type:#check"
+	static let blnabTVleaflet = "#id:chkabTVleaflet| #title:Abnormal leaflets | #type:#check"
 	
 	
 	static let mvacm = "#id:mvacm | #title:MVA cm² | #type:#decimalRight | #min:0.1 | #max:9.0 | #placeholder: "
@@ -192,23 +192,23 @@ struct HMS {
 	static let abnormalTVLeaflets = "#id:abnormalTVLeaflets| #title:Abnormal TV Leaflet(s) | #type:#check"
 	
 	// Valvular -> Valvular -> Pulmonic Regurgitation
-	static let favorableValveMorphologyInPulmonic = "#id:chkWideRegurJet| #title:Wide Regurfitant Jet | #type:#check"
-	static let abnormalPulmonicValveLeaflets = "#id:chkabnpulval| #title:Abnormal Pulmonic Valve Leaflets | #type:#check"
+	static let favorableValveMorphologyInPulmonic = "#id:chkWideRegurJet| #title:Wide regurgitant jet | #type:#check"
+	static let abnormalPulmonicValveLeaflets = "#id:chkabnpulval| #title:Abnormal valve leaflet| #type:#check"
 	
 	
 	// Valvular -> Valvular Risk Surgery
 	static let stsPromLabel = "#id:stsPromLabel| #title:STS PROM Risk Score | #type:#label"
 	
-	static let lowInVRS = "#id:chklowrisk| #title:Low | #type:#check"
-	static let intermediateInVRS = "#id:chkintermediaterisk| #title:Intermediate | #type:#check"
-	static let highInVRS = "#id:chkhighrisk| #title:High | #type:#check"
-	static let prohibitiveInVRS = "#id:chkprohibitive| #title:Prohibitive | #type:#check"
+	static let lowInVRS = "#id:chklowrisk| #title:Low risk | #type:#check"
+	static let intermediateInVRS = "#id:chkintermediaterisk| #title:Intermediate risk | #type:#check"
+	static let highInVRS = "#id:chkhighrisk| #title:High risk | #type:#check"
+	static let prohibitiveInVRS = "#id:chkprohibitive| #title:Prohibitive risk | #type:#check"
 	
 	// Valvular -> Other Surgical Risk
-	static let supraInguinalVascularSurgery = "#id:chkvascular| #title: High Risk (Supra Inguinal Vascular Surgery) | #type:#check"
-	static let lowRiskCataractPlastic = "#id:chklowriskelec| #title: Low Risk (Cataract, Plastic) | #type:#check"
-	static let intermediateRiskInOSR = "#id:chkelective| #title:Intermediate Risk | #type:#check"
-	static let otherCardiacInOSR = "#id:chkcardiac| #title:Other Cardiac | #type:#check"
+	static let supraInguinalVascularSurgery = "#id:chkvascular| #title:Vascular | #type:#check"
+	static let lowRiskCataractPlastic = "#id:chklowriskelec| #title:Low risk elective | #type:#check"
+	static let intermediateRiskInOSR = "#id:chkelective| #title:Elective | #type:#check"
+	static let otherCardiacInOSR = "#id:chkcardiac| #title:Cardiac | #type:#check"
 	
 	// Advanced LHF
 	static let blnHF = "#id:blnHF| #title:Heart Failure | #type:#disclosureControl"
@@ -399,16 +399,17 @@ struct HMS {
 	static let blnLVH = "#id:chkLVH| #title:LVH | #type:#check"
 	
 	// RHC
-	static let txtMPAP = "#id:txtMPAP | #title:MEAN PAP, mmHg |#type:#integerRight | #min:10 | #max:70 | #placeholder: "
-	static let txtPVR = "#id:txtPVR | #title:PVR, WU |#type:#decimalRight | #min:1 | #max:20 | #placeholder: "
-	static let txtLVEDP = "#id:txtLVEDP | #title:LVEDP, mmHg |#type:#integerRight | #min:8 | #max:50 | #placeholder: "
-	static let txtPCWP = "#id:txtPCWP | #title:PCWP, mmHg |#type:#integerRight | #min:3 | #max:40 | #placeholder: "
-	static let txtCI = "#id:txtCI | #title:CI It/min/sq |#type:#decimalRight | #min:0.9 | #max:5.0 | #placeholder: "
-	static let txtRAP = "#id:txtRAP | #title:RA Pressure, mmHg |#type:#integerRight | #min:0 | #max:40 | #placeholder: "
-	static let txtVWA = "#id:txtVWA | #title:V Wave Amplitude |#type:#integerRight | #min:0 | #max:40 | #placeholder: "
-	static let blnTotalVWA = "#id:chkTotalVWA | #title:No V Wave |#type:#check"
-	static let txtPADP = "#id:txtPADP | #title:PADP, mmHg |#type:#integerRight | #min:5 | #max:40 | #placeholder: "
-	static let txtRVEDP = "#id:txtRVEDP | #title:RVEDP, mmHg |#type:#integerRight | #min:3 | #max:20 | #placeholder: "
+	static let txtMPAP = "#id:txtMPAP | #title:MPAP, mmHg |#type:#integerRight | #min:10 | #max:70 | #placeholder: Value"
+	static let txtPVR = "#id:txtPVR | #title:PVR, WU |#type:#decimalRight | #min:1 | #max:20 | #placeholder: Value"
+	static let txtLVEDP = "#id:txtLVEDP | #title:LVEDP, mmHg |#type:#integerRight | #min:8 | #max:50 | #placeholder: Value"
+	static let txtPCWP = "#id:txtPCWP | #title:PCWP, mmHg |#type:#integerRight | #min:3 | #max:40 | #placeholder: Value"
+	static let txtCI = "#id:txtCI | #title:CI,L/min/ms2 |#type:#decimalRight | #min:0.9 | #max:5.0 | #placeholder: Value"
+	static let txtRAP = "#id:txtRAP | #title:RAP, mmHg |#type:#integerRight | #min:0 | #max:40 | #placeholder: Value"
+	static let txtVWA = "#id:txtVWA | #title:V wave amplitude, mmHg |#type:#integerRight | #min:0 | #max:40 | #placeholder: Value"
+	static let blnTotalVWA = "#id:chkVWA | #title:No V wave on wedge tracing |#type:#check"
+	static let txtPADP = "#id:txtPADP | #title:PADP, mmHg |#type:#integerRight | #min:5 | #max:40 | #placeholder: Value"
+	static let txtRVEDP = "#id:txtRVEDP | #title:RVEDP, mmHg |#type:#integerRight | #min:3 | #max:20 | #placeholder: Value"
+	static let txtSVRWU = "#id:txtSVR | #title:SVR |#type:#integerRight | #min:1 | #max:19 | #placeholder: Value"
 	
 	static let lvefInHMS = "#id:chkCHF| #title:LV EF | #type:#integerRight | #min:0 | #max:9999 | #placeholder:  "
 	static let newOnsetAtrialFibrilation = "#id:chknewonsetAF| #title:Name | #type:#check"

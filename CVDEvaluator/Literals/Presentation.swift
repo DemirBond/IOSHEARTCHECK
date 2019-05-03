@@ -1292,18 +1292,16 @@ struct Presentation {
 	//
 	static let bioPAHMain = "#id:secbio_pah_main | #title:Exercise capacity | #type:#disclosureWeather"
 	static let pah = "#id:pah | #title:PAH Etiology | #type:#disclosureWeather"
-	static let valvularInHSM = "#id:valvularInHSM | #title:Valvular | #type:#disclosureWeather"
+	static let valvularInHSM = "#id:secvalvular | #title:Valvular Heart Disease | #type:#disclosureWeather"
 	static let advancedLHF = "#id:advancedLHF | #title:Advanced LHF | #type:#disclosureWeather"
 	static let echocardiographyInHSM = "#id:echocardiographyInHSM | #title:Echocardiography | #type:#disclosureControl"
 	static let laboratoryEKG = "#id:laboratoryEKG | #title:Laboratory/EKG | #type:#disclosureControl"
-	
+	static let rhcInHSM = "#id:secright_heart_catheterization | #title:Right Heart Catheterization | #type:#disclosureWeather"
+
 	//phillips fixes
 //	static let EKGinHSM = "#id: EKGinHSM | #title: EKG | #type:#disclosureWeather"
 //	static let LaboratoryinHSM = "#id: "
-	
-	
-	static let rhcInHSM = "#id:rhcInHSM | #title:RHC | #type:#disclosureWeather"
-	
+
 	static let pah1 = "#id:pah1 | #title:Page 1 | #type:#segment"
 	static let pah2 = "#id:pah2 | #title:Page 2 | #type:#segment"
 	static let pah3 = "#id:pah3 | #title:Page 3 | #type:#segment"
