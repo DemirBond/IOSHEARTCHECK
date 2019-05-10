@@ -448,11 +448,21 @@ class CheckBoxCell: GeneratedCell {
 				return
 			}
 
-			
 			cellModel.storedValue!.isChecked = newValue
 			updateCell()
-			// self.delegate?.evaluationValueDidChange(model: cellModel)
-			print("check box checked")
+
+			if !newValue {
+				resetSubItem(item: cellModel)
+			}
+		}
+	}
+
+	func resetSubItem(item: EvaluationItem) {
+		item.storedValue?.isChecked = false
+		item.storedValue?.radioGroup?.selectedRadioItem = nil
+		
+		for subItem in item.items {
+			resetSubItem(item: subItem)
 		}
 	}
 	
@@ -851,10 +861,6 @@ class RadioButtonCell: GeneratedCell {
 				cellModel.storedValue?.reopenedFromSave = false
 			}
 		}
-
-
-		
-		
 	}
 	
 	@IBAction func pressActionDown(_ sender: UIButton) {
