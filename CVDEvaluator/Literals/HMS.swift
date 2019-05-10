@@ -239,9 +239,9 @@ struct HMS {
 	static let therapeutics = "#id:therapeutics | #title:Therapeutics | #type:#disclosureWeather"
 	
 	// Advanced LHF -> Heart Failure -> Clinics
-	static let txtCHF = "#id:txtCHF| #title:LVEF | #type:#integerRight | #min:10 | #max:80 | #placeholder: "
-	static let txtO2sat = "#id:txtO2Sat| #title: O2sat% | #type:#integerRight | #min:50 | #max:100 | #placeholder: "
-	static let txtproBNP = "#id:txtproBNP| #title:NT-proBNP pg/ml | #type:#integerRight | #min:50 | #max:100000 | #placeholder: "
+	static let txtCHF = "#id:txtCHF| #title:LVEF | #type:#integerRight | #min:10 | #max:80 | #placeholder: Value"
+	static let txtO2sat = "#id:txtO2Sat| #title: O2sat% | #type:#integerRight | #min:50 | #max:100 | #placeholder: Value"
+	static let txtproBNP = "#id:txtproBNP| #title:NT-proBNP pg/ml | #type:#integerRight | #min:50 | #max:100000 | #placeholder: Value"
 	
 	static let blnPEd = "#id:chkPEd| #title:Pulmonary Edema | #type:#check"
 	static let blnS3 = "#id:chkS3| #title:S3 or S4 Gallop | #type:#check"

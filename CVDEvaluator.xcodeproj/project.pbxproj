@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E2706D22269B3F9009386A3 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2706D12269B3F9009386A3 /* UITableView+Extensions.swift */; };
+		0ED4BD9B228547FF004FDFE3 /* Compareable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED4BD9A228547FF004FDFE3 /* Compareable.swift */; };
 		78174BB11FE571930068B98D /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 78174BA61FE571920068B98D /* LICENSE.txt */; };
 		78174BB21FE571930068B98D /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78174BA71FE571920068B98D /* OpenSans-Bold.ttf */; };
 		78174BB31FE571930068B98D /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78174BA81FE571920068B98D /* OpenSans-BoldItalic.ttf */; };
@@ -145,6 +146,7 @@
 
 /* Begin PBXFileReference section */
 		0E2706D12269B3F9009386A3 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		0ED4BD9A228547FF004FDFE3 /* Compareable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compareable.swift; sourceTree = "<group>"; };
 		2AB6A5BC01152DFBE0438B0C /* Pods-CVDEvaluator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVDEvaluator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CVDEvaluator/Pods-CVDEvaluator.debug.xcconfig"; sourceTree = "<group>"; };
 		78174BA61FE571920068B98D /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		78174BA71FE571920068B98D /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				0E2706D12269B3F9009386A3 /* UITableView+Extensions.swift */,
+				0ED4BD9A228547FF004FDFE3 /* Compareable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -916,6 +919,7 @@
 				BA49CC7A1F339FDD0040060A /* ResetAccountController.swift in Sources */,
 				BA49CCD51F33A35E0040060A /* Evaluation.swift in Sources */,
 				BA49CD321F33A6FE0040060A /* RegisterResponse.swift in Sources */,
+				0ED4BD9B228547FF004FDFE3 /* Compareable.swift in Sources */,
 				BA49CD231F33A6B00040060A /* ControllerStyle.swift in Sources */,
 				BA49CCE71F33A35E0040060A /* Laboratories.swift in Sources */,
 				789268A51E6478C80018FEF5 /* Evaluation.xcdatamodeld in Sources */,

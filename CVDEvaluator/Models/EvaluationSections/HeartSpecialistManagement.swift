@@ -16,7 +16,7 @@ class HeartSpecialistManagement: EvaluationItem {
 	let bioPAHMain = ExerciseCapacity(literal: Presentation.bioPAHMain)
 	let pah = PAH1(literal: Presentation.pah)
 	let valvularInHSM = Valvular(literal: Presentation.valvularInHSM)
-	//let advancedLHF = AdvancedLHF(literal: Presentation.advancedLHF)
+	let advancedLHF = AdvancedLHF(literal: Presentation.advancedLHF)
 	//let echocardiographyInHSM = EchocardiographyInHSM(literal: Presentation.echocardiographyInHSM)
 	//let laboratoryEKG = LaboratoryEKG(literal: Presentation.laboratoryEKG)
 	let rhcInHSM = RHCInHSM(literal: Presentation.rhcInHSM)
@@ -32,7 +32,7 @@ class HeartSpecialistManagement: EvaluationItem {
 			pah,
 			rhcInHSM,
 			valvularInHSM,
-			//advancedLHF,
+			advancedLHF,
 			//echocardiographyInHSM,
 			//laboratoryEKG,
 //			seperator,
@@ -676,8 +676,7 @@ class HeartFailureInHMS: EvaluationItem {
 	//let blnHFPLVF = EvaluationItem(literal: HMS.blnHFPLVF)
 	//let blnfoutpt = EvaluationItem(literal: HMS.blnfoutpt)
 	let blnLVEF = EvaluationItem(literal: Presentation.lvefInHF)
-	
-	
+
 	let clinics = Clinics(literal: HMS.clinics)
 	let etiology = Etiology(literal: HMS.etiology)
 	let stageClass = StageClass(literal: HMS.stageClass)
