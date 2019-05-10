@@ -581,10 +581,10 @@ struct Presentation {
 	static let nonAuto = "#id:chknonauto | #title:Non Auto | #type:#check"
 	
 	//	CurrentPast CV Profile -> Coronary Heart Disease -> Stable Ang https://zpl.io/1nIjn5 (Android)
-	static let nyhaccvsClass1 = "#id:chkNYHA1 | #title: NYHA/CCVS Class 1 | #type:#check | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
-	static let nyhaccvsClass2 = "#id:chkNYHA2 | #title: NYHA/CCVS Class 2 | #type:#check | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
-	static let nyhaccvsClass3 = "#id:chkNYHA3 | #title: NYHA/CCVS Class 3 | #type:#check | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
-	static let nyhaccvsClass4 = "#id:chkNYHA4 | #title: NYHA/CCVS Class 4 | #type:#check | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
+	static let nyhaccvsClass1 = "#id:chkNYHA1 | #title: NYHA/CCVS Class 1 | #type:#radio | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
+	static let nyhaccvsClass2 = "#id:chkNYHA2 | #title: NYHA/CCVS Class 2 | #type:#radio | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
+	static let nyhaccvsClass3 = "#id:chkNYHA3 | #title: NYHA/CCVS Class 3 | #type:#radio | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
+	static let nyhaccvsClass4 = "#id:chkNYHA4 | #title: NYHA/CCVS Class 4 | #type:#radio | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
 	
 	// Second nyhccvs that groups all as radio buttons
 	static let hsmnyhaccvsClass1 = "#id:chkNYHA1 | #title: NYHA/CCVS Class 1 | #type:#radio | #group: (chkNYHA1, chkNYHA2,chkNYHA3, chkNYHA4)"
@@ -618,10 +618,10 @@ struct Presentation {
 	static let peripartumCMP = "#id:chkrestrictive | #title:Peripartum CMP | #type:#check"
 	
 	//	CurrentPast CV Profile -> Heart Failure -> Heart Failure Class / Stage
-	static let nyhaclass1 = "#id:chkNYHA1 | #title:NYHA Class 1 |  #type:#check | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
-	static let nyhaclass2 = "#id:chkNYHA2 | #title:NYHA Class 2 |  #type:#check | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
-	static let nyhaclass3 = "#id:chkNYHA3 | #title:NYHA Class 3 |  #type:#check | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
-	static let nyhaclass4 = "#id:chkNYHA4 | #title:NYHA Class 4 |  #type:#check | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
+	static let nyhaclass1 = "#id:chkNYHA1 | #title:NYHA Class 1 |  #type:#radio | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
+	static let nyhaclass2 = "#id:chkNYHA2 | #title:NYHA Class 2 |  #type:#radio | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
+	static let nyhaclass3 = "#id:chkNYHA3 | #title:NYHA Class 3 |  #type:#radio | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
+	static let nyhaclass4 = "#id:chkNYHA4 | #title:NYHA Class 4 |  #type:#radio | #group: (chkNYHA1, chkNYHA2,chkNYHA3,chkNYHA4)"
 	static let atHighRiskOfHF = "#id:chkA|    #title:At High Risk for HF, but without Structural Heart Disease or Symptoms of HF NYHA/CCVS Class 0|    #type:#check"
 	static let structuralHeartDeseaseNoSymptoms = "#id:chkB| #title:Structural Heart Disease, but without signs/symptoms of HF|    #type:#check"
 	static let structuralHeartDeseaseSymptoms = "#id:chkC| #title:Structural Heart Diseasewith prior or current symptoms of HF|    #type:#check"
