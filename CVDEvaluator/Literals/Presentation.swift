@@ -1201,7 +1201,7 @@ struct Presentation {
 	static let poDiuretic = "#id:chkdiuretic | #title:PO Diuretic | #type:#disclosureControl"
 	static let ccbOtherVasolidators = "#id:chkCCB | #title:CCB| #type:#disclosureControlExpandable"
 	static let dihydropyridine = "#id:chkdihydropyridine | #title:Dihydropyridine| #type:#check | #group: (chkdihydropyridine, chknondihydropyridine)"
-	static let nondihydropyridine = "#id:chknondihydropyridine | #title:Nitrates| #type:#check | #group: (chkdihydropyridine, chknondihydropyridine)"
+	static let nondihydropyridine = "#id:chknondihydropyridine | #title:Non-dihydropyridine| #type:#check | #group: (chkdihydropyridine, chknondihydropyridine)"
 	static let vasodilator = "#id:chkvasodilator | #title:Vasodilators| #type:#disclosureControlExpandable"
 	static let hydralazine = "#id:chkhydralazine | #title:Hydralazine| #type:#check | #group: (chkhydralazine, chknitrate)"
 	static let nitrate = "#id:chknitrate | #title:Nitrates| #type:#check | #group: (chkhydralazine, chknitrate)"
