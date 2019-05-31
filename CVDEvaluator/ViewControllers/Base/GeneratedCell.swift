@@ -175,7 +175,7 @@ class GeneratedCell: UITableViewCell, UITextFieldDelegate, KBNumberPadDelegate {
 		
 		self.subtitleLabel?.textColor = CVDStyle.style.subtitleColor
 		self.subtitleLabel?.font = CVDStyle.style.currentFont
-		self.subtitleLabel?.text = cellModel?.subtitle
+		self.subtitleLabel?.text = (cellModel?.subtitle ?? "")
 		
 		self.icon?.image = nil
 		if let field = self.textField {
@@ -1187,7 +1187,7 @@ class OutputResultsCell: GeneratedCell {
 		
 		//self.titleLabel?.font = CVDStyle.style.currentFont
 		self.titleLabel?.font = UIFont(name: "OpenSans-Bold", size: CVDStyle.style.currentFont.pointSize + 5)
-		print("\(CVDStyle.style.currentFont.fontName)")
+		//print("\(CVDStyle.style.currentFont.fontName)")
 		
 		self.subtitleLabel?.font = CVDStyle.style.currentFont
 		//self.subtitleLabel?.textColor = CVDStyle.style.subtitleColor
@@ -1196,5 +1196,19 @@ class OutputResultsCell: GeneratedCell {
 		//self.subtitleLabel?.font = UIFont(name: "OpenSans-SemiBold", size: 19.0)
 		self.subtitleLabel?.textColor = CVDStyle.style.defaultFontColor
 
+		let substrings = self.cellModel.subtitle ?? ""
+		var combineString = ""
+		for item in substrings.lines where !item.isEmpty {
+			combineString += "\u{2022} \(item)\n"
+		}
+		self.subtitleLabel?.text = combineString
+	}
+}
+
+extension String {
+	var lines: [String] {
+		var result: [String] = []
+		enumerateLines { line, _ in result.append(line) }
+		return result
 	}
 }
