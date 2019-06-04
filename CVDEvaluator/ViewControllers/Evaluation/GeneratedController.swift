@@ -255,7 +255,6 @@ class GeneratedController: BaseTableController, NVActivityIndicatorViewable {
 	
 	
 	override func rightMenuButtonAction(_ sender: UIBarButtonItem) {
-		self.view.endEditing(true)
 		var actions = [MenuAction] ()
 		
 		if pageForm.title == DataManager.manager.evaluation!.outputInMain.title {
@@ -328,12 +327,11 @@ class GeneratedController: BaseTableController, NVActivityIndicatorViewable {
 							  .decimalRight,
 							  .integerLeft,
 							  .integerRight) {
-				if let _: String = item.storedValue?.value {
-					item.storedValue?.value = nil
-				}
+				item.storedValue?.value = nil
 			} else if type.oneOf(other: .check,
 										.disclosureControl,
-										.disclosureControlExpandable) {
+										.disclosureControlExpandable,
+										.disclosureControlInputCellExpandable) {
 				if let _: Bool = item.storedValue?.isChecked {
 					item.storedValue?.isChecked = false
 				}
