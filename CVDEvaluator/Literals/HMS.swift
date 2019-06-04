@@ -134,13 +134,13 @@ struct HMS {
 	static let otherSurgicalRiskInValvular = "#id:secother_surgical_risk| #title:Other Surgical Risk  | #type:#disclosureWeather"
 	
 	// Valvular -> Valvular
-	static let lvef = "#id:txtEF| #title:LV EF  | #type:#integerRight | #min:10 | #max:80 | #placeholder: "
+	static let lvef = "#id:txtCHF| #title:LVEF  | #type:#integerRight | #min:10 | #max:80 | #placeholder: "
 	static let newOnsetAtrialFibrillation = "#id:chknewonsetAF| #title:New Onset Atrial Fibrillation  | #type:#check"
 	static let pregnancyInValvular = "#id:pregnancyInValvular| #title:Pregnancy  | #type:#check"
 	static let aorticStenosis = "#id:chkAorticStenosis| #title:Aortic Stenosis  | #type:#disclosureControl"
 	static let mitralStenosis = "#id:chkMitralStenosis| #title:Mitral Stenosis  | #type:#disclosureControl"
 	static let tricuspidStenosis = "#id:chkTricuspidStenosis| #title:Tricuspid Stenosis  | #type:#disclosureControl"
-	static let pulmonicStenosis = "#id:chkPulmonicStenosis| #title:Pulmonic Stenosis  | #type:#disclosureControl"
+	static let pulmonicStenosis = "#id:chkPulmonicStenosis| #title:Pulmonic Stenosis  | #type:#disclosureControlInputCellExpandable"
 	static let aorticRegurgitation = "#id:chkAorticRegurgitation| #title:Aortic Regurgitation  | #type:#disclosureControl"
 	static let primaryMitralRegurgitation = "#id:chkMitralRegurgitation| #title:Primary Mitral Regurgitation  | #type:#disclosureControl"
 	static let tricuspidRegurgitation = "#id:chkTricuspidRegurgitation| #title:Tricuspid Regurgitation  | #type:#disclosureControl"

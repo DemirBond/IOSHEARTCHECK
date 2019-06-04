@@ -16,7 +16,7 @@ class HeartSpecialistManagement: EvaluationItem {
 	let bioPAHMain = ExerciseCapacity(literal: Presentation.bioPAHMain)
 	let pah = PAH1(literal: Presentation.pah)
 	let valvularInHSM = Valvular(literal: Presentation.valvularInHSM)
-	let advancedLHF = AdvancedLHF(literal: Presentation.advancedLHF)
+	//let advancedLHF = AdvancedLHF(literal: Presentation.advancedLHF)
 	//let echocardiographyInHSM = EchocardiographyInHSM(literal: Presentation.echocardiographyInHSM)
 	//let laboratoryEKG = LaboratoryEKG(literal: Presentation.laboratoryEKG)
 	let rhcInHSM = RHCInHSM(literal: Presentation.rhcInHSM)
@@ -32,7 +32,7 @@ class HeartSpecialistManagement: EvaluationItem {
 			pah,
 			rhcInHSM,
 			valvularInHSM,
-			advancedLHF,
+			//advancedLHF,
 			//echocardiographyInHSM,
 			//laboratoryEKG,
 //			seperator,
@@ -372,7 +372,7 @@ class Valvular: EvaluationItem {
 
 class ValvularInValvular: EvaluationItem {
 	
-	//let lvef = EvaluationItem(literal: Presentation.lvefInHF)
+	let lvef = EvaluationItem(literal: Presentation.lvefInHF)
 	let newOnsetAtrialFibrillation = EvaluationItem(literal: HMS.newOnsetAtrialFibrillation)
 	//let pregnancyInValvular = EvaluationItem(literal: HMS.pregnancyInValvular)
 	let aorticStenosis = AorticStenosis(literal: HMS.aorticStenosis)
@@ -388,8 +388,8 @@ class ValvularInValvular: EvaluationItem {
 	
 	override var items: [EvaluationItem] {
 		return [
-				//lvef,
 				newOnsetAtrialFibrillation,
+				lvef,
 				//pregnancyInValvular,
 				aorticStenosis,
 				mitralStenosis,

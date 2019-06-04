@@ -139,6 +139,7 @@ class GeneratedController: BaseTableController, NVActivityIndicatorViewable {
 			print(alert)
 			// FIXME: add condition check to see what the alert says. If its one that Dr doesn't want refered, add here.
 			let handler1: CVDHandler = {() in
+				DataManager.manager.resetAllPAHItems()
 				_ = self.navigationController?.popViewController(animated: true)
 			}
 			
@@ -254,7 +255,7 @@ class GeneratedController: BaseTableController, NVActivityIndicatorViewable {
 	
 	
 	override func rightMenuButtonAction(_ sender: UIBarButtonItem) {
-		
+		self.view.endEditing(true)
 		var actions = [MenuAction] ()
 		
 		if pageForm.title == DataManager.manager.evaluation!.outputInMain.title {
@@ -336,7 +337,7 @@ class GeneratedController: BaseTableController, NVActivityIndicatorViewable {
 				if let _: Bool = item.storedValue?.isChecked {
 					item.storedValue?.isChecked = false
 				}
-				if type == ItemType.disclosureControlExpandable {
+				if type.oneOf(other: .disclosureControlExpandable, .disclosureControlInputCellExpandable) {
 					resetFields(items: item.items)
 				}
 			} else if type.oneOf(other: .radio) {
@@ -559,7 +560,7 @@ class GeneratedController: BaseTableController, NVActivityIndicatorViewable {
 		
 		cell.cellModel = itemModel
 		
-		cell.updateCell()
+		cell.updateCell(model: itemModel)
 
 		// Laboratories only logic
 		//let classType = type(of:pageForm)
@@ -641,7 +642,7 @@ class GeneratedController: BaseTableController, NVActivityIndicatorViewable {
 			
 			hideKeyboard()
 		 
-		case .disclosureControlExpandable:
+		case .disclosureControlExpandable, .disclosureControlInputCellExpandable:
 			//let cell = tableView.cellForRow(at: indexPath) as! RightIntegerCellExpandable
 			//cellExpanded = !cellExpanded
 			let cell = tableView.cellForRow(at: indexPath) as! DisclosureControlCellExpandable			
@@ -678,7 +679,7 @@ class GeneratedController: BaseTableController, NVActivityIndicatorViewable {
 			}
 		}
 		
-		if (itemModel.form.itemType == .disclosureControlExpandable) {
+		if itemModel.form.itemType.oneOf(other: .disclosureControlExpandable) {
 			if itemModel.isExpanded {
 				if itemModel.subCellsCount == 3{
 					return 200
@@ -693,7 +694,23 @@ class GeneratedController: BaseTableController, NVActivityIndicatorViewable {
 			else {
 				return 55
 			}
-			
+		}
+
+		if itemModel.form.itemType.oneOf(other: .disclosureControlInputCellExpandable) {
+			if itemModel.isExpanded {
+				if itemModel.subCellsCount == 3 {
+					return 220
+				}
+				else if  itemModel.subCellsCount == 2{
+					return 165
+				}
+				else { //if  itemModel.subCellsCount == 1{
+					return 110
+				}
+			}
+			else {
+				return 55
+			}
 		}
 		
 		if (itemModel.form.itemType == .integerRightExpandable) {

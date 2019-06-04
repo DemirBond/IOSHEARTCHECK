@@ -337,7 +337,7 @@ extension BioController {
 		
 		cell.cellModel = itemModel
 		
-		cell.updateCell()
+		cell.updateCell(model: itemModel)
 		
 		if cellType ==  .textLeft || cellType ==  .integerLeft || cellType ==  .decimalLeft  {
 			cell.textField?.textColor = CVDStyle.style.purpleColor
