@@ -251,20 +251,20 @@ class EvaluationController: BaseTableController, NVActivityIndicatorViewable {
 			let cancelAction = CVDAction(title: "Cancel".localized, type: CVDActionType.cancel, handler: nil, short: false)
 			let navigateAction = CVDAction(title: "Open " + model.bio.title, type: CVDActionType.done, handler: handler1, short: false)
 			self.showCVDAlert(title: alertTitle, message: alertDescription, actions: [navigateAction, cancelAction])
-			return
+
 		case .bioCompleted:
 			let alertDescription = "Please fill out the form \(model.cvProfile.title) or \(model.riskFactors.title)"
 			//showAlert(title: alertTitle, description: alertDescription, models: [model.cvProfile, model.riskFactors])
 			showAlert(title: alertTitle, description: alertDescription, models: [model.cvProfile, model.riskFactors], doneModel: item)
-			return
+
 		case .riskCompleted:
 			let alertDescription = "Please fill out the form \(model.diagnostics.title)"
 			showAlert(title: alertTitle, description: alertDescription, models: [model.diagnostics])
-			return
+
 		case .diagnosticCompleted:
 			let alertDescription = "Please fill out the form \(model.nsr.title)"
 			showAlert(title: alertTitle, description: alertDescription, models: [model.nsr])
-			return
+
 		default: return
 		}
 	}
@@ -295,12 +295,12 @@ class EvaluationController: BaseTableController, NVActivityIndicatorViewable {
 			let navigateAction = CVDAction(title: "Open ".localized + model.bio.title, type: CVDActionType.done, handler: handler1, short: false)
 			self.showCVDAlert(title: alertTitle, message: alertDescription, actions: [navigateAction, cancelAction])
 			
-		} else if DataManager.manager.evaluation!.evaluationStatus == .bioCompleted {
+		} /*else if DataManager.manager.evaluation!.evaluationStatus == .bioCompleted {
 			
 			let alertDescription = "Please fill out the form \(model.cvProfile.title) or \(model.riskFactors.title)"
 			showAlert(title: alertTitle, description: alertDescription, models: [model.cvProfile, model.riskFactors])
 			
-		}
+		}*/
 			
 		// Removed because of task CVD-220 [IOS] Unable to compute evaluation
 		/*
