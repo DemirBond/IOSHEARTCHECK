@@ -25,9 +25,9 @@ class BioPersonal: EvaluationItem {
 	let age = EvaluationItem(literal: Presentation.age)
 	
 	let gender = Gender(literal: Presentation.gender)
-	
+	let repRate = EvaluationItem(literal: Presentation.respRate)
 	let bmi = EvaluationItem(literal: Presentation.bmi)
-
+	let temp = EvaluationItem(literal: Presentation.temp)
 	let weight = EvaluationItem(literal: Presentation.weight)
 	let heartRate = EvaluationItem(literal: Presentation.heartRate)
 	let sbp = EvaluationItem(literal: Presentation.bioSBP)
@@ -46,6 +46,8 @@ class BioPersonal: EvaluationItem {
 			age,
 			gender,
 			bmi,
+			temp,
+			repRate,
 			weight,
 			heartRate,
 			sbp,

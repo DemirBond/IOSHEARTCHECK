@@ -52,7 +52,7 @@ class Diabetes: EvaluationItem {
 // MARK: - MajorCVRisks -> Diabetes -> Type II DM
 
 class TypeIIDM: EvaluationItem{
-	
+	let DM2Duration = EvaluationItem(literal: Presentation.DM2Duration)
 	let DMNP = EvaluationItem(literal: Presentation.DMNP)
 	let DMCKD = EvaluationItem(literal: Presentation.DMCKD)
 	let DMother = EvaluationItem(literal: Presentation.DMother)
@@ -101,6 +101,7 @@ class TypeIIDM: EvaluationItem{
 
 class TypeIDM: EvaluationItem{
 	
+	let DM1Duration = EvaluationItem(literal: Presentation.DM1Duration)
 	let DMNP = EvaluationItem(literal: Presentation.DMNP)
 	let DMCKD = EvaluationItem(literal: Presentation.DMCKD)
 	let DMother = EvaluationItem(literal: Presentation.DMother)
@@ -122,6 +123,7 @@ class TypeIDM: EvaluationItem{
 	
 	override var items: [EvaluationItem]{
 		return [
+			DM1Duration,
 			DMNP,
 			DMCKD,
 			DMother,

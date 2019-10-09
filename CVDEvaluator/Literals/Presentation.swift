@@ -94,8 +94,9 @@ struct Presentation {
 	
 	//static let name = 		"#id:name|      #title:Name|      #type:#textLeft | #maxLength: 50 | #mandatory: 1"
 	static let name = 		"#id:name|      #title:Patient ID|      #type:#textLeft | #maxLength: 50 | #mandatory: 1"
+	static let temp = "#id:txttemp |      #title:Temp|  #type:#integerLeft| #min:0|  #max:200| #placeholder:   | mandatory: 0"
 	static let age = 			"#id:age |      #title:Age|       #type:#integerLeft|   #min:20|  #max:100| #mandatory: 1"
-	
+		static let respRate = "#id:txtresprate |      #title:Respitory Rate|  #type:#integerLeft| #min:0|  #max:100| #placeholder:   | mandatory: 0"
 	//FIXME: Phillips fix to check if radio button saves
 	//static let gender = 		"#id:gender|    #title:Gender|    #type:#disclosureSimple | #height: 60 | #madatory: 1"
 	static let gender = 		"#id:gender|    #title:Gender|    #type:#disclosureSimpleExpandable | #height: 60 | #mandatory: 1"
@@ -939,6 +940,8 @@ struct Presentation {
 	static let gestationalDM = "#id:chkgestational | #title:Gestational DM | #type:#check"
 	static let retinopathy = "#id:chkRetinopathy | #title:Retinopathy | #type:#check"
 	
+	static let DM1Duration = "#id:txtdm1d | #title: DM1 Duration | #type:#integerLeft"
+	static let DM2Duration = "#id:txtdm2d | #title: DM2 Duration | #type:#integerLeft"
 	static let DMNP = "#id:chkDMNP | #title:Diabetic Nephropathy | #type:#check"
 	static let DMCKD = "#id:chkDMCKD| #title:Diabetic CKD | #type:#check"
 	static let DMother = "#id:chkDMother | #title:Other Kidney Complications | #type:#check"
@@ -1060,7 +1063,7 @@ struct Presentation {
 	
 	// Diagnostics -> EKG
 	static let nsrInEKG = "#id:chkNSR| #title: Normal sinus rhtym| #type:#check"
-	static let svt = "#id:chkPSVT| #title:Supraventricular tachycardia | #type:#check"
+	static let svt = "#id:chkPSVT| #title:EKG during tachyardia | #type:#disclosureControl"
 	static let atrialFibrillationInEKG = "#id:chkatrialfib | #title:Atrial Fibrillation | #type:#check"
 	static let atrialFlutter = "#id:chkflutter | #title:Atrial Flutter | #type:#disclosureControl"
 	static let prDuration  = "#id:txtPRduration | #title:PR Duration |#type:#integerRight | #min:0 | #max:10000 | #placeholder: Value"
@@ -1099,6 +1102,11 @@ struct Presentation {
 	static let ekgTitleEctopy = "#id: ekgtitleEctopy | #title: Ectopy | #type: #label"
 	static let ekgTitleSTAbnormality = "#id: ekgtitleST | #title: ST Abnormality | #type: #label"
 	
+	// Diagnostics -> EKG -> EKG during tachycardia
+	static let nsrEkgPalpitations1 = "#id:chkpalNSR | #title:Sinus tachycardia | #type:#check"
+	static let regularEkgPalpitations1 = "#id:chkpalregRR | #title:Regular RR, other than sinus | #type:#check"
+	static let irregularEkgPalpitations1 = "#id:chkpalirregRR | #title:Irregular RR, other than sinus | #type:#check"
+	static let responseToAdenosine = "#id:chkadenosine | #title:Irregular RR, other than sinus | #type:#check"
 	
 	// Diagnostics -> EKG -> Atrial Flutter https://zpl.io/Zcjvv8
 	static let typicalAF = "#id:chktypicalAF | #title:Typical AF | #type:#radio | #group: (chktypicalAF, chkatypicalAF)"

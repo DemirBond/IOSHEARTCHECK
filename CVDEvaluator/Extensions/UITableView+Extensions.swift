@@ -19,6 +19,7 @@ extension UITableView {
 		CATransaction.commit()
 		CATransaction.setCompletionBlock(closure)
 	}
+	//asdf
 
 
 	var isResetting: Bool {

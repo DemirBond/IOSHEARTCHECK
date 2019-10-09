@@ -62,6 +62,8 @@ class BioPAHMain: EvaluationItem {
 	
 	let name = EvaluationItem(literal: HMS.name)
 	let age = EvaluationItem(literal: HMS.age)
+	let temp = EvaluationItem(literal: HMS.temp)
+	let respRate = EvaluationItem(literal: HMS.respRate)
 	let gender = GenderInHMS(literal: HMS.gender)
 	let height = EvaluationItem(literal: HMS.height)
 	let weight = EvaluationItem(literal: HMS.weight)
@@ -83,7 +85,9 @@ class BioPAHMain: EvaluationItem {
 			name,
 			age,
 			gender,
+			
 			//height,
+			temp,
 			weight,
 			heartRate,
 			bioSBP,

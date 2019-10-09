@@ -61,7 +61,7 @@ class PFTS: EvaluationItem {
 class EKG: EvaluationItem {
 	
 	let NSRInEKG = EvaluationItem(literal: Presentation.nsrInEKG)
-	let svt = EvaluationItem(literal: Presentation.svt)
+	let svt = SVT(literal: Presentation.svt)
 	let atrialFibrillationInEKG = EvaluationItem(literal: Presentation.atrialFibrillationInEKG)
 	let atrialFlutter = AtrialFlutter(literal: Presentation.atrialFlutter)
 	let prDuration  = EvaluationItem(literal: Presentation.prDuration)
@@ -92,6 +92,8 @@ class EKG: EvaluationItem {
 	let secondDegreeAVBlock = SecondDegreeAVBlock(literal: Presentation.secondDegreeAVBlock)
 	let thirdDegreeAVBlock = EvaluationItem(literal: Presentation.thirdDegreeAVBlock)
 	
+
+	
 	//EKG Seperated Categories
 	let titleRhytm = EvaluationItem(literal: Presentation.ekgTitleRhtym)
 	let titleConduction = EvaluationItem(literal: Presentation.ekgTitleConduction)
@@ -114,6 +116,8 @@ class EKG: EvaluationItem {
 			titleRhytm,
 				NSRInEKG,
 				svt,
+				
+					
 				atrialFibrillationInEKG,
 				atrialFlutter,
 			
@@ -150,6 +154,19 @@ class EKG: EvaluationItem {
 		]
 	}
 }
+// MARK: - Diagnostics -> EKG -> Supraventricular Tachycardia || EKG During Tachycardia
+class SVT: EvaluationItem {
+	//EKG During Tachycardia
+	let nsrEkgPalpitations1 = EvaluationItem(literal: Presentation.nsrEkgPalpitations1)
+	let regularEkgPalpitations1 = EvaluationItem(literal: Presentation.regularEkgPalpitations1)
+	let irregularEkgPalpitations1 = EvaluationItem(literal: Presentation.irregularEkgPalpitations1)
+	let responseToAdenosine = EvaluationItem(literal: Presentation.responseToAdenosine)
+	
+	override var items: [EvaluationItem] {
+		return [nsrEkgPalpitations1, regularEkgPalpitations1, irregularEkgPalpitations1, responseToAdenosine]
+	}
+}
+
 
 
 // MARK: - Diagnostics -> EKG -> AtrialFlutter

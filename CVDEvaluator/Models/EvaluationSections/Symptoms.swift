@@ -725,11 +725,11 @@ class Palpitations: EvaluationItem  {
 			anginaSyncopePalpitations,
 			polyuriaSyncopePalpitations,
 			pulsationsSyncopePalpitations,
-
-			ekgPalpitationsLabel,
-			nsrEkgPalpitations,
-			regularEkgPalpitations,
-			irregularEkgPalpitations,
+//
+//			ekgPalpitationsLabel,
+//			nsrEkgPalpitations,
+//			regularEkgPalpitations,
+//			irregularEkgPalpitations,
 			
 			onsetPalpitationsLabel,
 			suddenOnsetPalpitations,

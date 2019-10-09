@@ -31,6 +31,8 @@ struct HMS {
 	// Main:
 	// Make mandatory once the values is copied from the Bio section
 	static let name = 		"#id:name|      #title:Name*|       #type:#textLeft |  #placeholder:  | #maxLength: 50 | mandatory: 0"
+	static let temp = "#id:txttemp |      #title:Temp|  #type:#integerLeft| #min:0|  #max:200| #placeholder:   | mandatory: 0"
+	static let respRate = "#id:txtresprate |      #title:Respitory Rate|  #type:#integerLeft| #min:0|  #max:100| #placeholder:   | mandatory: 0"
 	// Make mandatory once the values is copied from the Bio section
 	static let age = 			"#id:age |      #title:Age*|  #type:#integerLeft| #min:20|  #max:100| #placeholder:   | mandatory: 0"
 	static let gender = 		"#id:gender|    #title:Gender*|    #type:#disclosureSimple | #height: 60"
