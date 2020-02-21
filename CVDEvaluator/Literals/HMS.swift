@@ -41,8 +41,15 @@ struct HMS {
 	static let heartRate = 	"#id:HR| #title:Heart Rate| #type:#integerLeft| #min:30|  #max:300| #placeholder:  "
 	// Make mandatory once the values is copied from the Bio section
 	static let bioSBP = 		"#id:sbp|       #title:SBP*|  #type:#decimalLeft| #min:60|  #max:300| #placeholder: SBP mmHg | mandatory: 0"
+	
+	static let bioSBPNumber130 = "#id:txtNumberSBP | #title:How many times |#type:#integerRight | #min:1 | #max:20 | #placeholder: jt | #dependsOn: bioSBP| #dependMin: 60| #dependMax: 300"
+	static let bioSBPNumber90 = "#id:txtDurationSBP | #title:How many minutes |#type:#integerRight | #min:1 | #max:20 | #placeholder: jt | #dependsOn: bioSBP| #dependMin: 60| #dependMax: 300"
+	
 	// Make mandatory once the values is copied from the Bio section
 	static let bioDBP = 		"#id:dbp|       #title:DBP*|  #type:#decimalLeft| #min:30|  #max:160| #placeholder: DBP mmHg | mandatory: 0"
+	
+	static let bioDBPNumber90 = "#id:txtNumberDBP | #title:How many times |#type:#integerRight | #min:1 | #max:20 | #placeholder: jt | #dependsOn: bioDBP| #dependMin: 30| #dependMax: 160"
+	
 	static let orthostaticSBP = "#id:orthostaticSBP | #title:Orthostatic SBP | #type:#integerRight | #min:0 | #max:240 | #placeholder: DBP mmHg "
 	static let orthostaticSymptoms = "#id:chkSymptomatic|       #title:Orthostatic Symptoms|  #type:#check"
 

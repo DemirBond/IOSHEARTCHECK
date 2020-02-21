@@ -466,6 +466,14 @@ extension BioController {
 			}
 		}
 		
+		if itemModel.form.itemType == .sbpExpandable || itemModel.form.itemType == .dbpExpandable {
+			if itemModel.isExpanded {
+				return 145
+			} else {
+				return ItemType.sbpExpandable.defaultHeight()
+			}
+		}
+		
 		return itemModel.calculateCellHeight(forWidth: self.view.frame.size.width)
 	}
 	

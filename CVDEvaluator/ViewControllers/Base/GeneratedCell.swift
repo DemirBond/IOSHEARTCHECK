@@ -59,6 +59,16 @@ class GeneratedCell: UITableViewCell, UITextFieldDelegate, KBNumberPadDelegate {
 	@IBOutlet weak var subTextFieldTwo: UITextField?
 	@IBOutlet weak var subTextFieldThree: UITextField?
 	
+	@IBOutlet weak var sbpSubTextField: UITextField!
+	@IBOutlet weak var sbpSubLabel: UILabel!
+	@IBOutlet weak var sbpInfoLabel: UILabel!
+	
+	@IBOutlet weak var dbpSubTextField: UITextField!
+	@IBOutlet weak var dbpSubLabel: UILabel!
+	@IBOutlet weak var dbpInfoLabel: UILabel!
+	
+	var subCellSbpModelOne:EvaluationItem?
+	var subCellDbpModelOne:EvaluationItem?
 	
 	var subCellModelOne:EvaluationItem?
 	
@@ -258,14 +268,26 @@ class GeneratedCell: UITableViewCell, UITextFieldDelegate, KBNumberPadDelegate {
 			
 		}
 		
-		updateCell(model: self.cellModel)
-		
-		//print("\(cellModel.title)  -  items size \(theitems.count)")
-		
-		for i in theitems {
-			let t = i.title
-			//print("      title - \(t)")
+		if let textInt = cellModel.storedValue?.value, let value = Int(textInt), value > 0 {
+			if cellModel.form.itemType == .sbpExpandable {
+				cellModel.subCellsCount = theitems.count
+				if value > 130 {
+					subCellSbpModelOne = EvaluationItem(literal: Presentation.bioSBPNumber130)
+					sbpInfoLabel?.text = "Value is greater than 130. Please give additional details."
+				} else if value < 90 {
+					sbpInfoLabel?.text = "Value is less than 90. Please give additional details."
+					subCellSbpModelOne = EvaluationItem(literal: Presentation.bioSBPNumber90)
+				}
+				sbpSubLabel?.text = subCellSbpModelOne?.title
+			} else if cellModel.form.itemType == .dbpExpandable {
+				cellModel.subCellsCount = theitems.count
+				subCellDbpModelOne = EvaluationItem(literal: Presentation.bioDBPNumber90)
+				dbpSubLabel?.text = subCellDbpModelOne?.title
+				dbpInfoLabel?.text = "Value is greater than 90. Please give additional details"
+			}
 		}
+		
+		updateCell(model: self.cellModel)
 		
 	}
 	
@@ -321,7 +343,11 @@ class GeneratedCell: UITableViewCell, UITextFieldDelegate, KBNumberPadDelegate {
 			return
 		}
 
-		if textField.oneOf(other: subTextFieldOne ?? UITextField(), subTextFieldTwo ?? UITextField() , subTextFieldThree ?? UITextField()) {return}
+		if textField.oneOf(other: subTextFieldOne ?? UITextField(),
+										  subTextFieldTwo ?? UITextField(),
+										  subTextFieldThree ?? UITextField(),
+										  sbpSubTextField ?? UITextField(),
+										  dbpSubTextField ?? UITextField()) { return }
 
 		let strInput = textField.text
 		
@@ -331,10 +357,8 @@ class GeneratedCell: UITableViewCell, UITextFieldDelegate, KBNumberPadDelegate {
 			
 			if (cellModel.form.itemType == .integerRightExpandable && textField == self.textField) {
 				
-				let intInput = Int(strInput!)
-				
 				//print("input value - \(String(describing: intInput))")
-				if (intInput! < 130) {
+				if let strNumber = strInput, let intInput = Int(strNumber), intInput < 130 {
 					//print("should be expanded")
 					cellModel.isExpanded = true
 					self.delegate?.evaluationFieldTogglesDropDown()
@@ -346,7 +370,31 @@ class GeneratedCell: UITableViewCell, UITextFieldDelegate, KBNumberPadDelegate {
 					self.delegate?.evaluationFieldTogglesDropDown()
 				}
 				
+			} else if cellModel.form.itemType == .sbpExpandable && textField == self.textField {
+				
+				if let strNumber = strInput, let intInput = Int(strNumber), (intInput > 130 || intInput < 90) {
+					cellModel.isExpanded = true
+				}
+				else {
+					cellModel.isExpanded = false
+				}
+				setupCell()
+				// update table view
+				self.delegate?.evaluationFieldTogglesDropDown()
+				
+			} else if cellModel.form.itemType == .dbpExpandable && textField == self.textField {
+				
+				if let strNumber = strInput, let intInput = Int(strNumber), intInput > 90 {
+					cellModel.isExpanded = true
+				}
+				else {
+					cellModel.isExpanded = false
+				}
+				setupCell()
+				// update table view
+				self.delegate?.evaluationFieldTogglesDropDown()
 			}
+			
 		} catch InputError.incorrectInput {
 			markInvalidInput()
 			self.delegate?.evaluationValueDidNotValidate(model: cellModel,
@@ -1289,6 +1337,85 @@ class RightIntegerCellExpandable: GeneratedCell {
 	}
 	*/
 }
+
+//class SBPDBPCellExpandable: GeneratedCell {
+//
+//  /*
+//	subCellModelOne = EvaluationItem(literal: Presentation.urineNaMeql)
+//
+//	var subCellModelTwo = EvaluationItem(literal: Presentation.serumOsmolality)
+//
+//	var subCellModelThree = EvaluationItem(literal: Presentation.urineOsmolality)
+//	*/
+//
+//	override func updateCell(model: EvaluationItem) {
+//		super.updateCell(model: model)
+//		self.sbpdbpSubLabel?.text = subCellSbpDbpModelOne?.title
+////		self.subLabelTwo?.text = subCellModelTwo.title
+////		self.subLabelThree?.text = subCellModelThree.title
+//		//self.textField?.delegate = self
+//
+//		let theitems = cellModel.items
+//		print("items size \(theitems.count)")
+//
+//		for i in theitems {
+//			let t = i.title
+//			print("title - \(t)")
+//		}
+//
+//	}
+//
+//	override func layoutSubviews() {
+//		super.layoutSubviews()
+//
+////		self.subLabelOne?.text = subCellModelOne.title
+////		self.subLabelTwo?.text = subCellModelTwo.title
+////		self.subLabelThree?.text = subCellModelThree.title
+//		//self.textField?.delegate = self
+//
+//		let theitems = cellModel.items
+//		print("items size \(theitems.count)")
+//
+//		for i in theitems {
+//			let t = i.title
+//			print("title - \(t)")
+//		}
+//	}
+//	override func textFieldDidEndEditing(_ textField: UITextField) {
+//		super.textFieldDidEndEditing(textField)
+//		//print("------does this get called?")
+//
+//		//print("input value - \(String(describing: intInput))")
+//		if let strInput = textField.text, let intInput = Int(strInput), intInput > 130 {
+//			//print("should be expanded")
+//			cellModel.isExpanded = true
+//			self.delegate?.evaluationFieldTogglesDropDown()
+//
+//		}
+//		else {
+//			//print("should not be expanded")
+//			cellModel.isExpanded = false
+//			self.delegate?.evaluationFieldTogglesDropDown()
+//		}
+//	}
+//
+//	override func textFieldDidBeginEditing(_ textField: UITextField) {
+//		//print("-dis called?")
+//		//self.delegate?.evaluationFieldDidBeginEditing(textField, model: self.cellModel)
+//		//drawFieldWithDefaultColor()
+//	}
+//
+//	/*
+//	override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//
+//		print("-dis called?")
+//		//textField.resignFirstResponder()
+//		//self.delegate?.keyboardReturnDidPress(model: self.cellModel)
+//
+//		return true
+//	}
+//	*/
+//}
 
 
 class DisclosureRadioCell: RadioButtonCell {}

@@ -18,6 +18,29 @@ class Gender: EvaluationItem {
 	}
 }
 
+class SBP90130: EvaluationItem {
+	
+	let sbp90 = EvaluationItem(literal: Presentation.bioSBPNumber90)
+	let sbp130 = EvaluationItem(literal: Presentation.bioSBPNumber130)
+	
+	override var items: [EvaluationItem] {
+		return [
+			sbp90,
+			sbp130
+		]
+	}
+}
+
+class DBP90: EvaluationItem {
+	
+	let dbp90 = EvaluationItem(literal: Presentation.bioDBPNumber90)
+	
+	override var items: [EvaluationItem] {
+		return [
+			dbp90
+		]
+	}
+}
 
 class BioPersonal: EvaluationItem {
 		
@@ -30,8 +53,8 @@ class BioPersonal: EvaluationItem {
 	let temp = EvaluationItem(literal: Presentation.temp)
 	let weight = EvaluationItem(literal: Presentation.weight)
 	let heartRate = EvaluationItem(literal: Presentation.heartRate)
-	let sbp = EvaluationItem(literal: Presentation.bioSBP)
-	let dbp = EvaluationItem(literal: Presentation.bioDBP)
+	let sbp = SBP90130(literal: Presentation.bioSBP)
+	let dbp = DBP90(literal: Presentation.bioDBP)
 	
 	let bioOrthostaticSBP = EvaluationItem(literal: Presentation.bioOrthostaticSBP)
 	let bioOrthostaticSymptoms = EvaluationItem(literal: Presentation.bioOrthostaticSymptoms)
