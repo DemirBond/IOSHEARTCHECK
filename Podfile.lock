@@ -18,7 +18,7 @@ DEPENDENCIES:
   - YNExpandableCell
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Crashlytics
     - Fabric
@@ -36,4 +36,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 3288c772cce1f03500229f2f84b90ef10103d7cd
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.4
