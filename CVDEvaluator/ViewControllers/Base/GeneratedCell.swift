@@ -279,11 +279,13 @@ class GeneratedCell: UITableViewCell, UITextFieldDelegate, KBNumberPadDelegate {
 					subCellSbpModelOne = EvaluationItem(literal: Presentation.bioSBPNumber90)
 				}
 				sbpSubLabel?.text = subCellSbpModelOne?.title
+				sbpSubTextField.textColor = CVDStyle.style.rightFieldColor
 			} else if cellModel.form.itemType == .dbpExpandable {
 				cellModel.subCellsCount = theitems.count
 				subCellDbpModelOne = EvaluationItem(literal: Presentation.bioDBPNumber90)
 				dbpSubLabel?.text = subCellDbpModelOne?.title
 				dbpInfoLabel?.text = "Value is greater than 90. Please give additional details"
+				dbpSubTextField.textColor = CVDStyle.style.rightFieldColor
 			}
 		}
 		

@@ -2481,90 +2481,8 @@
                                     <outlet property="titleLabel" destination="Cw3-ax-jXq" id="b4r-hL-fNA"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SBPDBPCellExpandable" rowHeight="140" id="SG3-1j-tov" customClass="SBPDBPCellExpandable" customModule="Heart_Check" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="2148" width="375" height="140"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SG3-1j-tov" id="CJl-da-noi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfg-FY-BBl">
-                                            <rect key="frame" x="23" y="22" width="204" height="23.5"/>
-                                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="255" verticalCompressionResistancePriority="755" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Placeholder" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hbW-07-EhB" userLabel="User Name label">
-                                            <rect key="frame" x="235" y="13" width="116" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="QkY-SF-c4Z"/>
-                                                <constraint firstAttribute="width" constant="116" id="VAU-eU-xOn"/>
-                                            </constraints>
-                                            <color key="textColor" red="0.1215686275" green="0.16078431369999999" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="18"/>
-                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
-                                            <connections>
-                                                <outlet property="delegate" destination="SG3-1j-tov" id="zBr-4q-GML"/>
-                                            </connections>
-                                        </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="255" verticalCompressionResistancePriority="755" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bWk-ce-Mru" userLabel="User Name label">
-                                            <rect key="frame" x="235" y="79" width="116" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="116" id="L5I-Lc-52d"/>
-                                                <constraint firstAttribute="height" constant="40" id="oJZ-vl-un2"/>
-                                            </constraints>
-                                            <color key="textColor" red="0.1215686275" green="0.16078431369999999" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="18"/>
-                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
-                                            <connections>
-                                                <outlet property="delegate" destination="SG3-1j-tov" id="BzC-2j-nAJ"/>
-                                            </connections>
-                                        </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sn6-72-agQ">
-                                            <rect key="frame" x="68" y="88.5" width="159" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="159" id="bnm-6j-kWc"/>
-                                                <constraint firstAttribute="height" constant="21" id="fjR-et-kqb"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value is greater than 130, Please give additional details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSu-pY-vgB">
-                                            <rect key="frame" x="23" y="55" width="328" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="8tl-Ne-fEi"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="11"/>
-                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="sn6-72-agQ" firstAttribute="centerY" secondItem="bWk-ce-Mru" secondAttribute="centerY" id="AXr-y2-hMx"/>
-                                        <constraint firstItem="bWk-ce-Mru" firstAttribute="top" secondItem="hbW-07-EhB" secondAttribute="bottom" constant="26" id="Fei-RZ-G7G"/>
-                                        <constraint firstItem="zSu-pY-vgB" firstAttribute="leading" secondItem="CJl-da-noi" secondAttribute="leadingMargin" constant="7" id="O8D-nv-kfX"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="zSu-pY-vgB" secondAttribute="trailing" constant="8" id="Qsk-cq-Tpf"/>
-                                        <constraint firstItem="zSu-pY-vgB" firstAttribute="centerX" secondItem="CJl-da-noi" secondAttribute="centerX" id="T6b-Qg-Rtg"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="hbW-07-EhB" secondAttribute="trailing" constant="8" id="asH-mp-AC3"/>
-                                        <constraint firstItem="Yfg-FY-BBl" firstAttribute="top" secondItem="CJl-da-noi" secondAttribute="topMargin" constant="11" id="bE1-Z0-un0"/>
-                                        <constraint firstItem="zSu-pY-vgB" firstAttribute="top" secondItem="hbW-07-EhB" secondAttribute="bottom" constant="2" id="cjj-Dl-6Ld"/>
-                                        <constraint firstItem="bWk-ce-Mru" firstAttribute="leading" secondItem="sn6-72-agQ" secondAttribute="trailing" constant="8" id="eYT-uA-xTj"/>
-                                        <constraint firstItem="hbW-07-EhB" firstAttribute="top" secondItem="CJl-da-noi" secondAttribute="topMargin" constant="2" id="gYa-J9-bi3"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="bWk-ce-Mru" secondAttribute="trailing" constant="8" id="iXw-lJ-xzI"/>
-                                        <constraint firstItem="Yfg-FY-BBl" firstAttribute="leading" secondItem="CJl-da-noi" secondAttribute="leadingMargin" constant="7" id="kiK-AL-tzc"/>
-                                        <constraint firstItem="hbW-07-EhB" firstAttribute="leading" secondItem="Yfg-FY-BBl" secondAttribute="trailing" constant="8" id="ypt-UF-J3q"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="sbpdbpSubLabel" destination="sn6-72-agQ" id="cj7-rX-dXD"/>
-                                    <outlet property="sbpdbpSubTextField" destination="bWk-ce-Mru" id="Bpe-l0-iif"/>
-                                    <outlet property="textField" destination="hbW-07-EhB" id="z4a-xE-cvm"/>
-                                    <outlet property="titleLabel" destination="Yfg-FY-BBl" id="5sp-Yl-6Ox"/>
-                                </connections>
-                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OutputResultsCell" rowHeight="178" id="aFe-v4-8BN" customClass="OutputResultsCell" customModule="Heart_Check" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="2288" width="375" height="178"/>
+                                <rect key="frame" x="0.0" y="2148" width="375" height="178"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aFe-v4-8BN" id="WC7-Hv-gTo">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
@@ -2598,7 +2516,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatusCardCell" rowHeight="178" id="MQF-da-5eQ" customClass="OutputSimpleCell" customModule="Heart_Check" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="2466" width="375" height="178"/>
+                                <rect key="frame" x="0.0" y="2326" width="375" height="178"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MQF-da-5eQ" id="7KZ-DA-J3M">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
@@ -2632,7 +2550,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartnerCardCell" rowHeight="178" id="vRc-YY-SlP" customClass="PartnerCardCell" customModule="Heart_Check" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="2644" width="375" height="178"/>
+                                <rect key="frame" x="0.0" y="2504" width="375" height="178"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vRc-YY-SlP" id="x2h-YU-7sK">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
@@ -2640,7 +2558,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReferencesCardCell" rowHeight="178" id="3zU-ii-esW" customClass="ReferencesCardCell" customModule="Heart_Check" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="2822" width="375" height="178"/>
+                                <rect key="frame" x="0.0" y="2682" width="375" height="178"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3zU-ii-esW" id="Cai-0W-YIF">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
@@ -2648,7 +2566,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClearCardCell" rowHeight="178" id="7uN-t8-5BO" customClass="ClearCardCell">
-                                <rect key="frame" x="0.0" y="3000" width="375" height="178"/>
+                                <rect key="frame" x="0.0" y="2860" width="375" height="178"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7uN-t8-5BO" id="gqD-Ui-kpr">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
@@ -2666,7 +2584,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DisclosureControlInputCellExpandable" rowHeight="200" id="yOO-B8-JrS" customClass="DisclosureControlInputCellExpandable" customModule="Heart_Check" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="3178" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="3038" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yOO-B8-JrS" id="8iu-Hx-ARd">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
