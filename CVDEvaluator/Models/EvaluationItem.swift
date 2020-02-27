@@ -94,7 +94,7 @@ class EvaluationItem  {
 	let dependancy: Dependancy?
 	var placeHolder: String?
 	
-	let subItems = [EvaluationItem]()
+	var subItems = [EvaluationItem]()
 	
 	var subCellsCount = 0
 	var isExpanded:Bool = false

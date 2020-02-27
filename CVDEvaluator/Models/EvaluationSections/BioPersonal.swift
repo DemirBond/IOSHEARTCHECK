@@ -33,7 +33,7 @@ class SBP90130: EvaluationItem {
 
 class DBP90: EvaluationItem {
 	
-	let dbp90 = EvaluationItem(literal: Presentation.bioDBPNumber90)
+	let dbp90 = EvaluationItem(literal: Presentation.bioDBPNumber80)
 	
 	override var items: [EvaluationItem] {
 		return [
@@ -55,6 +55,10 @@ class BioPersonal: EvaluationItem {
 	let heartRate = EvaluationItem(literal: Presentation.heartRate)
 	let sbp = SBP90130(literal: Presentation.bioSBP)
 	let dbp = DBP90(literal: Presentation.bioDBP)
+	
+	var txtNumberSBP = -1
+	var txtDurationSBP = -1
+	var txtNumberDBP = -1
 	
 	let bioOrthostaticSBP = EvaluationItem(literal: Presentation.bioOrthostaticSBP)
 	let bioOrthostaticSymptoms = EvaluationItem(literal: Presentation.bioOrthostaticSymptoms)
