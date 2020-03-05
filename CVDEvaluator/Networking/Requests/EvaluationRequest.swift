@@ -21,8 +21,8 @@ struct EvaluationRequest{
 	var SBP: Int
 	var txtNumberSBP: Int?
 	var txtDurationSBP: Int?
-	var DBP: Int
 	var txtNumberDBP: Int?
+	var DBP: Int
 	
 	var inputs: String
 	

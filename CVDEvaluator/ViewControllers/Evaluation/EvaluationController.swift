@@ -365,6 +365,9 @@ class EvaluationController: BaseTableController, NVActivityIndicatorViewable {
 				                                          gender: gender,
 				                                          SBP: Int((model.bio.sbp.storedValue?.value)!)!,
 				                                          DBP: Int((model.bio.dbp.storedValue?.value)!)!,
+																		txtNumberSBP: Int((model.bio.txtNumberSBP.storedValue?.value)!)!,
+																		txtDurationSBP: Int((model.bio.txtDurationSBP.storedValue?.value)!)!,
+																		txtNumberDBP: Int((model.bio.txtNumberSBP.storedValue?.value)!)!,
 				                                          inputs: inputs)
 				//print("PAH:\t" + evaluation.isPAH + "\t Inputs:\t " + evaluation.inputs)
 				
