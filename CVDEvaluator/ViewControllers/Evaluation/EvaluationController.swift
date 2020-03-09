@@ -357,17 +357,33 @@ class EvaluationController: BaseTableController, NVActivityIndicatorViewable {
 				let patientname: String = (model.bio.name.storedValue?.value)!
 				let gender: Int = model.bio.gender.storedValue?.value == "male" ? 1 : 2
 				
+				let sbp = Int((model.bio.sbp.storedValue?.value)!)!
+				let dbp = Int((model.bio.dbp.storedValue?.value)!)!
+				
+				var txtNumberSBP: Int = 0
+				var txtDurationSBP: Int = 0
+				if sbp > 130 {
+					txtNumberSBP = Int((model.bio.sbp.subItems.first?.storedValue!.value)!)!
+				} else if sbp < 90 {
+					txtDurationSBP = Int((model.bio.sbp.subItems.first?.storedValue!.value)!)!
+				}
+				
+				var txtNumberDBP: Int = 0
+				if dbp > 80 {
+					txtNumberDBP = Int((model.bio.dbp.subItems.last?.storedValue!.value)!)!
+				}
+				
 				let evaluationRequest = EvaluationRequest(uuid: uuid,
 				                                          isSave: saveMode,
 				                                          age: Int((model.bio.age.storedValue?.value)!)!,
 				                                          isPAH: String(DataManager.manager.getPAHValue()),
 				                                          name: patientname,
 				                                          gender: gender,
-				                                          SBP: Int((model.bio.sbp.storedValue?.value)!)!,
-				                                          DBP: Int((model.bio.dbp.storedValue?.value)!)!,
-																		txtNumberSBP: Int((model.bio.txtNumberSBP.storedValue?.value)!)!,
-																		txtDurationSBP: Int((model.bio.txtDurationSBP.storedValue?.value)!)!,
-																		txtNumberDBP: Int((model.bio.txtNumberSBP.storedValue?.value)!)!,
+				                                          SBP: sbp,
+																		txtNumberSBP: txtNumberSBP,
+																		txtDurationSBP: txtDurationSBP,
+				                                          DBP: dbp,
+																		txtNumberDBP: txtNumberDBP,
 				                                          inputs: inputs)
 				//print("PAH:\t" + evaluation.isPAH + "\t Inputs:\t " + evaluation.inputs)
 				

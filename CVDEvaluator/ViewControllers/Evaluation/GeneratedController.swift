@@ -406,14 +406,14 @@ class GeneratedController: BaseTableController, NVActivityIndicatorViewable {
 			var txtNumberSBP: Int = 0
 			var txtDurationSBP: Int = 0
 			if sbp > 130 {
-				txtNumberSBP = Int((model.bio.sbp.items.last?.storedValue!.value)!)!
+				txtNumberSBP = Int((model.bio.sbp.subItems.first?.storedValue!.value)!)!
 			} else if sbp < 90 {
-				txtDurationSBP = Int((model.bio.sbp.items.first?.storedValue!.value)!)!
+				txtDurationSBP = Int((model.bio.sbp.subItems.first?.storedValue!.value)!)!
 			}
 			
 			var txtNumberDBP: Int = 0
 			if dbp > 80 {
-				txtNumberDBP = Int((model.bio.dbp.items.last?.storedValue!.value)!)!
+				txtNumberDBP = Int((model.bio.dbp.subItems.last?.storedValue!.value)!)!
 			}
 			// gather up data to send to the server for compute
 			let evaluationRequest = EvaluationRequest(uuid: uuid,

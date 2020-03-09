@@ -18,11 +18,16 @@ struct EvaluationRequest{
 	var isPAH: String
 	var name: String
 	var gender: Int
-	var SBP: Int
+	var SBP: Int {
+		didSet {
+			print("SBP set")
+		}
+	}
 	var txtNumberSBP: Int?
 	var txtDurationSBP: Int?
-	var txtNumberDBP: Int?
+	
 	var DBP: Int
+	var txtNumberDBP: Int?
 	
 	var inputs: String
 	
