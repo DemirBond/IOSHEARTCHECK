@@ -386,7 +386,7 @@ class GeneratedCell: UITableViewCell, UITextFieldDelegate, KBNumberPadDelegate {
 				
 			} else if cellModel.form.itemType == .dbpExpandable && textField == self.textField {
 				
-				if let strNumber = strInput, let intInput = Int(strNumber), intInput > 90 {
+				if let strNumber = strInput, let intInput = Int(strNumber), intInput > 80 {
 					cellModel.isExpanded = true
 				}
 				else {
