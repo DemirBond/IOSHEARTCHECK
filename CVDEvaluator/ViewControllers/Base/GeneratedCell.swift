@@ -269,19 +269,61 @@ class GeneratedCell: UITableViewCell, UITextFieldDelegate, KBNumberPadDelegate {
 		if cellModel.form.itemType == .integerRightExpandable {
 			cellModel.subCellsCount = theitems.count
 			//print("this expandable cell has \(theitems.count) items")
-			
+
 			subCellModelOne = EvaluationItem(literal: Presentation.urineNaMeql)
-			
+
 			subCellModelTwo = EvaluationItem(literal: Presentation.serumOsmolality)
-			
+
 			subCellModelThree = EvaluationItem(literal: Presentation.urineOsmolality)
-			
+
 			self.subLabelOne?.text = subCellModelOne?.title
 			self.subLabelTwo?.text = subCellModelTwo?.title
 			self.subLabelThree?.text = subCellModelThree?.title
+
+         self.subLabelOne?.font = CVDStyle.style.currentFont
+         self.subLabelTwo?.font = CVDStyle.style.currentFont
+         self.subLabelThree?.font = CVDStyle.style.currentFont
+
+         subTextFieldOne?.textColor = CVDStyle.style.rightFieldColor
+         subTextFieldTwo?.textColor = CVDStyle.style.rightFieldColor
+         subTextFieldThree?.textColor = CVDStyle.style.rightFieldColor
+			
+			// get back old value
+			if theitems.count > 0 {
+				subCellModelOne = theitems.first
+				subCellModelTwo = theitems[1]
+				subCellModelThree = theitems[2]
+			} else {
+				subCellModelOne = EvaluationItem(literal: Presentation.urineNaMeql)
+				subCellModelTwo = EvaluationItem(literal: Presentation.urineOsmolality)
+				subCellModelThree = EvaluationItem(literal: Presentation.serumOsmolality)
+			}
+			
+			subTextFieldOne?.textColor = CVDStyle.style.rightFieldColor
+			subTextFieldTwo?.textColor = CVDStyle.style.rightFieldColor
+			subTextFieldThree?.textColor = CVDStyle.style.rightFieldColor
+			cellModel.subCellsCount = theitems.count
+			
+			if let textInt = cellModel.storedValue?.value, let value = Int(textInt), value < 130 {
+				subLabelOne?.text = subCellModelOne?.title
+				subLabelTwo?.text = subCellModelTwo?.title
+				subLabelThree?.text = subCellModelThree?.title
+				//dbpInfoLabel?.text = "Value is less than 130. Please give additional details"
+				subTextFieldOne?.text = subCellModelOne?.storedValue?.value
+				subTextFieldTwo?.text = subCellModelTwo?.storedValue?.value
+				subTextFieldThree?.text = subCellModelThree?.storedValue?.value
+			} else {
+				subCellModelOne = EvaluationItem(literal: Presentation.urineNaMeql)
+				subCellModelTwo = EvaluationItem(literal: Presentation.urineOsmolality)
+				subCellModelThree = EvaluationItem(literal: Presentation.serumOsmolality)
+				self.cellModel.subItems = [EvaluationItem]()
+				subTextFieldOne?.text = nil
+				subTextFieldTwo?.text = nil
+				subTextFieldThree?.text = nil
+			}
 			
 		}
-		
+
 		updateCell(model: self.cellModel)
 		
 	}
@@ -314,6 +356,21 @@ class GeneratedCell: UITableViewCell, UITextFieldDelegate, KBNumberPadDelegate {
 				self.textField?.textColor = CVDStyle.style.rightFieldColor
 			}
 		}
+		
+		if cellModel.form.itemType == .integerRightExpandable {
+			if let textInt = cellModel.storedValue?.value, let value = Int(textInt), value > 130 {
+				subCellModelOne = EvaluationItem(literal: Presentation.urineNaMeql)
+				subCellModelTwo = EvaluationItem(literal: Presentation.urineOsmolality)
+				subCellModelThree = EvaluationItem(literal: Presentation.serumOsmolality)
+				self.cellModel.subItems = [EvaluationItem]()
+				subTextFieldOne?.text = nil
+				subTextFieldTwo?.text = nil
+				subTextFieldThree?.text = nil
+				
+			}
+		}
+		
+		
 	}
 	
 	
@@ -341,14 +398,44 @@ class GeneratedCell: UITableViewCell, UITextFieldDelegate, KBNumberPadDelegate {
 
 		let strInput = textField.text
 		
-		if textField.oneOf(other: subTextFieldOne ?? UITextField(),
-										  subTextFieldTwo ?? UITextField(),
-										  subTextFieldThree ?? UITextField(),
-										  sbpSubTextField ?? UITextField(),
-										  dbpSubTextField ?? UITextField()) {
-			return
-		}
+		if textField.oneOf(other: sbpSubTextField ?? UITextField(),
+										  dbpSubTextField ?? UITextField()) { return }
 		
+		if (textField.oneOf(other: subTextFieldOne ?? UITextField(),
+										 subTextFieldTwo ?? UITextField(),
+										 subTextFieldThree ?? UITextField()) && cellModel.form.itemType == .integerRightExpandable)
+		{
+			if subTextFieldOne == textField {
+				 // store subcell value and return
+				 if let strNumber = textField.text {
+					  var subFields = [EvaluationItem]()
+					  subCellModelOne?.storedValue?.value = strNumber
+					  subFields.append(subCellModelOne!)
+					  self.cellModel.subItems = subFields
+				 }
+			} else if subTextFieldTwo == textField {
+				 // store subcell value and return
+				 if let strNumber = textField.text {
+					  var subFields = [EvaluationItem]()
+					  subCellModelTwo?.storedValue?.value = strNumber
+					  subFields.append(subCellModelTwo!)
+					  self.cellModel.subItems = subFields
+				 }
+			} else if subTextFieldThree == textField {
+				 // store subcell value and return
+				 if let strNumber = textField.text {
+					  var subFields = [EvaluationItem]()
+					  subCellModelThree?.storedValue?.value = strNumber
+					  subFields.append(subCellModelThree!)
+					  self.cellModel.subItems = subFields
+				 }
+			}
+			
+			
+			return
+			
+		}else {
+			
 		do {
 			try cellModel.storedValue?.validateInput(inputText: strInput!)
 			self.cellModel.storedValue?.value = strInput!.count > 0 ? strInput : nil
@@ -366,6 +453,17 @@ class GeneratedCell: UITableViewCell, UITextFieldDelegate, KBNumberPadDelegate {
 					//print("should not be expanded")
 					cellModel.isExpanded = false
 					self.delegate?.evaluationFieldTogglesDropDown()
+					self.subCellModelOne?.storedValue?.value = nil
+					self.subCellModelTwo?.storedValue?.value = nil
+					self.subCellModelThree?.storedValue?.value = nil
+					
+					var subFields = [EvaluationItem]()
+					subFields.append(subCellModelOne!)
+					subFields.append(subCellModelTwo!)
+					subFields.append(subCellModelThree!)
+					
+					self.cellModel.subItems = [EvaluationItem]()
+					self.cellModel.subItems = subFields
 				}
 				
 			}
@@ -402,7 +500,7 @@ class GeneratedCell: UITableViewCell, UITextFieldDelegate, KBNumberPadDelegate {
 		} catch {
 			()
 		}
-		
+	 }
 	}
 	
 	
