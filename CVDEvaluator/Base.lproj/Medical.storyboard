@@ -314,7 +314,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="BioControllerID" id="wGm-Zx-aLa" customClass="BioController" customModule="Heart_Check" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="NKM-pu-pHe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -656,7 +656,7 @@
                                     <outlet property="titleLabel" destination="jag-MV-se9" id="W0P-Mf-fGS"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SBPCellExpandable" rowHeight="140" id="dOJ-1d-Rmp" customClass="RightIntegerCell" customModule="Heart_Check" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SBPCellExpandable" rowHeight="140" id="dOJ-1d-Rmp" customClass="SBPCellExpandable" customModule="Heart_Check" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="478" width="375" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dOJ-1d-Rmp" id="0tp-SH-tfz">
@@ -738,7 +738,7 @@
                                     <outlet property="titleLabel" destination="vFJ-Sl-Yon" id="mQb-po-rRC"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DBPCellExpandable" rowHeight="140" id="2zq-aJ-FBp" customClass="RightIntegerCell" customModule="Heart_Check" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DBPCellExpandable" rowHeight="140" id="2zq-aJ-FBp" customClass="DBPCellExpandable" customModule="Heart_Check" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="618" width="375" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2zq-aJ-FBp" id="pC0-Hn-4Eq">
@@ -827,7 +827,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <size key="freeformSize" width="375" height="800"/>
+                    <size key="freeformSize" width="375" height="900"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3u-n2-P7S" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="Pp3-rl-JMR">
@@ -5170,10 +5170,10 @@ These Terms and Conditions are governed by the substantive laws of the State of 
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="puz-SP-bqf">
-                                <rect key="frame" x="8" y="595" width="359" height="44"/>
+                                <rect key="frame" x="8" y="595" width="359" height="88"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vv-xH-bB8">
-                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="88"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
                                         <state key="normal" title="Print" backgroundImage="outline">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -5183,7 +5183,7 @@ These Terms and Conditions are governed by the substantive laws of the State of 
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Gr-sx-Cyb">
-                                        <rect key="frame" x="119.5" y="0.0" width="120" height="44"/>
+                                        <rect key="frame" x="119.5" y="0.0" width="120" height="88"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
                                         <state key="normal" title="Cancel" backgroundImage="outline">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -5193,7 +5193,7 @@ These Terms and Conditions are governed by the substantive laws of the State of 
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsI-uR-I3p">
-                                        <rect key="frame" x="239.5" y="0.0" width="119.5" height="44"/>
+                                        <rect key="frame" x="239.5" y="0.0" width="119.5" height="88"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
                                         <state key="normal" title="Accept" backgroundImage="outline">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

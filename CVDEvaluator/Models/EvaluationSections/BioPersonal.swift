@@ -33,7 +33,7 @@ class SBP90130: EvaluationItem {
 
 class DBP90: EvaluationItem {
 	
-	let dbp90 = EvaluationItem(literal: Presentation.bioDBPNumber90)
+	let dbp90 = EvaluationItem(literal: Presentation.bioDBPNumber80)
 	
 	override var items: [EvaluationItem] {
 		return [
