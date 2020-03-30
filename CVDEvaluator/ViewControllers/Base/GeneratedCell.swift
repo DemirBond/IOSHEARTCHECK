@@ -899,9 +899,15 @@ class SBPCellExpandable: GeneratedCell {
 				var subFields = [EvaluationItem]()
 				
 				if intInput > 130 {
+					if(subCellSbpModel130 == nil) {
+						subCellSbpModel130 = EvaluationItem(literal: Presentation.bioSBPNumber130)
+					}
 					subCellSbpModel130?.storedValue?.value = subStrInput
 					subFields.append(subCellSbpModel130!)
 				} else if intInput < 90 {
+					if(subCellSbpModel90 == nil) {
+						subCellSbpModel90 = EvaluationItem(literal: Presentation.bioSBPNumber90)
+					}
 					subCellSbpModel90?.storedValue?.value = subStrInput
 					subFields.append(subCellSbpModel90!)
 				}
@@ -1022,6 +1028,11 @@ class DBPCellExpandable: GeneratedCell {
 			// store subcell value and return
 			if let strNumber = textField.text {
 				var subFields = [EvaluationItem]()
+				
+				if(subCellDbpModel80 == nil) {
+					subCellDbpModel80 = EvaluationItem(literal: Presentation.bioDBPNumber80)
+				}
+				
 				subCellDbpModel80?.storedValue?.value = strNumber
 				subFields.append(subCellDbpModel80!)
 				self.cellModel.subItems = subFields
