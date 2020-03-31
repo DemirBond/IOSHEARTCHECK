@@ -31,6 +31,15 @@ class ReviewOfSystem: EvaluationItem {
 	let pnd = EvaluationItem(literal: Presentation.pndInROS)
 	let orthopnea = EvaluationItem(literal: Presentation.orthopneaInROS)
 	let previousDVT = EvaluationItem(literal: Presentation.previousDVTEInROS)
+	let otherImmune = EvaluationItem(literal: Presentation.otherImmune)
+	let socialHisLabel = EvaluationItem(literal: Presentation.socialHistoryLabel)
+	let tobaccoUse = EvaluationItem(literal: Presentation.tobaccoUse)
+	let famHisLabel = EvaluationItem(literal: Presentation.familyHistoryLabel)
+	let familyHistory = FamilyHistory(literal: Presentation.familyHistory)
+	
+	let covLabel = EvaluationItem(literal: Presentation.covidEx)
+	let covTravel = EvaluationItem(literal: Presentation.covidTravel)
+	let covExposure = EvaluationItem(literal: Presentation.covidExposure)
 	
 	override var items: [EvaluationItem] {
 		return [
@@ -54,7 +63,37 @@ class ReviewOfSystem: EvaluationItem {
 			ulcerInROS,
 			blnunilateral,
 			previousDVT,
-			rheumInROS
+			rheumInROS,
+			otherImmune,
+			
+			socialHisLabel,
+			tobaccoUse,
+			
+			famHisLabel,
+			familyHistory,
+			
+			covLabel,
+			covTravel,
+			covExposure
+		]
+	}
+	
+	
+}
+
+class FamilyHistory: EvaluationItem {
+	
+	let fam1 = EvaluationItem(literal: Presentation.famFirstPremature)
+	let fam2 = EvaluationItem(literal: Presentation.famFirstRelLDLCAbove95)
+	let fam3 = EvaluationItem(literal: Presentation.famXan)
+	
+	override var items: [EvaluationItem] {
+		return [
+			fam1,
+			fam2,
+			fam3,
+			
 		]
 	}
 }
+

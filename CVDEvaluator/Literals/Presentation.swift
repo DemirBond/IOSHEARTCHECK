@@ -72,7 +72,7 @@ struct Presentation {
 	//
 	static let bio = 			"#id:bio |      #title:Bio |  #type:#disclosureVieved | #mandatory: 1"
 	static let symptoms = 	"#id:symptoms|  #title:Symptoms|  #type:#disclosureVieved"
-	static let reviewOfSystem = 	"#id:reviewOfSystem|  #title:Review of Systems|  #type:#disclosureVieved"
+	static let reviewOfSystem = 	"#id:reviewOfSystem|  #title:Other History|  #type:#disclosureVieved"
 	static let physicalExam = "#id:currentPastCVProfile| #title:Physical Exam| #type:#disclosureVieved"
 	static let cvProfile = 	"#id:cvProfile| #title:Cardiovascular| #type:#disclosureVieved"
 	static let pulmonary = 	"#id:pulmonary| #title:Pulmonary| #type:#disclosureVieved"
@@ -104,11 +104,11 @@ struct Presentation {
 	static let weight = 		"#id:txtWeight|    #title:Weight|    #type:#integerLeft|   #min:40|  #max:400"
 	static let heartRate = 	"#id:txtHR| #title:Heart Rate| #type:#integerLeft| #min:30|  #max:300"
 	
-	static let bioSBP = 		"#id:sbp|       #title:SBP|  #type:#sbpExpandable| #min:60|  #max:300| #mandatory: 1"
+	static let bioSBP = 		"#id:txtSBP|       #title:SBP|  #type:#sbpExpandable| #min:60|  #max:300| #mandatory: 1"
 	static let bioSBPNumber130 = "#id:txtNumberSBP | #title:How many times |#type:#integerRight | #min:1 | #max:20 | #placeholder: jt | #dependsOn: bioSBP| #dependMin: 60| #dependMax: 300"
 	static let bioSBPNumber90 = "#id:txtDurationSBP | #title:How many minutes |#type:#integerRight | #min:1 | #max:20 | #placeholder: jt | #dependsOn: bioSBP| #dependMin: 60| #dependMax: 300"
 	
-	static let bioDBP = 		"#id:dbp|       #title:DBP|  #type:#dbpExpandable| #min:30|  #max:160| #mandatory: 1"
+	static let bioDBP = 		"#id:txtDBP|       #title:DBP|  #type:#dbpExpandable| #min:30|  #max:160| #mandatory: 1"
 	static let bioDBPNumber80 = "#id:txtNumberDBP | #title:How many times |#type:#integerRight | #min:1 | #max:20 | #placeholder: jt | #dependsOn: bioDBP| #dependMin: 30| #dependMax: 160"
 	
 	static let bioOrthostaticSBP = 		"#id:OrthostaticSBP|       #title:Orthostatic SBP|  #type:#decimalLeft| #min:0|  #max:240"
@@ -135,11 +135,13 @@ struct Presentation {
 	static let chestPain = "#id: chkCP | #title: Chest Pain | #type: #disclosureControl"
 	static let syncope = "#id: chkTestSyncope | #title: Presyncope / Syncope / Seizure | #type: #disclosureControl"
 	//static let edemaInSymptoms = "#id:secedema | #title:Edema | #type:#disclosureControl"
-	static let weakness = "id:chkmalaise | #title:Weakness | #type:#disclosureControlExpandable"
+	static let weakness = "id:chkmalaise | #title:Weakness, Malaise, Fatigue | #type:#check"
+	//OLD CODE PHILL = 3/23/2020
+	//static let weakness = "id:chkmalaise | #title:Weakness, Malaise, Fatigue | #type:#disclosureControlExpandable"
 
 	
 	static let palpitationsInSymptoms = "#id:chkp| #title:Palpitations| #type:#disclosureControl"
-	static let abdominalPain = "#id:chkplaceholderone | #title:Abdominal Pain | #type:#disclosureControl"
+	static let abdominalPain = "#id:chkplaceholderone | #title:GI symptoms | #type:#disclosureControl"
 	static let shock = "#id:chkss | #title:Shock | #type:#disclosureControl"
 	
 	// Symptoms -> Dyspnea: https://zpl.io/Z1jN2eH
@@ -379,7 +381,9 @@ struct Presentation {
 	
 	// Symptoms ->Abdominal Pain -> Associated Symptoms
 	static let associatedSymptomsAbdominalPainLabel = "#type:#label | #title: Associated Findings | #id: associatedSymptomsAbdominalPain"
-	static let vomitingSymptoms = "#id:chkvomiting | #title:Vomiting | #type:#disclosureControl"
+	//Old code Phillip 3/24/20
+	//static let vomitingSymptoms = "#id:chkvomiting | #title:Vomiting | #type:#disclosureControl"
+	static let vomitingSymptoms = "#id:chkvomiting | #title:Vomiting | #type:#check"
 	static let anorexiaSymptoms = "#id:chkanorexia | #title:Anorexia | #type:#check"
 	static let bowelHabitSymptoms = "#id:chkbowel | #title:Change in bowel habit | #type:#check"
 	static let operativeSymptoms = "#id:chkpostoperative | #title:Post operative status | #type:#check"
@@ -425,7 +429,16 @@ struct Presentation {
 	static let previousDVTEInROS = "id:chkDVTE| #title: Previous DVT| #type:#check"
 	static let rheumInROS = "#id:chkrheum | #title:Rheumatic Disease | #type:#check"
 	
-	
+	// Other
+	static let otherImmune = "id:chkimmuncom | #title: Other Immunocomprimised State | #type:#check"
+	static let socialHistoryLabel = "#id:socialHistoryLabel | #title:Social History | #type:#label"
+	static let familyHistoryLabel = "#id:familyHistoryLabel | #title:Family History | #type:#label"
+	static let famFirstPremature = "#id:chkFamily | #title:First-degree relative with known premature (men aged <55 years; women <60 years) coronary or vascular disease | #type:#check"
+	static let famFirstRelLDLCAbove95 = "#id:chkFamily | #title:First-degree relative with known LDL-C above the 95th percentile | #type:#check"
+	static let famXan = "#id:chkFamily | #title:First-degree relative with tendinous xanthomata and/or arcus cornealis, or children aged <18 years with LDL-C above the 95th percentile | #type:#check"
+	static let covidEx = "id:covidExLabel | #title: COVID-19 EXPOSURE | #type:#label"
+	static let covidTravel = "id:chktravel | #title: Close contact within 14 days of symptom onset | #type:#check"
+	static let covidExposure = "id:chkexposure | #title: Travel from affected geographic areas within 14 days of symptom onset | #type:#check"
 	//
 	// MARK: - Physical Exam https://zpl.io/29sOGH
 	//	static let typePalpitationsLabel = "#id: typePalpitations | #title:Type | #type:#label"
@@ -935,10 +948,10 @@ struct Presentation {
 	//
 	// MARK: - Major CV Risk Factors https://zpl.io/1OuArq
 	//
-	static let diabetes = "#id:diabetes | #title:Diabetes | #type:#disclosureControl"
+	static let diabetes = "#id:diabetes | #title:Diabetes | #type:#disclosureVieved"
 	static let systemicArterialHypertension = "#id:chkSAH | #title:Systemic Arterial Hypertension | #type:#disclosureControl" // WithCheck"
 	static let tobaccoUse = "#id:chkSmoke | #title:Tobacco Use | #type:#check"
-	static let familyHistory = "#id:chkFamily | #title:Family History | #type:#check"
+	static let familyHistory = "#id:chkFamily | #title:Family History | #type:#disclosureControl"
 	
 	// Major CV Risk Factors -> Diabetes https://zpl.io/2lz31S
 	static let typeIIDM = "#id:chkDM | #title:Type II DM | #type:#disclosureControl"
@@ -1264,12 +1277,15 @@ struct Presentation {
 	static let ivAntihypertensive = "#id:chkIVHT | #title:IV Antihypertensive | #type:#disclosureControl"
 	static let ivVasoactive = "#id:chkIVVA | #title:IV Vasoactive | #type:#disclosureControl"
 	static let ivDiuretic = "#id:chkIVDI | #title:IV Diuretic | #type:#disclosureControl"
-	static let mechanicalVentiallationOrNIPPV = "#id:chkNIPPV | #title:Mechanical Ventiallation or NIPPV | #type:#disclosureControl"
-	static let o2Supplement = "#id:txtOsupp | #title:O₂ Supplement % / | #type:#check | #type:#integerRight | #min:23 | #max:100 | #placeholder: Value"
+	static let mechanicalVentiallationOrNIPPV = "#id:chkNIPPV | #title:Respiratory Interventions | #type:#disclosureControl"
+	static let o2Supplement = "#id:txtOsupp | #title:FiO2 / | #type:#check | #type:#integerRight | #min:23 | #max:100 | #placeholder: Value"
 	static let ivVasopressors = "#id:chkVAD | #title:IV Vasopressors | #type:#check"
 	static let ultrafiltration = "#id:chkult | #title:Ultrafiltration | #type:#check"
 	static let iabp = "#id:chkIABP | #title:IABP | #type:#check"
 	static let temporaryPM = "#id:chkTPM | #title:Temporary PM | #type:#check"
+	
+	static let cpap1 = "#id:txtCPAP | #title:CPAP cm H20 | #type:#integerRight | #min:1 | #max:100 | #placeholder: Value"
+	static let peep1 = "#id:txtPEEP | #title:PEEP cm H20 | #type:#integerRight | #min:1 | #max:100 | #placeholder: Value"
 	
 	// HSR -> In Hospital -> IV Antiarrythmic https://zpl.io/2f248Q
 	static let continuousInAntiarrythmic = "#id:chkAAcon | #title:Continuous | #type:#check"

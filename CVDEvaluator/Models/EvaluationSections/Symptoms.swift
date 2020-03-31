@@ -18,7 +18,7 @@ class Symptoms: EvaluationItem {
 	var syncope = Syncope(literal: Presentation.syncope)
 	
 //	let edema = EdemaInSymptoms(literal: Presentation.edemaInSymptoms )
-	let weakness  = Weakness(literal: Presentation.weakness )
+	let weakness  = Weakness(literal: Presentation.weakness)
 	let palpitations = Palpitations(literal: Presentation.palpitationsInSymptoms)
 	let abdominalPain  = AbdominalPain(literal: Presentation.abdominalPain )
 	let shock = ShockInSymptoms(literal: Presentation.shock )

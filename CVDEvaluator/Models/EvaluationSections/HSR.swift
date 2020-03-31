@@ -177,7 +177,6 @@ class InHospital: EvaluationItem {
 	let ivVasoactive = IVVasoactive(literal: Presentation.ivVasoactive)
 	let ivDiuretic = IVDiuretic(literal: Presentation.ivDiuretic)
 	let mechanicalVentiallationOrNIPPV = MechanicalVentiallationOrNIPPV(literal: Presentation.mechanicalVentiallationOrNIPPV)
-	let o2Supplement = EvaluationItem(literal: Presentation.o2Supplement)
 	let ivVasopressors = EvaluationItem(literal: Presentation.ivVasopressors)
 	let ultrafiltration = EvaluationItem(literal: Presentation.ultrafiltration)
 	let iabp = EvaluationItem(literal: Presentation.iabp)
@@ -192,7 +191,6 @@ class InHospital: EvaluationItem {
 			ivVasoactive,
 			ivDiuretic,
 			mechanicalVentiallationOrNIPPV,
-			o2Supplement,
 			ivVasopressors,
 			ultrafiltration,
 			iabp,
@@ -200,6 +198,7 @@ class InHospital: EvaluationItem {
 		]
 	}
 }
+
 
 
 // MARK: - HSR -> InHospital -> IV Antiarrythmic
@@ -293,8 +292,11 @@ class IVDiuretic: EvaluationItem {
 class MechanicalVentiallationOrNIPPV: EvaluationItem {
 	
 	let txtRI = EvaluationItem(literal: Presentation.txtRI)
+	let o2Supplement = EvaluationItem(literal: Presentation.o2Supplement)
+	let cpap = EvaluationItem(literal: Presentation.cpap1)
+	let peep = EvaluationItem(literal: Presentation.peep1)
 	
 	override var items: [EvaluationItem] {
-		return [txtRI]
+		return [txtRI, o2Supplement, cpap, peep]
 	}
 }
