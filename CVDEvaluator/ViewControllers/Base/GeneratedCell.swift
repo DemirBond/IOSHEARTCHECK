@@ -312,7 +312,9 @@ class GeneratedCell: UITableViewCell, UITextFieldDelegate, KBNumberPadDelegate {
 				subTextFieldOne?.text = subCellModelOne?.storedValue?.value
 				subTextFieldTwo?.text = subCellModelTwo?.storedValue?.value
 				subTextFieldThree?.text = subCellModelThree?.storedValue?.value
+				cellModel.isExpanded = true
 			} else {
+				cellModel.isExpanded = false
 				subCellModelOne = EvaluationItem(literal: Presentation.urineNaMeql)
 				subCellModelTwo = EvaluationItem(literal: Presentation.urineOsmolality)
 				subCellModelThree = EvaluationItem(literal: Presentation.serumOsmolality)
@@ -815,6 +817,32 @@ class SBPCellExpandable: GeneratedCell {
 	override func setupCell() {
 		super.setupCell()
 		
+		if let sbpNumberItem = DataManager.manager.evaluation?.bio.sbp.sbp130 {
+			if(sbpNumberItem.storedValue?.value != nil ) {
+				subCellSbpModel130 = sbpNumberItem
+				if let index = cellModel.subItems.firstIndex(where: {
+					$0.identifier == "txtNumberSBP" })
+				{
+					cellModel.subItems[index] = (sbpNumberItem)
+				} else {
+					cellModel.subItems.append(sbpNumberItem)
+				}
+			}
+		}
+		
+		if let sbpDurationItem = DataManager.manager.evaluation?.bio.sbp.sbp90{
+			if(sbpDurationItem.storedValue?.value != nil ) {
+			subCellSbpModel90 = sbpDurationItem
+				if let index = cellModel.subItems.firstIndex(where: {
+					$0.identifier == "txtDurationSBP" })
+				{
+					cellModel.subItems[index] = (sbpDurationItem)
+				} else {
+					cellModel.subItems.append(sbpDurationItem)
+				}
+			}
+		}
+		
 		let theitems = cellModel.subItems
 		
 		// get back old value
@@ -839,15 +867,18 @@ class SBPCellExpandable: GeneratedCell {
 				sbpInfoLabel?.text = "Value is greater than 130. Please give additional details."
 				sbpSubLabel?.text = subCellSbpModel130?.title
 				sbpSubTextField?.text = subCellSbpModel130?.storedValue?.value
+				cellModel.isExpanded = true
 			} else if value < 90 {
 				sbpInfoLabel?.text = "Value is less than 90. Please give additional details."
 				sbpSubLabel?.text = subCellSbpModel90?.title
 				sbpSubTextField?.text = subCellSbpModel90?.storedValue?.value
+				cellModel.isExpanded = true
 			} else {
 				subCellSbpModel130 = EvaluationItem(literal: Presentation.bioSBPNumber130)
 				subCellSbpModel90 = EvaluationItem(literal: Presentation.bioSBPNumber90)
 				sbpSubTextField?.text = nil
 				self.cellModel.subItems = [EvaluationItem]()
+				cellModel.isExpanded = false
 			}
 			sbpSubTextField.textColor = CVDStyle.style.rightFieldColor
 		} else {
@@ -855,6 +886,7 @@ class SBPCellExpandable: GeneratedCell {
 			subCellSbpModel90 = EvaluationItem(literal: Presentation.bioSBPNumber90)
 			sbpSubTextField?.text = nil
 			self.cellModel.subItems = [EvaluationItem]()
+			cellModel.isExpanded = false
 		}
 		
 		updateCell(model: self.cellModel)
@@ -911,7 +943,6 @@ class SBPCellExpandable: GeneratedCell {
 					subCellSbpModel90?.storedValue?.value = subStrInput
 					subFields.append(subCellSbpModel90!)
 				}
-				
 				self.cellModel.subItems = subFields
 			}
 			
@@ -929,6 +960,19 @@ class SBPCellExpandable: GeneratedCell {
 			do {
 				try cellModel.storedValue?.validateInput(inputText: strInput!)
 				self.cellModel.storedValue?.value = strInput!.count > 0 ? strInput : nil
+				
+				if let valueAsString = cellModel.storedValue?.value {
+					let value = Int(valueAsString) ?? 0
+					if ( value >= 90 && value <= 130) {
+						subCellSbpModel90?.storedValue?.value = nil
+						subCellSbpModel130?.storedValue?.value = nil
+					} else if (value > 130){
+						subCellSbpModel90?.storedValue?.value = nil
+					} else if (value < 90){
+						subCellSbpModel130?.storedValue?.value = nil
+					}
+				}
+				
 			} catch InputError.incorrectInput {
 				markInvalidInput()
 				self.delegate?.evaluationValueDidNotValidate(model: cellModel,
@@ -968,6 +1012,18 @@ class DBPCellExpandable: GeneratedCell {
 	override func setupCell() {
 		super.setupCell()
 		
+		if let dbpNumberItem = DataManager.manager.evaluation?.bio.dbp.dbp90 {
+			subCellDbpModel80 = dbpNumberItem
+			
+			if let index = cellModel.subItems.firstIndex(where: {
+				$0.identifier == "txtNumberDBP" })
+			{
+				cellModel.subItems[index] = dbpNumberItem
+			} else {
+				cellModel.subItems.append(dbpNumberItem)
+			}
+		}
+		
 		let theitems = cellModel.subItems
 		
 		// get back old value
@@ -984,10 +1040,12 @@ class DBPCellExpandable: GeneratedCell {
 			dbpSubLabel?.text = subCellDbpModel80?.title
 			dbpInfoLabel?.text = "Value is greater than 80. Please give additional details"
 			dbpSubTextField.text = subCellDbpModel80?.storedValue?.value
+			cellModel.isExpanded = true
 		} else {
 			subCellDbpModel80 = EvaluationItem(literal: Presentation.bioDBPNumber80)
 			self.cellModel.subItems = [EvaluationItem]()
 			dbpSubTextField.text = nil
+			cellModel.isExpanded = false
 		}
 		
 		updateCell(model: self.cellModel)
@@ -1049,6 +1107,13 @@ class DBPCellExpandable: GeneratedCell {
 			do {
 				try cellModel.storedValue?.validateInput(inputText: strInput!)
 				self.cellModel.storedValue?.value = strInput!.count > 0 ? strInput : nil
+				
+				if let value = cellModel.storedValue?.value {
+					if (Int(value) ?? 0 <= 80) {
+						subCellDbpModel80?.storedValue?.value = nil
+					}
+				}
+				
 			} catch InputError.incorrectInput {
 				markInvalidInput()
 				self.delegate?.evaluationValueDidNotValidate(model: cellModel,
