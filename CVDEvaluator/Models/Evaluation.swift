@@ -89,6 +89,7 @@ class Evaluation: EvaluationItem {
 	let nsr = HSR(literal: Presentation.hsr)
 	let heartSpecialistManagement = HeartSpecialistManagement(literal: Presentation.heartSpecialistManagement)
 	let outputInMain = Output(literal: Presentation.outputInMain)
+	let diabetes = Diabetes(literal: Presentation.diabetes)
 	
 	override var items: [EvaluationItem] {
 		return [
@@ -99,7 +100,8 @@ class Evaluation: EvaluationItem {
 			cvProfile,
 			pulmonary,
 			renal,
-			riskFactors,
+			//riskFactors,
+			diabetes,
 			surgicalRisk,
 			laboratories,
 			diagnostics,
