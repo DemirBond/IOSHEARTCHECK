@@ -34,6 +34,7 @@ struct EvaluationRequest{
 	func toDictionary() -> Dictionary<String, AnyObject> {
 		var dict = ["age": age as AnyObject, "isPAH": isPAH as AnyObject, "gender": gender as AnyObject, "SBP": SBP as AnyObject, "DBP": DBP as AnyObject, "forHF" : "false" as AnyObject, "inputs": inputs as AnyObject]
 		
+<<<<<<< HEAD
 		if SBP > 130 && txtNumberSBP != nil {
 			dict["E"] = txtNumberSBP! as AnyObject
 			
@@ -44,6 +45,17 @@ struct EvaluationRequest{
 		if DBP > 80 && txtNumberDBP != nil {
 			dict["txtNumberDBP"] = txtNumberDBP! as AnyObject
 		}
+=======
+//		if SBP > 130 && txtNumberSBP != nil {
+//			dict["txtNumberSBP"] = txtNumberSBP! as AnyObject
+//		} else if SBP < 90 && txtDurationSBP != nil {
+//			dict["txtDurationSBP"] = txtDurationSBP! as AnyObject
+//		}
+//
+//		if DBP > 80 && txtNumberDBP != nil {
+//			dict["txtNumberDBP"] = txtNumberDBP! as AnyObject
+//		}
+>>>>>>> be564e441e4c31cbc3a45e2ac065952cbec7b412
 		
 		if (isSave) {
 			dict["name"] = name as AnyObject
