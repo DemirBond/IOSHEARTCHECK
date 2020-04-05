@@ -35,7 +35,8 @@ struct EvaluationRequest{
 		var dict = ["age": age as AnyObject, "isPAH": isPAH as AnyObject, "gender": gender as AnyObject, "SBP": SBP as AnyObject, "DBP": DBP as AnyObject, "forHF" : "false" as AnyObject, "inputs": inputs as AnyObject]
 		
 		if SBP > 130 && txtNumberSBP != nil {
-			dict["txtNumberSBP"] = txtNumberSBP! as AnyObject
+			dict["E"] = txtNumberSBP! as AnyObject
+			
 		} else if SBP < 90 && txtDurationSBP != nil {
 			dict["txtDurationSBP"] = txtDurationSBP! as AnyObject
 		}

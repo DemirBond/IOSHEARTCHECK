@@ -699,6 +699,8 @@ class DataManager {
 			parameters["sbp"] = responseJson["SBP"].intValue
 			parameters["dbp"] = responseJson["DBP"].intValue
 			
+			
+			
 			let rest = responseJson["rest"].stringValue
 			if rest.isEmpty {
 				let error = NSError(domain: "Empty Evaluation", code: 501, userInfo: ["message" : ""])
@@ -943,6 +945,17 @@ class DataManager {
 		if DataManager.manager.evaluation!.bio.heartRate.storedValue?.value != nil {
 			result = result + "|HR=" + (DataManager.manager.evaluation!.bio.heartRate.storedValue?.value)!
 		}
+		
+		if DataManager.manager.evaluation!.bio.sbp.sbp130.storedValue?.value != nil {
+			print("HEY HEY THIS ISNT NIL")
+			//result = result + "|HR=" + (DataManager.manager.evaluation!.bio.heartRate.storedValue?.value)!
+		}
+		
+		if DataManager.manager.evaluation!.bio.sbp.storedValue?.value != nil {
+			print("HEY HEY THIS ISNT NIL2")
+			//result = result + "|HR=" + (DataManager.manager.evaluation!.bio.heartRate.storedValue?.value)!
+		}
+
 		
 		for s in inputsStrings {
 			if s != "" {

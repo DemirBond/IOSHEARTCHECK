@@ -102,8 +102,9 @@ class Nameql: EvaluationItem {
 	override var items: [EvaluationItem] {
 		return [
 			urineNaMeql,
-			serumOsmolality,
-			urineOsmolality
+			urineOsmolality,
+			serumOsmolality
+			
 		]
 	}
 }

@@ -1126,7 +1126,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Demir Bay (34A2LRNN4X)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = CSVYPS8926;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1156,7 +1156,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Demir Bay (34A2LRNN4X)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = CSVYPS8926;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
