@@ -14,6 +14,7 @@ import UIKit
 class CVProfile: EvaluationItem {
 	
 	let coronaryHeartDisease = CoronaryHeartDisease(literal: Presentation.coronaryHeartDisease)
+	let systemicArterialHypertension = SystemicArterialHypertension(literal: Presentation.systemicArterialHypertension)
 	let heartFailure = HeartFailure(literal: Presentation.heartFailure)
 	let atrialFibrillation = AtrialFibrilation(literal: Presentation.atrialFibrillation)
 	let thromboembolicVKA = ThromboembolicVKA(literal: Presentation.thromboembolicVKA)
@@ -26,6 +27,7 @@ class CVProfile: EvaluationItem {
 	override var items: [EvaluationItem] {
 		return [
 			coronaryHeartDisease,
+			systemicArterialHypertension,
 			heartFailure,
 			atrialFibrillation,
 			thromboembolicVKA,

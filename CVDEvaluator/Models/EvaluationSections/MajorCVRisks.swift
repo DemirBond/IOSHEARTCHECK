@@ -165,6 +165,7 @@ class SystemicArterialHypertension: EvaluationItem {
 	let headachedBlurredVisionOrAMS = EvaluationItem(literal: Presentation.headachedBlurredVisionAMS)
 	let epistaxis = EvaluationItem(literal: Presentation.epistaxis)
 	let chestBackPainDyspnea = EvaluationItem(literal: Presentation.chestBackPainDyspnea)
+	let blurredV = EvaluationItem(literal: Presentation.blurredVision)
 	
 	override var items: [EvaluationItem] {
 		return [
@@ -179,9 +180,10 @@ class SystemicArterialHypertension: EvaluationItem {
 			pheocromocytoma,
 			osa,
 			secondaryHypertensionLabel,
+			chestBackPainDyspnea,
 			headachedBlurredVisionOrAMS,
+			blurredV,
 			epistaxis,
-			chestBackPainDyspnea
 		]
 	}
 }

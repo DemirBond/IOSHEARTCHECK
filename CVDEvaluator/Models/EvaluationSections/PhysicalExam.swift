@@ -68,6 +68,8 @@ class PhysicalExam: EvaluationItem {
 	override var items: [EvaluationItem] {
 		return [
 			// Neck Group
+			differenceinSBPInPhysicalExam,
+			
 			neckLabel,
 			neckveins,
 			jugularVenousDistentionInPhysicalExam,
@@ -125,7 +127,7 @@ class PhysicalExam: EvaluationItem {
 			
 			
 			// Extra
-			differenceinSBPInPhysicalExam,
+			
 		
 		]
 	}
@@ -297,8 +299,8 @@ class HeartMurmurInPhysicalExam: EvaluationItem {
 				
 				seperator,
 				
-				diffusePain,
-				localizedPain
+//				diffusePain,
+//				localizedPain
 				
 			]
 		}

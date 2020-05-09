@@ -178,13 +178,14 @@ class ChestPain: EvaluationItem {
 	
 	override var items: [EvaluationItem] {
 		return [
+			emergencyRoom,
 			pleaseSelectOneLabel,
 			
 			typicalAnginaNew,
 			probableAngina,
 			undeterminedCP,
 			separator1,
-			emergencyRoom,
+			
 			unableToExercise
 		]
 	}
@@ -201,7 +202,7 @@ class EmergencyRoomInChestPain: EvaluationItem {
 	let positiveTroponin = PositiveTroponin(literal: Presentation.positiveTroponin)
 	
 	override var items: [EvaluationItem] {
-		return [more2TypicalOrProbableAngina, typicalOrProbableAnginaMore20Min, ASAUseInPast1Week, positiveTroponin]
+		return [more2TypicalOrProbableAngina, typicalOrProbableAnginaMore20Min, ASAUseInPast1Week]
 	}
 }
 
@@ -885,6 +886,9 @@ class AbdominalPain: EvaluationItem {
 	let achingQualityAbdominalPain = EvaluationItem(literal: Presentation.achingQualityAbdominalPain)
 	
 	//
+	let diffusePain = EvaluationItem(literal: Presentation.diffusePain)
+	let localizedPain = EvaluationItem(literal: Presentation.localizedPain)
+	
 	let locationAbdominalPainLabel = EvaluationItem(literal: Presentation.locationAbdominalPainLabel)
 	let periumbilicalLocationAbdominalPain = EvaluationItem(literal: Presentation.periumbilicalLocationAbdominalPain)
 	let epigastricFindAbdominalPain = EvaluationItem(literal: Presentation.epigastricFindAbdominalPain)
@@ -924,6 +928,8 @@ class AbdominalPain: EvaluationItem {
 		   colickyQualityAbdominalPain,
 		   achingQualityAbdominalPain,
 		   locationAbdominalPainLabel,
+			diffusePain,
+			localizedPain,
 			periumbilicalLocationAbdominalPain,
 			epigastricFindAbdominalPain,
 			suprapubicEdemaLocationAbdominalPain,

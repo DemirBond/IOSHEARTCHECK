@@ -947,7 +947,6 @@ class DataManager {
 			result = result + "|HR=" + (DataManager.manager.evaluation!.bio.heartRate.storedValue?.value)!
 		}
 		
-<<<<<<< HEAD
 		if DataManager.manager.evaluation!.bio.sbp.sbp130.storedValue?.value != nil {
 			print("HEY HEY THIS ISNT NIL")
 			//result = result + "|HR=" + (DataManager.manager.evaluation!.bio.heartRate.storedValue?.value)!
@@ -958,7 +957,7 @@ class DataManager {
 			//result = result + "|HR=" + (DataManager.manager.evaluation!.bio.heartRate.storedValue?.value)!
 		}
 
-=======
+
 		if let evaluationItem = DataManager.manager.evaluation {
 			let spbItems = evaluationItem.bio.sbp.subItems
 
@@ -978,7 +977,7 @@ class DataManager {
 
 		}
 		
->>>>>>> be564e441e4c31cbc3a45e2ac065952cbec7b412
+
 		
 		for s in inputsStrings {
 			if s != "" {

@@ -32,8 +32,11 @@ class ReviewOfSystem: EvaluationItem {
 	let orthopnea = EvaluationItem(literal: Presentation.orthopneaInROS)
 	let previousDVT = EvaluationItem(literal: Presentation.previousDVTEInROS)
 	let otherImmune = EvaluationItem(literal: Presentation.otherImmune)
+	
 	let socialHisLabel = EvaluationItem(literal: Presentation.socialHistoryLabel)
 	let tobaccoUse = EvaluationItem(literal: Presentation.tobaccoUse)
+	let alcoholUses = AlcoholUses(literal: Presentation.alcoholCV)
+	
 	let famHisLabel = EvaluationItem(literal: Presentation.familyHistoryLabel)
 	let familyHistory = FamilyHistory(literal: Presentation.familyHistory)
 	
@@ -41,6 +44,7 @@ class ReviewOfSystem: EvaluationItem {
 	let covTravel = EvaluationItem(literal: Presentation.covidTravel)
 	let covExposure = EvaluationItem(literal: Presentation.covidExposure)
 	
+	let blnactivecancer = EvaluationItem(literal: Presentation.blnactivecancer)
 	override var items: [EvaluationItem] {
 		return [
 			weightChangeInROS,
@@ -64,10 +68,12 @@ class ReviewOfSystem: EvaluationItem {
 			blnunilateral,
 			previousDVT,
 			rheumInROS,
+			blnactivecancer,
 			otherImmune,
 			
 			socialHisLabel,
 			tobaccoUse,
+			alcoholUses,
 			
 			famHisLabel,
 			familyHistory,
@@ -97,3 +103,14 @@ class FamilyHistory: EvaluationItem {
 	}
 }
 
+
+class AlcoholUses: EvaluationItem {
+	
+	let alcoholHeavy = EvaluationItem(literal: Presentation.alcoholHeavy)
+
+	override var items: [EvaluationItem] {
+		return [
+			alcoholHeavy,
+		]
+	}
+}

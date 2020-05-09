@@ -72,9 +72,10 @@ class BioPersonal: EvaluationItem {
 			temp,
 			repRate,
 			weight,
-			heartRate,
+			
 			sbp,
 			dbp,
+			heartRate,
 			bioOrthostaticSBP,
 			bioOrthostaticSymptoms,
 			bioWaistCirc,

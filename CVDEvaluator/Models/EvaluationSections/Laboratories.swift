@@ -23,6 +23,11 @@ class Laboratories: EvaluationItem {
 	let inr = EvaluationItem(literal: Presentation.inr)
 	let gfrMlMin173M2 = EvaluationItem(literal: Presentation.gfrMlMin173M2)
 	let hemoglobin = EvaluationItem(literal: Presentation.hemoglobin)
+	
+	let hemaLabel = EvaluationItem(literal: Presentation.hemaTitle)
+	let hemaPlate = EvaluationItem(literal: Presentation.hemaPlatelet)
+	let hemaTrans = EvaluationItem(literal: Presentation.hemaTransferrin)
+	
 	let worseningRenalFx = EvaluationItem(literal: Presentation.worseningRenalFx)
 	
 	let lipidProfileLabel = EvaluationItem(literal: Presentation.lipidProfileLabel)
@@ -45,7 +50,9 @@ class Laboratories: EvaluationItem {
 	let bnpPgMl = EvaluationItem(literal: Presentation.bnpPgMl)
 	let albuminuriaMgGmOrMg24hr = EvaluationItem(literal: Presentation.albuminuriaMgGmOrMg24hr)
 	let abnormalurinsediment = AbnormalUrinSediment(literal: Presentation.abnormalurinsediment)
+	let ldlMutationCheck1 = EvaluationItem(literal: Presentation.ldlMutationCheck)
 	
+	let positiveTroponin = PositiveTroponin(literal: Presentation.positiveTroponin)
 	// nameql options
 //	let naOptionUrine = EvaluationItem(literal: Presentation.naOptionUrine)
 //	let naOptionSerumOsmolality = EvaluationItem(literal: Presentation.naOptionSerumOsmolality)
@@ -59,14 +66,24 @@ class Laboratories: EvaluationItem {
 			kmeql,
 			creatinineMgDl,
 			bunMgDl,
+			fastingPlasmaGlucose,
+			hba1c,
 			alt,
 		  	ast,
-			inr,
+			//inr,
 			gfrMlMin173M2,
-			hemoglobin,
+			//hemoglobin,
 			//worseningRenalFx,
 			
+			hemaLabel,
+			inr,
+			hemoglobin,
+			hemaPlate,
+			hemaTrans,
+			
 			lipidProfileLabel,
+			ascvdRisk,
+			alreadyOnStatin,
 			statinIntolerance,
 			cholesterol,
 			trg,
@@ -75,12 +92,10 @@ class Laboratories: EvaluationItem {
 			apoB,
 			ldlp,
 			lpaMgdl,
-			alreadyOnStatin,
-			ascvdRisk,
+			ldlMutationCheck1,
 			
 			othersLabel,
-			fastingPlasmaGlucose,
-			hba1c,
+			positiveTroponin,
 			crpMgl,
 			ntProBNPPgMl,
 			bnpPgMl,

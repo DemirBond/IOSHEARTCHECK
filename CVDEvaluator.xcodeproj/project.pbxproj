@@ -1126,7 +1126,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Demir Bay (34A2LRNN4X)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CSVYPS8926;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1138,7 +1138,7 @@
 				INFOPLIST_FILE = CVDEvaluator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.medicalsoftware.HeartCheck;
 				PRODUCT_NAME = "Heart Check";
 				PROVISIONING_PROFILE = "";
@@ -1156,7 +1156,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Demir Bay (34A2LRNN4X)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CSVYPS8926;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1168,7 +1168,7 @@
 				INFOPLIST_FILE = CVDEvaluator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.medicalsoftware.HeartCheck;
 				PRODUCT_NAME = "Heart Check";
 				PROVISIONING_PROFILE = "";
