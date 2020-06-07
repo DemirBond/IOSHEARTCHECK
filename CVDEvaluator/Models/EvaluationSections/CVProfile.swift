@@ -983,12 +983,16 @@ class AbdomialAoritcAneurysm: EvaluationItem {
 	let aaDiameteMore5cm = EvaluationItem(literal: Presentation.aaDiameteMore5cm)
 	let thoracic = EvaluationItem(literal: Presentation.thoracic)
 	let thoracoabdominal = EvaluationItem(literal: Presentation.thoracoabdominal)
+	let thoracicRuptured = EvaluationItem(literal: Presentation.thoracicRuptured)
+	let thoracicEmbolismAndThrombosis = EvaluationItem(literal: Presentation.thoracicEmbolismAndThrombosis)
 	
 	override var items: [EvaluationItem] {
 		return [
 			aaDiameteMore5cm,
 			thoracic,
-			thoracoabdominal
+			thoracicRuptured,
+			thoracoabdominal,
+			thoracicEmbolismAndThrombosis
 		]
 	}
 }

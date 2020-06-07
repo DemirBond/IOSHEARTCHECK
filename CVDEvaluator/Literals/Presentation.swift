@@ -909,6 +909,8 @@ struct Presentation {
 	static let thoracic = "#id:chkthoracic| #title:Thoracic aortic aneurysm | #type:#check"
 	static let thoracoabdominal = "#id:chkthoracoabdominal| #title:Thoracoabdominal aortic aneurysm | #type:#check"
 	
+	static let thoracicRuptured = "#id:chkrupthoracic| #title:Thoracic aortic aneurysm, ruptured | #type:#check"
+	static let thoracicEmbolismAndThrombosis = "#id:chkTAemb| #title:Embolism and thrombosis of thoracic aorta | #type:#check"
 	
 	//
 	// MARK: - Pulmonary
