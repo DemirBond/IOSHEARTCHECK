@@ -34,6 +34,8 @@ class POMeds: EvaluationItem {
 	let currentVKATherapy = EvaluationItem(literal: Presentation.currentVKATherapy)
 	let directThrombinInhibitors = EvaluationItem(literal: Presentation.directThrombinInhibitors)
 	let factorXaInhibitors = EvaluationItem(literal: Presentation.factorXaInhibitors)
+	let immunosuppressives = EvaluationItem(literal: Presentation.immunosuppressives)
+	
 	
 	override var items: [EvaluationItem] {
 		return [
@@ -44,7 +46,8 @@ class POMeds: EvaluationItem {
 			vasodilator,
 			currentVKATherapy,
 			directThrombinInhibitors,
-			factorXaInhibitors
+			factorXaInhibitors,
+			immunosuppressives
 		]
 	}
 }

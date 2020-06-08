@@ -75,13 +75,10 @@ class GeneratedCell: UITableViewCell, UITextFieldDelegate, KBNumberPadDelegate {
 	var subCellDbpModel80:EvaluationItem?
 	
 	var subCellModelOne:EvaluationItem?
-	
-	
 	var subCellModelTwo:EvaluationItem?
-	
-	
 	var subCellModelThree:EvaluationItem?
 
+	
 	/*
 	var isCheckedButtonSubOne: Bool {
 		get {

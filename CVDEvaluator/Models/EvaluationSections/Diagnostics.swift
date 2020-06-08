@@ -230,7 +230,7 @@ class StressTesting: EvaluationItem {
 	let dseIschemicThreshold = EvaluationItem(literal: Presentation.dseIschemicThreshold)
 	let dseOrStressMRI = EvaluationItem(literal: Presentation.dseOrStressMRI)
 	let artifactualUninterpretableImages = EvaluationItem(literal: Presentation.artifactualUninterpretableImages)
-	let akineticDyskineticWMA = EvaluationItem(literal: Presentation.akineticDyskineticWMA)
+	let akineticDyskineticWMA = SectionAkineticDiskineticWMA(literal: Presentation.akineticDyskineticWMA)
 	
 	let titleNuclearImaging = EvaluationItem(literal: Presentation.stTitleNuclearImaging)
 	let titleDobutaminStress = EvaluationItem(literal: Presentation.stTItleDobutaminStressEcho)
@@ -268,6 +268,13 @@ class StressTesting: EvaluationItem {
 	}
 }
 
+
+class SectionAkineticDiskineticWMA: EvaluationItem {
+	let viabilityPresent = EvaluationItem(literal: Presentation.akineticDiskineticViabilityPresent)
+	override var items: [EvaluationItem] {
+		return [viabilityPresent]
+	}
+}
 
 // MARK: - Diagnostics -> Stress Testing -> AnginaIndex
 

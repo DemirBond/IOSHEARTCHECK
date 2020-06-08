@@ -94,14 +94,14 @@ struct Presentation {
 	
 	//static let name = 		"#id:name|      #title:Name|      #type:#textLeft | #maxLength: 50 | #mandatory: 1"
 	static let name = 		"#id:name|      #title:Patient ID|      #type:#textLeft | #maxLength: 50 | #mandatory: 1"
-	static let temp = "#id:txttemp |      #title:Temp|  #type:#integerLeft| #min:0|  #max:200| #placeholder:   | mandatory: 0"
+	static let temp = "#id:txttemp |      #title:Temp/C|  #type:#integerLeft| #min:0|  #max:200| #placeholder:   | mandatory: 0"
 	static let age = 			"#id:age |      #title:Age|       #type:#integerLeft|   #min:20|  #max:100| #mandatory: 1"
-		static let respRate = "#id:txtresprate |      #title:Respitory Rate|  #type:#integerLeft| #min:0|  #max:100| #placeholder:   | mandatory: 0"
+		static let respRate = "#id:txtresprate |      #title:Respiratory Rate|  #type:#integerLeft| #min:0|  #max:100| #placeholder:   | mandatory: 0"
 	//FIXME: Phillips fix to check if radio button saves
 	//static let gender = 		"#id:gender|    #title:Gender|    #type:#disclosureSimple | #height: 60 | #madatory: 1"
 	static let gender = 		"#id:gender|    #title:Gender|    #type:#disclosureSimpleExpandable | #height: 60 | #mandatory: 1"
 	static let bmi = 		"#id:txtBMI|    #title:BMI|    #type:#integerLeft|   #min:10.0|  #max:50.0"
-	static let weight = 		"#id:txtWeight|    #title:Weight|    #type:#integerLeft|   #min:40|  #max:400"
+	static let weight = 		"#id:txtWeight|    #title:Weight/kg|    #type:#integerLeft|   #min:40|  #max:400"
 	static let heartRate = 	"#id:txtHR| #title:Heart Rate| #type:#integerLeft| #min:30|  #max:300"
 	
 	static let bioSBP = 		"#id:txtsbp |       #title:SBP|  #type:#sbpExpandable| #min:60|  #max:300| #mandatory: 1"
@@ -431,6 +431,8 @@ struct Presentation {
 	static let ulcerInROS = "#id:chkulcer | #title:Lower Extremity Ulceration | #type:#check"
 	static let blnunilateral = "#id:chkunilateral | #title:Unilateral Lower Limb Pain | #type:#check"
 	static let previousDVTEInROS = "id:chkDVTE| #title: Previous DVT| #type:#check"
+	static let carpalTunnel = "id:chkcarpal| #title: Carpal tunnel| #type:#check"
+	static let peripheralNeuropathy = "id:chkneuropathy| #title: Peripheral Neuropathy| #type:#check"
 	static let rheumInROS = "#id:chkrheum | #title:Rheumatic Disease | #type:#check"
 	
 	// Other
@@ -465,8 +467,8 @@ struct Presentation {
 	static let frictionRubInPhysicalExam = "#id:chkrub | #title:Friction Rub| #type:#check"
 	static let distantInPhysicalExam = "#id:chkdistant | #title:Distant Heart Sounds| #type:#check"
 	
-	static let newRalesInPhysicalExam = "#id:chkMR | #title:New Rales | #type:#check"
-	static let pulmonaryEdemaInPhysicalExam = "#id:chkPEd | #title:Diffuse mixed ralles | #type:#check"
+	static let newRalesInPhysicalExam = "#id:chkMR | #title:New moist rales | #type:#check"
+	static let pulmonaryEdemaInPhysicalExam = "#id:chkPEd | #title:New diffuse mixed rales | #type:#check"
 	static let diminishedBreathSoundsInPhysicalExam = "#id:chkbreath | #title:Diminished Breath Sounds | #type:#check"
 	static let rhonchiInPhysicalExam = "#id:chkrhonchi | #title:Dry rales, rhonchi | #type:#check"
 	static let percussionInPhysicalExam = "#id:chkpercussion| #title:Abnormal resonance to percussion | #type:#check"
@@ -480,13 +482,18 @@ struct Presentation {
 	static let hepatojulularRefluxInPhysicalExam = "#id:chkHJR | #title:Hepatojulular Reflux | #type:#check"
 	static let ascitesInPhysicalExam = "#id:chkascites | #title:Ascites | #type:#check"
 	static let abdominalbruitInPhysicalExam = "#id: chkabbruit | #title: Abdominal Bruit | #type:#check"
-	static let anyCNSSymptomsInPhysicalExam = "#id:chkAMS | #title:Any CNS Symptoms | #type:#check"
+	static let anyCNSSymptomsInPhysicalExam = "#id:chkAMS | #title:Any CNS Symptoms / AMS | #type:#disclosureControlInputCellExpandable"
+	
+	static let glasgowComaScale = "#id:txtglasgow| #title:Glasgow Coma Scale | #type:#integerRight | #min:0 | #max:100 | #placeholder: Value"
 	
 	static let coldClammyExtremitiesInPhysicalExam = "#id:chkshock | #title:Cold Clammy Extremities | #type:#check"
 	static let clubbingInPhysicalExam = "#id:chkskinwarm | #title:Clubbing | #type:#check"
 	static let edemaInPhysicalExam = "#id:chkedema | #title:Edema | #type:#check"
 	static let abnormalRightPulse = "#id:chkabsentright | #title: Abnormal RLE Pulse | #type:#check"
 	static let abnormalLeftPulse = "#id: chkabsentleft | #title: Abnormal LLE Pulse | #type: #check"
+	
+	static let abnormalOtherExtremityPulse = "#id: chkabsentother | #title: Abnormal other extremity pulse | #type: #check"
+	
 	static let differenceinSBPInPhysicalExam = "#id:txtDiffInSBP | #title:SBP difference between arms if available | #type:#integerRight | #min:0 | #max:50 | #placeholder: Value"
 	
 	// Physical Exam -> Heart Murmur https://zpl.io/SNRzD
@@ -883,7 +890,7 @@ struct Presentation {
 	// CurrentPast CV Profile -> Vascular Disease https://zpl.io/Z1M98ld
 	static let symptomaticCarotidDisease = "#id:symptomaticCarotidDisease | #title:Symptomatic Carotid Disease | #type:#disclosureWeather"
 	static let periphericVascularDisease = "#id:periphericVascularDisease | #title:Peripheric Vascular Disease | #type:#disclosureWeather"
-	static let abdomialAoritcAneurysm = "#id:abdomialAoritcAneurysm | #title:Abdomial Aoritc Aneurysm | #type:#disclosureWeather"
+	static let abdomialAoritcAneurysm = "#id:abdomialAoritcAneurysm | #title:Aortic Aneurysm  | #type:#disclosureWeather"
 	
 	// CurrentPast CV Profile -> Vascular Disease -> Symptomatic Carotid Disease https://zpl.io/ZB3jN
 	static let noncardioembolicVCATIAAssoicaedWithCarotidPlaque = "#id:chkNoncardioCVA | #title:Noncardioembolic VCA/TIA Assoicaed with Carotid Plaque | #type:#check"
@@ -915,7 +922,7 @@ struct Presentation {
 	static let asthmadisease = "#id:chkasthma| #title:Reactive Airway Disease | #type:#disclosureControl"
 	static let lung_copd = "#id:chkCOPD| #title:COPD | #type:#disclosureControlExpandable"
 	static let interstitialLungDisease = "#id:chkILD| #title:Interstitial lung disease | #type:#check"
-	static let pulmonaryOSA = "#id:chkOSA| #title:OSA | #type:#disclosureControl"
+	static let pulmonaryOSA = "#id:chkOSA| #title:OSA | #type:#disclosureControlInputCellExpandable"
 	static let ahi = "#id:txtAHI| #title:AHI | #type:#integerRight | #min:0 | #max:120 | #placeholder: Value"
 
 	// Pulmonary -> Asthma / Reactive airway disease:
@@ -1050,6 +1057,7 @@ struct Presentation {
 	static let trg = "#id:txtTRG | #title:Tryglyceride mg/dl |#type:#integerRight | #min:25 | #max:25000 | #placeholder: mg/dl"
 	static let ldlc = "#id:txtLDL | #title:LDL-C |#type:#integerRight | #min:0 | #max:500 | #placeholder: LDL-C"
 	static let hdlc = "#id:txtHDL | #title:HDL-C |#type:#integerRight | #min:1 | #max:200 | #placeholder: HDL-C"
+	static let crpMgl = "#id:txtCRP | #title:CRP mg/l |#type:#decimalRight | #min:0.1 | #max:30.0 | #placeholder: CRP mg/l"
 	static let apoB = "#id:txtApoB | #title:Apo B |#type:#integerRight | #min:0 | #max:400 | #placeholder: Apo B"
 	static let ldlp = "#id:txtLDLP | #title:LDL-P |#type:#integerRight | #min:100 | #max:5000 | #placeholder: LDL-P"
 	static let lpaMgdl = "#id:txtLPA | #title:LPa mg/dl |#type:#integerRight | #min:1 | #max:500 | #placeholder: mg/dl"
@@ -1059,13 +1067,16 @@ struct Presentation {
 	static let ldlMutationCheck = "#id:chkmutation | #title:LDL-R/APOB/PCSK-9 | #type:#check"
 	
 	
-	static let othersLabel = "#id:othersLabel | #title:Others | #type:#label"
+	static let othersLabel = "#id:othersLabel | #title:Biomarkers | #type:#label"
 	static let fastingPlasmaGlucose = "#id:txtGlucose | #title:Glucose |#type:#integerRight | #min:35 | #max:1000 | #placeholder: Glucose"
 	static let hba1c = "#id:txtHBA1C | #title:HBA1C |#type:#decimalRight | #min:4.9 | #max:19.99 | #placeholder: HBA1C"
-	static let crpMgl = "#id:txtCRP | #title:CRP mg/l |#type:#decimalRight | #min:0.1 | #max:30.0 | #placeholder: CRP mg/l"
+	
 	static let ntProBNPPgMl = "#id:txtproBNP | #title:NT-proBNP pg/ml |#type:#integerRight | #min:50 | #max:100000 | #placeholder: pg/ml"
 	static let bnpPgMl = "#id:txtBNP | #title:BNP pg/ml |#type:#integerRight | #min:10 | #max:100000 | #placeholder: pg/ml"
+	
+	static let urinesLabel = "#id:urinesLabel | #title:Urine | #type:#label"
 	static let albuminuriaMgGmOrMg24hr = "#id:txtMICRO | #title:Albumin/creatinin mg/G |#type:#integerRight | #min:1 | #max:10000 | #placeholder: mg/G"
+	static let abnormalurinsediment = "#id:chksediment | #title:Abnormal urine sediment | #type:#disclosureControl"
 	
 	static let hemaTitle = "#id:hemoTitle | #title:Hematology | #type:#label"
 	static let hemaPlatelet = "#id:txtplatelet | #title:Platelet K/uL  |#type:#integerRight | #min:0 | #max:5000 | #placeholder: Value"
@@ -1078,7 +1089,7 @@ struct Presentation {
 	
 	
 	// Laboratories -> Abnormal urine sediment
-	static let abnormalurinsediment = "#id:chksediment | #title:Abnormal urine sediment | #type:#disclosureControl"
+	
 	static let isolatedrbc = "#id:chkRBC | #title:Isolated RBC | #type:#check"
 	static let rbccast = "#id:chkRBCcast | #title: RBC Cast| #type:#check"
 	static let wbccast = "#id:chkWBCcast | #title: WBC Cast | #type:#check"
@@ -1172,7 +1183,7 @@ struct Presentation {
 	static let ventricularTachycardia = "#id:chkExVT | #title:Ventricular Tachycardia | #type:#check"
 	static let prolongSTDepression = "#id:chkprolongedST | #title:Prolonged ST Depression | #type:#check"
 	static let fixedPerfusionDefects = "#id:chkfixed  | #title:Fixed Perfusion Defects | #type:#disclosureControlExpandable"
-	static let akineticDyskineticWMA = "#id: chkfixedSE | #title: Akinetic/Dyskinetic Wall Motion Abnormality| #type:#check"
+	static let akineticDyskineticWMA = "#id: chkfixedSE | #title: Akinetic/Dyskinetic Wall Motion Abnormality| #type:#disclosureControlExpandable"
 	static let dseIschemicThreshold = "#id:txtDSE | #title:DSE Ischemic Threshold, %MPHR at the Onset of Ischemia |#type:#integerRight | #min:0 | #max:200 | #placeholder: Value"
 	static let dseOrStressMRI = "#id:txtWMA | #title:DSE or Stress MRI, Number of Segments with new WMA |#type:#integerRight | #min:0 | #max:24 | #placeholder: Value"
 	static let artifactualUninterpretableImages = "#id:chkuninterpret | #title:Artifactual/Uninterpretable Images | #type:#check"
@@ -1180,6 +1191,8 @@ struct Presentation {
 	static let stTitleNuclearImaging = "#id: stTItleNI | #title:Nuclear Imaging | #type: #label"
 	static let stTItleDobutaminStressEcho = "#id: stTitleDSE | #title: Dobutamin Stress Echocardiography | #type: #label"
 	static let stTitleETT = "#id: stTitleETT | #title: ETT | #type: #label"
+	
+	static let akineticDiskineticViabilityPresent = "#id: TIDSE | #title: Viability Present| #type:#check"
 	
 	// Diagnostics -> Stress Testing -> Angina Index
 	static let noAnginaDuringExercise = "#id:secno_angina_during_exercise| #title:No Angina During Exercise | #type:#radio | #group: (noAnginaDuringExercise, nonLimitingAngina, exerciseLimitingAngina)"
@@ -1257,6 +1270,9 @@ struct Presentation {
 	static let currentVKATherapy = "#id:chkVKA| #title:Current VKA Therapy | #type:#check"
 	static let directThrombinInhibitors = "#id:chkCAC  | #title:Direct Thrombin Inhibitors | #type:#check"
 	static let factorXaInhibitors = "#id:chkFactorX  | #title:Factor Xa Inhibitors | #type:#check"
+
+	static let immunosuppressives = "#id:chkimmunosuppressive  | #title: Immunosuppressives| #type:#check"
+	
 	
 	// HSR -> PO Meds -> B Blocker https://zpl.io/Z1Fk3YB
 	static let carvedilol3125bid = "#id:chkBisoprolol25 | #title:Carvedilol 3.125 bid | #type:#check"

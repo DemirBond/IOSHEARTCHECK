@@ -31,6 +31,9 @@ class ReviewOfSystem: EvaluationItem {
 	let pnd = EvaluationItem(literal: Presentation.pndInROS)
 	let orthopnea = EvaluationItem(literal: Presentation.orthopneaInROS)
 	let previousDVT = EvaluationItem(literal: Presentation.previousDVTEInROS)
+	let carpalTunnel = EvaluationItem(literal: Presentation.carpalTunnel)
+	let peripheralNeuropathy = EvaluationItem(literal: Presentation.peripheralNeuropathy)
+	
 	let otherImmune = EvaluationItem(literal: Presentation.otherImmune)
 	
 	let socialHisLabel = EvaluationItem(literal: Presentation.socialHistoryLabel)
@@ -67,6 +70,8 @@ class ReviewOfSystem: EvaluationItem {
 			ulcerInROS,
 			blnunilateral,
 			previousDVT,
+			carpalTunnel,
+			peripheralNeuropathy,
 			rheumInROS,
 			blnactivecancer,
 			otherImmune,

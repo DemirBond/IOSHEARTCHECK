@@ -730,7 +730,7 @@ class GeneratedController: BaseTableController, NVActivityIndicatorViewable {
 					return 165
 				}
 				else { //if  itemModel.subCellsCount == 1{
-					return 110
+					return 105
 				}
 			}
 			else {

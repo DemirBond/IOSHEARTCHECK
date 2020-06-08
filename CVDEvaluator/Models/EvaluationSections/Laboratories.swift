@@ -48,11 +48,14 @@ class Laboratories: EvaluationItem {
 	let crpMgl = EvaluationItem(literal: Presentation.crpMgl)
 	let ntProBNPPgMl = EvaluationItem(literal: Presentation.ntProBNPPgMl)
 	let bnpPgMl = EvaluationItem(literal: Presentation.bnpPgMl)
-	let albuminuriaMgGmOrMg24hr = EvaluationItem(literal: Presentation.albuminuriaMgGmOrMg24hr)
-	let abnormalurinsediment = AbnormalUrinSediment(literal: Presentation.abnormalurinsediment)
+	
 	let ldlMutationCheck1 = EvaluationItem(literal: Presentation.ldlMutationCheck)
 	
 	let positiveTroponin = PositiveTroponin(literal: Presentation.positiveTroponin)
+	
+	let urineLabel = EvaluationItem(literal: Presentation.urinesLabel)
+	let albuminuriaMgGmOrMg24hr = EvaluationItem(literal: Presentation.albuminuriaMgGmOrMg24hr)
+	let abnormalurinsediment = AbnormalUrinSediment(literal: Presentation.abnormalurinsediment)
 	// nameql options
 //	let naOptionUrine = EvaluationItem(literal: Presentation.naOptionUrine)
 //	let naOptionSerumOsmolality = EvaluationItem(literal: Presentation.naOptionSerumOsmolality)
@@ -74,6 +77,11 @@ class Laboratories: EvaluationItem {
 			gfrMlMin173M2,
 			//hemoglobin,
 			//worseningRenalFx,
+
+			othersLabel,
+			positiveTroponin,
+			ntProBNPPgMl,
+			bnpPgMl,
 			
 			hemaLabel,
 			inr,
@@ -82,23 +90,20 @@ class Laboratories: EvaluationItem {
 			hemaTrans,
 			
 			lipidProfileLabel,
-			ascvdRisk,
-			alreadyOnStatin,
-			statinIntolerance,
-			cholesterol,
-			trg,
-			ldlc,
-			hdlc,
-			apoB,
-			ldlp,
-			lpaMgdl,
-			ldlMutationCheck1,
-			
-			othersLabel,
-			positiveTroponin,
-			crpMgl,
-			ntProBNPPgMl,
-			bnpPgMl,
+					ascvdRisk,
+					alreadyOnStatin,
+					statinIntolerance,
+					cholesterol,
+					trg,
+					ldlc,
+					hdlc,
+					crpMgl,
+					apoB,
+					ldlp,
+					lpaMgdl,
+					ldlMutationCheck1,
+					
+			urineLabel,
 			albuminuriaMgGmOrMg24hr,
 			abnormalurinsediment
 		]

@@ -38,11 +38,14 @@ class PhysicalExam: EvaluationItem {
 
 	let hepatojulularRefluxInPhysicalExam = EvaluationItem(literal: Presentation.hepatojulularRefluxInPhysicalExam)
 	let ascitesInPhysicalExam = EvaluationItem(literal: Presentation.ascitesInPhysicalExam)
-	let anyCNSSymptomsInPhysicalExam = EvaluationItem(literal: Presentation.anyCNSSymptomsInPhysicalExam)
+	let anyCNSSymptomsInPhysicalExam = SectionCNS(literal: Presentation.anyCNSSymptomsInPhysicalExam)
+	
 	
 	let abdominalBruit = EvaluationItem(literal: Presentation.abdominalbruitInPhysicalExam)
 	let abnormalRightPulse = EvaluationItem(literal: Presentation.abnormalRightPulse)
 	let abnormalLeftPulse = EvaluationItem(literal: Presentation.abnormalLeftPulse)
+	
+	let abnormalOtherExtremityPulse = EvaluationItem(literal: Presentation.abnormalOtherExtremityPulse)
 	
 	let cyanosisInPhysicalExam = SectionCyanosis(literal: Presentation.cyanosisInPhysicalExam)
 	
@@ -123,6 +126,7 @@ class PhysicalExam: EvaluationItem {
 			vascularLabel,
 			abnormalRightPulse,
 			abnormalLeftPulse,
+			abnormalOtherExtremityPulse,
 			abdominalBruit,
 			
 			
@@ -133,6 +137,12 @@ class PhysicalExam: EvaluationItem {
 	}
 }
 
+class SectionCNS: EvaluationItem {
+	let glasgowComaScale = EvaluationItem(literal: Presentation.glasgowComaScale)
+	override var items: [EvaluationItem] {
+		return [glasgowComaScale]
+	}
+}
 
 // MARK: - Physical Exam -> Heart Murmur
 
