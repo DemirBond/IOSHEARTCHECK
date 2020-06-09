@@ -1288,12 +1288,12 @@ struct Presentation {
 	static let metoproloIER200qd = "#id:chkMetoprololER200 | #title:MetoproloI 200 qd | #type:#check"
 	
 	// HSR -> PO Meds -> Acel/ARB
-	static let lisinopril5 = "#id:chklisinopril5 | #title:Lisinopril <10mg qd | #type:#check"
-	static let lisinopril10 = "#id:chklisinopril10| #title:Lisinopril 10-20mg qd | #type:#check"
-	static let lisinopril20 = "#id:chklisinopril20 | #title:Lisinopril 20mg qd | #type:#check"
-	static let losartan25 = "#id:chklosartan25 | #title:Losartan 25mg qd | #type:#check"
-	static let losartan50 = "#id:chklosartan50 | #title:Losartan 50mg qd | #type:#check"
-	static let losartan100 = "#id:chklosartan100 | #title:Losartan 100mg qd | #type:#check"
+	static let lisinopril5 = "#id:chklisinopril5 | #title:Lisinopril 5 qd or its equivalent | #type:#check"
+	static let lisinopril10 = "#id:chklisinopril10| #title:Lisinopril 10-20 qd or its equival | #type:#check"
+	static let lisinopril20 = "#id:chklisinopril20 | #title:Lisinopril 30-40 qd or its equival | #type:#check"
+	static let losartan25 = "#id:chklosartan25 | #title:Losartan 25 qd or its equival | #type:#check"
+	static let losartan50 = "#id:chklosartan50 | #title:Losartan 50 qd or its equival | #type:#check"
+	static let losartan100 = "#id:chklosartan100 | #title:Losartan 100 qd or its equival | #type:#check"
 	
 	// HSR -> PO Meds -> PO Diuretic https://zpl.io/1FSlBB
 	static let furosemide40 = "#id:chkfurosemide40 | #title:Furosemide 40 | #type:#check"
@@ -1314,15 +1314,29 @@ struct Presentation {
 	static let ivAntiarrythmic = "#id:chkIVAA | #title:IV Antiarrythmic | #type:#disclosureControl"
 	static let urgentCV = "#id:chkurgcv | #title:Urgent CV | #type:#check"
 	static let defibrillationACLS = "#id:chkdefib | #title:Defibrillation/ACLS | #type:#check"
-	static let ivAntihypertensive = "#id:chkIVHT | #title:IV Antihypertensive | #type:#disclosureControl"
-	static let ivVasoactive = "#id:chkIVVA | #title:IV Vasoactive | #type:#disclosureControl"
+	static let ivAntihypertensive = "#id:chkIVHT | #title:IV Vasodilators | #type:#disclosureControl"
+	static let ivVasoactive = "#id:chkIVVA | #title:IV Inotropes | #type:#disclosureControl"
 	static let ivDiuretic = "#id:chkIVDI | #title:IV Diuretic | #type:#disclosureControl"
-	static let mechanicalVentiallationOrNIPPV = "#id:chkNIPPV | #title:Respiratory Interventions | #type:#disclosureControl"
-	static let o2Supplement = "#id:txtOsupp | #title:FiO2 / | #type:#check | #type:#integerRight | #min:23 | #max:100 | #placeholder: Value"
-	static let ivVasopressors = "#id:chkVAD | #title:IV Vasopressors | #type:#check"
+	static let mechanicalVentiallationOrNIPPV = "#id:chkNIPPV | #title:Mechanical Ventiallation or NIPPV | #type:#disclosureControl"
+	static let o2Supplement = "#id:txtOsupp | #title:FiO2 | #type:#check | #type:#integerRight | #min:23 | #max:100 | #placeholder: Value"
+	static let ivVasopressors = "#id:chkVAD | #title:IV Vasopressors | #type:#disclosureControl"
 	static let ultrafiltration = "#id:chkult | #title:Ultrafiltration | #type:#check"
 	static let iabp = "#id:chkIABP | #title:IABP | #type:#check"
 	static let temporaryPM = "#id:chkTPM | #title:Temporary PM | #type:#check"
+	
+	// Vasodilators
+	static let ivAntihypertensiveNPS = "#id:chkIVNPS | #title:IV NPS | #type:#check"
+	static let ivAntihypertensiveNTG = "#id:chkTchkIVNTGPM | #title:IV NTG | #type:#check"
+
+	//HSR -> In Hospital -> IV Vasopressors
+	static let ivVasopressorsDopamine = "#id:chkdopa | #title: Dopamine | #type:#check"
+	static let ivVasopressorsEpinephrine = "#id:chkepinephrine | #title: Epinephrine | #type:#check"
+	static let ivVasopressorsNorepinephrine = "#id:chknorepinephrine | #title: Norepinephrine | #type:#check"
+	static let ivVasopressorsContinuous = "#id:chkAAcon | #title: Continuous | #type:#check"
+	static let ivVasopressorsBolus = "#id:chkAAbolus | #title: Bolus | #type:#check"
+	static let ivVasopressorsTitration = "#id:chkAAtitr | #title: Titration | #type:#check"
+	static let ivVasopressorsFrequency = "#id:TxtAAmonitor | #title: Monitoring Frequency Q hr | #type:#integerRight | #min:1 | #max:12 | #placeholder: Value"
+	
 	
 	static let cpap1 = "#id:txtCPAP | #title:CPAP cm H20 | #type:#integerRight | #min:1 | #max:100 | #placeholder: Value"
 	static let peep1 = "#id:txtPEEP | #title:PEEP cm H20 | #type:#integerRight | #min:1 | #max:100 | #placeholder: Value"
@@ -1341,14 +1355,22 @@ struct Presentation {
 	static let txtHTmonitor = "#id:txtHTmonitor | #title:Monitoring Frequency Q hr  |#type:#integerRight | #min:1 | #max:12 | #placeholder: Value"
 	
 	// HSR -> In Hospital -> IV Vasoactive https://zpl.io/Ll2Pm
+	static let ivVasoactiveMilrinone = "#id:chkmilrinone | #title:Milrinone | #type:#check"
+	static let ivVasoactiveDobutamine = "#id:chkdobut | #title:Dobutamine | #type:#check"
+	static let ivVasoactiveContinuous = "#id:chkVAcon | #title:Continuous | #type:#check"
+	static let ivVasoactiveBolus = "#id:chkVAbolus | #title:Bolus | #type:#check"
+	static let ivVasoactiveTitration = "#id:chkVAtitr | #title:Titration | #type:#check"
+	static let ivVasoactiveTxtVAmonitor = "#id:TxtVAmonitor | #title:Monitoring Frequency Q hr |#type:#integerRight | #min:1 | #max:12 | #placeholder: Value"
+	
+	static let blnmilrinone = "#id:chkmilrinone | #title:IV Milrinone | #type:#check"
 	static let blnIVVAcon = "#id:chkVAcon | #title:Continuous | #type:#check"
 	static let blnIVVAbolus = "#id:chkVAbolus | #title:Bolus | #type:#check"
 	static let blnIVVAtitr = "#id:chkVAtitr | #title:Titration | #type:#check"
 	static let txtVAmonitor = "#id:txtVAmonitor | #title:Monitoring Frequency Q hr  |#type:#integerRight | #min:1 | #max:12 | #placeholder: Value"
 	static let blnIVNPSz = "#id:chkIVNPS | #title:IV NPS | #type:#check"
 	static let blnIVNTG = "#id:chkIVNTG | #title:IV NTG | #type:#check"
-	static let blnmilrinone = "#id:chkmilrinone | #title:IV Milrinone | #type:#check"
 	
+
 	// HSR -> In Hospital -> IV Diuretic https://zpl.io/Z5hShw
 	static let blncon = "#id:chkcon | #title:Continuous | #type:#check"
 	static let blnPODI = "#id:chkPODI | #title:Intermittent | #type:#check"

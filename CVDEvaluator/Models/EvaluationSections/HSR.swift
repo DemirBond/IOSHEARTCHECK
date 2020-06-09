@@ -180,21 +180,21 @@ class InHospital: EvaluationItem {
 	let ivVasoactive = IVVasoactive(literal: Presentation.ivVasoactive)
 	let ivDiuretic = IVDiuretic(literal: Presentation.ivDiuretic)
 	let mechanicalVentiallationOrNIPPV = MechanicalVentiallationOrNIPPV(literal: Presentation.mechanicalVentiallationOrNIPPV)
-	let ivVasopressors = EvaluationItem(literal: Presentation.ivVasopressors)
+	let ivVasopressors = IVVasopressors(literal: Presentation.ivVasopressors)
 	let ultrafiltration = EvaluationItem(literal: Presentation.ultrafiltration)
 	let iabp = EvaluationItem(literal: Presentation.iabp)
 	let temporaryPM = EvaluationItem(literal: Presentation.temporaryPM)
 	
 	override var items: [EvaluationItem] {
 		return [
-			ivAntiarrythmic,
-			urgentCV,
-			defibrillationACLS,
+			ivVasopressors,
 			ivAntihypertensive,
 			ivVasoactive,
 			ivDiuretic,
+			ivAntiarrythmic,
 			mechanicalVentiallationOrNIPPV,
-			ivVasopressors,
+			defibrillationACLS,
+			urgentCV,
 			ultrafiltration,
 			iabp,
 			temporaryPM
@@ -202,6 +202,28 @@ class InHospital: EvaluationItem {
 	}
 }
 
+class IVVasopressors: EvaluationItem {
+
+	let dopamine = EvaluationItem(literal: Presentation.ivVasopressorsDopamine)
+	let epinephrine = EvaluationItem(literal: Presentation.ivVasopressorsEpinephrine)
+	let norepinephrine = EvaluationItem(literal: Presentation.ivVasopressorsNorepinephrine)
+	let continuous = EvaluationItem(literal: Presentation.ivVasopressorsContinuous)
+	let bolus = EvaluationItem(literal: Presentation.ivVasopressorsBolus)
+	let titration = EvaluationItem(literal: Presentation.ivVasopressorsTitration)
+	let frequency = EvaluationItem(literal: Presentation.ivVasopressorsFrequency)
+	
+	override var items: [EvaluationItem] {
+		return [
+			dopamine,
+			epinephrine,
+			norepinephrine,
+			continuous,
+			bolus,
+			titration,
+			frequency
+		]
+	}
+}
 
 
 // MARK: - HSR -> InHospital -> IV Antiarrythmic
@@ -234,9 +256,13 @@ class IVAntihypertensive: EvaluationItem {
 	let blnIVHTbolus = EvaluationItem(literal: Presentation.blnIVHTbolus)
 	let blnIVHTtitr = EvaluationItem(literal: Presentation.blnIVHTtitr)
 	let txtHTmonitor = EvaluationItem(literal: Presentation.txtHTmonitor)
+	let ivAntihypertensiveNPS = EvaluationItem(literal: Presentation.ivAntihypertensiveNPS)
+	let ivAntihypertensiveNTG = EvaluationItem(literal: Presentation.ivAntihypertensiveNTG)
 	
 	override var items: [EvaluationItem] {
 		return [
+			ivAntihypertensiveNPS,
+			ivAntihypertensiveNTG,
 			blnIVHTcon,
 			blnIVHTbolus,
 			blnIVHTtitr,
@@ -250,23 +276,21 @@ class IVAntihypertensive: EvaluationItem {
 
 class IVVasoactive: EvaluationItem {
 	
-	let blnIVVAcon = EvaluationItem(literal: Presentation.blnIVVAcon)
-	let blnIVVAbolus = EvaluationItem(literal: Presentation.blnIVVAbolus)
-	let blnIVVAtitr = EvaluationItem(literal: Presentation.blnIVVAtitr)
-	let txtVAmonitor = EvaluationItem(literal: Presentation.txtVAmonitor)
-	let blnIVNPSz = EvaluationItem(literal: Presentation.blnIVNPSz)
-	let blnIVNTG = EvaluationItem(literal: Presentation.blnIVNTG)
-	let blnmilrinone = EvaluationItem(literal: Presentation.blnmilrinone)
+	let ivVasoactiveMilrinone = EvaluationItem(literal: Presentation.ivVasoactiveMilrinone)
+	let ivVasoactiveDobutamine = EvaluationItem(literal: Presentation.ivVasoactiveDobutamine)
+	let ivVasoactiveContinuous = EvaluationItem(literal: Presentation.ivVasoactiveContinuous)
+	let ivVasoactiveBolus = EvaluationItem(literal: Presentation.ivVasoactiveBolus)
+	let ivVasoactiveTitration = EvaluationItem(literal: Presentation.ivVasoactiveTitration)
+	let ivVasoactiveTxtVAmonitor = EvaluationItem(literal: Presentation.ivVasoactiveTxtVAmonitor)
 	
 	override var items: [EvaluationItem] {
 		return [
-			blnIVVAcon,
-			blnIVVAbolus,
-			blnIVVAtitr,
-			txtVAmonitor,
-			blnIVNPSz,
-			blnIVNTG,
-			blnmilrinone
+			ivVasoactiveMilrinone,
+			ivVasoactiveDobutamine,
+			ivVasoactiveContinuous,
+			ivVasoactiveBolus,
+			ivVasoactiveTitration,
+			ivVasoactiveTxtVAmonitor,
 		]
 	}
 }
