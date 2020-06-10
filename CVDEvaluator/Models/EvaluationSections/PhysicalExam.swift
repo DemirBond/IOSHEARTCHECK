@@ -61,7 +61,7 @@ class PhysicalExam: EvaluationItem {
 	let heartLabel = EvaluationItem(literal: Presentation.peheartLabel)
 	let pAndTLabel = EvaluationItem(literal: Presentation.pepandtLabel)
 	let abdominalLabel = EvaluationItem(literal: Presentation.peabdominalLabel)
-	let GULabel = EvaluationItem(literal: Presentation.peGULabel)
+	//let GULabel = EvaluationItem(literal: Presentation.peGULabel)
 	let sAndELabel = EvaluationItem(literal: Presentation.peSandELabel)
 	let cnsLabel = EvaluationItem(literal: Presentation.pecnsLabel)
 	let vascularLabel = EvaluationItem(literal: Presentation.pevascularLabel)
@@ -96,7 +96,7 @@ class PhysicalExam: EvaluationItem {
 			rhonchiInPhysicalExam,
 			diminishedBreathSoundsInPhysicalExam,
 	
-			// Abdominal
+			// Abdominal - GI/GU
 			abdominalLabel,
 			abdominalTendernessInPhysicalExam,
 			distentionInPhysicalExam,
@@ -106,9 +106,8 @@ class PhysicalExam: EvaluationItem {
 			ascitesInPhysicalExam,
 
 			// GU
-			GULabel,
-			costovertebralFindings,
-			
+//			GULabel,
+//			costovertebralFindings,
 			
 			// Skin and Extremities
 			sAndELabel,
